@@ -22,7 +22,13 @@ plot(Field.BSwitch.RightP.tl_x, Field.BSwitch.RightP.tl_y, 'b*');
 plot(Field.BSwitch.RightP.tr_x, Field.BSwitch.RightP.tr_y, 'b*');
 plot(Field.BSwitch.RightP.br_x, Field.BSwitch.RightP.br_y, 'b*');
 
-%plot(Field.BSwitch.LeftP.bl_x, Field.BSwitch.LeftP.bl_y, 'b*');
-%plot(Field.BSwitch.LeftP.tl_x, Field.BSwitch.LeftP.tl_y, 'b*');
-%plot(Field.BSwitch.LeftP.tr_x, Field.BSwitch.LeftP.tr_y, 'b*');
-%plot(Field.BSwitch.LeftP.br_x, Field.BSwitch.LeftP.br_y, 'b*');
+plot([Field.BSwitch.RightP.bl_x Field.BSwitch.RightP.tl_x Field.BSwitch.RightP.tr_x Field.BSwitch.RightP.br_x Field.BSwitch.RightP.bl_x], [
+Field.BSwitch.RightP.bl_y Field.BSwitch.RightP.tl_y Field.BSwitch.RightP.tr_y Field.BSwitch.RightP.br_y Field.BSwitch.RightP.bl_y], 'b-');
+
+plot(Field.BSwitch.LeftP.bl_x, Field.BSwitch.LeftP.bl_y, 'b*');
+plot(Field.BSwitch.LeftP.tl_x, Field.BSwitch.LeftP.tl_y, 'b*');
+plot(Field.BSwitch.LeftP.tr_x, Field.BSwitch.LeftP.tr_y, 'b*');
+plot(Field.BSwitch.LeftP.br_x, Field.BSwitch.LeftP.br_y, 'b*');
+
+plot([Field.BSwitch.LeftP.bl_x Field.BSwitch.LeftP.tl_x Field.BSwitch.LeftP.tr_x Field.BSwitch.LeftP.br_x Field.BSwitch.LeftP.bl_x], [
+Field.BSwitch.LeftP.bl_y Field.BSwitch.LeftP.tl_y Field.BSwitch.LeftP.tr_y Field.BSwitch.LeftP.br_y Field.BSwitch.LeftP.bl_y], 'b-');
