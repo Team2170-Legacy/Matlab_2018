@@ -1,4 +1,4 @@
-clear 
+clear all
 init_Constants
 Init_Robot_v001
 Init_Field_v001

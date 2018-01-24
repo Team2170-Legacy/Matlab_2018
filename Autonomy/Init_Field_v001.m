@@ -33,6 +33,48 @@ Field.BSwitch.LVT_y = Field.RSwitch.RVT_y;
 Field.BSwitch.RVT_x = Field.L - Field.RSwitch.RVT_x;
 Field.BSwitch.RVT_y = Field.RSwitch.LVT_y;
 
+%switch platforms
+
+%Right Platform Red Switch
+Field.RSwitch.RightP.bl_x = 14*ft;
+Field.RSwitch.RightP.bl_y = 7.5*ft;
+
+Field.RSwitch.RightP.tl_x = Field.RSwitch.RightP.bl_x;
+Field.RSwitch.RightP.tl_y = 10.5*ft;
+
+Field.RSwitch.RightP.tr_x = 18*ft;
+Field.RSwitch.RightP.tr_y = Field.RSwitch.RightP.tl_y;
+
+Field.RSwitch.RightP.br_x = Field.RSwitch.RightP.tr_x;
+Field.RSwitch.RightP.br_y = Field.RSwitch.RightP.bl_y;
+
+% Left Platform Red Switch
+Field.RSwitch.LeftP.bl_x = Field.RSwitch.RightP.bl_x;
+Field.RSwitch.LeftP.bl_y = 16.5*ft;
+
+Field.RSwitch.LeftP.tl_x = Field.RSwitch.RightP.bl_x;
+Field.RSwitch.LeftP.tl_y = Field.RSwitch.LeftP.bl_y+3*ft;
+
+Field.RSwitch.LeftP.tr_x = Field.RSwitch.RightP.tr_x;
+Field.RSwitch.LeftP.tr_y = Field.RSwitch.LeftP.tl_y;
+
+Field.RSwitch.LeftP.br_x = Field.RSwitch.LeftP.tr_x;
+Field.RSwitch.LeftP.br_y = Field.RSwitch.LeftP.bl_y;
+
+
+% Right Platform Blue Switch
+Field.BSwitch.RightP.bl_x = Field.L - Field.RSwitch.RightP.bl_x;
+Field.BSwitch.RightP.bl_y = Field.RSwitch.RightP.bl_y;
+
+Field.BSwitch.RightP.tl_x = Field.BSwitch.RightP.bl_x;
+Field.BSwitch.RightP.tl_y = Field.RSwitch.RightP.tl_y;
+
+Field.BSwitch.RightP.tr_x = Field.L - Field.RSwitch.RightP.tr_x;
+Field.BSwitch.RightP.tr_y = Field.RSwitch.RightP.tl_y;
+
+Field.BSwitch.RightP.br_x = Field.BSwitch.RightP.tr_x;
+Field.BSwitch.RightP.br_y = Field.RSwitch.RightP.bl_y;
+
 %auto lines
 AutoLineRed.C1_x = 10*ft;
 AutoLineRed.C1_y = 0*ft;
