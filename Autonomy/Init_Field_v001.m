@@ -33,8 +33,6 @@ Field.BSwitch.LVT_y = Field.RSwitch.RVT_y;
 Field.BSwitch.RVT_x = Field.L - Field.RSwitch.RVT_x;
 Field.BSwitch.RVT_y = Field.RSwitch.LVT_y;
 
-%switch platforms
-
 %Right Platform Red Switch
 Field.RSwitch.RightP.bl_x = 14*ft;
 Field.RSwitch.RightP.bl_y = 7.5*ft;
@@ -61,7 +59,6 @@ Field.RSwitch.LeftP.tr_y = Field.RSwitch.LeftP.tl_y;
 Field.RSwitch.LeftP.br_x = Field.RSwitch.LeftP.tr_x;
 Field.RSwitch.LeftP.br_y = Field.RSwitch.LeftP.bl_y;
 
-
 % Right Platform Blue Switch
 Field.BSwitch.RightP.bl_x = Field.L - Field.RSwitch.RightP.bl_x;
 Field.BSwitch.RightP.bl_y = Field.RSwitch.RightP.bl_y;
@@ -87,6 +84,11 @@ Field.BSwitch.LeftP.tr_y = Field.RSwitch.LeftP.tr_y;
 
 Field.BSwitch.LeftP.br_x = Field.BSwitch.LeftP.tr_x;
 Field.BSwitch.LeftP.br_y =Field.RSwitch.LeftP.br_y;
+
+%Top Platform of Scale from Looking Down POV
+
+%Field.Scale.TopP.br_x
+
 
 %auto lines
 AutoLineRed.C1_x = 10*ft;
