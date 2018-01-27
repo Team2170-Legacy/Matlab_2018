@@ -34,7 +34,7 @@ Field.BSwitch.RVT_x = Field.L - Field.RSwitch.RVT_x;
 Field.BSwitch.RVT_y = Field.RSwitch.LVT_y;
 
 %Right Platform Red Switch
-Field.RSwitch.RightP.bl_x = 14*ft;
+Field.RSwitch.RightP.bl_x = 12*ft;
 Field.RSwitch.RightP.bl_y = 7.5*ft;
 
 Field.RSwitch.RightP.tl_x = Field.RSwitch.RightP.bl_x;
@@ -154,7 +154,7 @@ Field.RedPlatZone.Cube6_y = Field.RedPlatZone.Cube1_y + space*5;
 
 
 %Cubes in Red Pyramid
-Field.RedPyramid.Cube1_x = 13.458333*ft;
+Field.RedPyramid.Cube1_x = 11.458333*ft;
 Field.RedPyramid.Cube1_y = 13.5*ft;
 
 Field.RedPyramid.Cube2_x = Field.RedPyramid.Cube1_x;
@@ -163,13 +163,13 @@ Field.RedPyramid.Cube2_y = 14.58333*ft;
 Field.RedPyramid.Cube3_x = Field.RedPyramid.Cube1_x;
 Field.RedPyramid.Cube3_y = 12.41667*ft;
 
-Field.RedPyramid.Cube4_x = 12.375*ft;
+Field.RedPyramid.Cube4_x = 10.375*ft;
 Field.RedPyramid.Cube4_y = 14.041667*ft;
 
 Field.RedPyramid.Cube5_x = Field.RedPyramid.Cube4_x;
 Field.RedPyramid.Cube5_y = 12.958333*ft;
 
-Field.RedPyramid.Cube6_x = 11.291667*ft;
+Field.RedPyramid.Cube6_x = 9.291667*ft;
 Field.RedPyramid.Cube6_y = Field.RedPyramid.Cube1_y;
 
 % Cubes in Blue Platform Zone 
