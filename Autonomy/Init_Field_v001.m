@@ -112,7 +112,33 @@ Field.Scale.BottP.tl_y = 9*ft;
 Field.Scale.BottP.tr_x = Field.Scale.TopP.tr_x;
 Field.Scale.BottP.tr_y = Field.Scale.BottP.tl_y;
 
+% Red Exchange Zone
 
+Field.RedExchangeZone.tl_x = 0;
+Field.RedExchangeZone.tl_y = 18*ft;
+
+Field.RedExchangeZone.tr_x = 4*ft;
+Field.RedExchangeZone.tr_y = Field.RedExchangeZone.tl_y;
+
+Field.RedExchangeZone.br_x = Field.RedExchangeZone.tr_x;
+Field.RedExchangeZone.br_y = 14*ft;
+
+Field.RedExchangeZone.bl_x = Field.RedExchangeZone.tl_x;
+Field.RedExchangeZone.bl_y = Field.RedExchangeZone.br_y;
+
+% Blue Exchange Zone
+
+Field.BlueExchangeZone.tl_x = Field.L;
+Field.BlueExchangeZone.tl_y = Field.RedExchangeZone.tl_y;
+
+Field.BlueExchangeZone.tr_x = Field.L - Field.RedExchangeZone.tr_x;
+Field.BlueExchangeZone.tr_y = Field.RedExchangeZone.tl_y;
+
+Field.BlueExchangeZone.br_x = Field.L - Field.RedExchangeZone.tr_x;
+Field.BlueExchangeZone.br_y = Field.RedExchangeZone.br_y;
+
+Field.BlueExchangeZone.bl_x = Field.L - Field.RedExchangeZone.tl_x;
+Field.BlueExchangeZone.bl_y = Field.RedExchangeZone.br_y;
 
 %auto lines
 AutoLineRed.C1_x = 10*ft;
