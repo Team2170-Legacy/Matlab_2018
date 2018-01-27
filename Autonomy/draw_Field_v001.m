@@ -1,14 +1,14 @@
 
-figure; 
-hold on
+%figure; 
+%hold on
 
 title_text = title('FRC Team 2170 Robot Simulator');
 % Plot field
 %OutsideSquare = plot([0 0 Field.L Field.L 0], [0 Field.L Field.L 0 0], 'g');
 
 
-xlim([0 54*ft]);
-ylim([0 27*ft]);
+% xlim([0 54*ft]);
+% ylim([0 27*ft]);
 Arcade = plot([0 Field.L Field.L 0 0], [0 0 Field.W Field.W 0],'gre');
 
 draw_StartingPositions();

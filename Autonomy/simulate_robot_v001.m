@@ -15,8 +15,9 @@
 
 %   Initialize conversion constants and field elements
 init_Constants;
-%***2018 init_Robot_v002;        % MK init_Robot_v002 now calls init_Field_002
 Init_Robot_v002
+Init_Field_v001
+%***2018 init_Robot_v002;        % MK init_Robot_v002 now calls init_Field_002
 
 %	initial robot wheel velocities & radius
 
@@ -58,6 +59,9 @@ v = VideoWriter('Robot_Movie','MPEG-4');	% initialize vide capture of simulation
 open(v);									% open movie file
 
 f1		= figure;				% open figure
+hold on							% ensure multiple drawing commands are overlaid on the figure
+draw_Field_v001
+
 axis('equal')					% ensure x & y directions are scale equally on screen
 xlim([-6*ft Field.L + 5*ft])					% [m]	set figure limits for x-axis
 ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
@@ -65,7 +69,6 @@ ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
 %ylim([-20 20])
 set(f1,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default
 grid on							% draw a grid on the figure
-hold on							% ensure multiple drawing commands are overlaid on the figure
 % without erasing figure first
 
 Field.t = 0;
@@ -201,7 +204,9 @@ for i=2:N
     draw_Robot(Robot);						% Call function to draw Robot in figure
 %***   plot( Robot.x, Robot.y , 'o');           % 2018 Simple single point robot for now
    
-   %***2018  draw_Field_v002(Field);
+    %****draw_Field_v001(Field);
+    draw_Field_v001
+    
     Robot_Figure		= getframe(f1);		% Capture screenshot image of figure
     Robot_Image			= Robot_Figure.cdata;
     %	pause

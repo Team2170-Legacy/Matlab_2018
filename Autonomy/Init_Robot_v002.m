@@ -42,31 +42,33 @@ Robot.a_max = 3;        %Robot assumed acceleration
 
 %init_Field_v002;
 % FRC2018  init_Field_v005;
-Init_Field_v001
+%Init_Field_v001
 
 % % Robot starting position selection
-% 
+%
 % Robot.Start_Pos     = Field.RS3;    % CHANGE SPECIFIED STARTING POSITION HERE
 %                                     % OR
 %                                     % in the selection of Autonomous
 %                                     % Trajectory, calc_trajectory_v8.m and
 %                                     % its associated helper scripts, e.g.
 %                                     % calc_RS3_RB_v001.m etc.
-% 
+%
 % Robot.x0 = Robot.Start_Pos.x;
 % Robot.y0 = Robot.Start_Pos.y;
 % Robot.theta0 = Robot.Start_Pos.theta;
 
-%   Prepare figure for field drawing
-f1		= figure;				% open figure
-axis('equal')					% ensure x & y directions are scale equally on screen
-xlim([-6*ft Field.L + 5*ft])					% [m]	set figure limits for x-axis
-ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
-%xlim([-30 30])
-%ylim([-20 20])
-set(f1,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default
-grid on							% draw a grid on the figure
-hold on							% ensure multiple drawing commands are overlaid on the figure
-% without erasing figure first
+if 0,
+    %   Prepare figure for field drawing
+    f1		= figure;				% open figure
+    axis('equal')					% ensure x & y directions are scale equally on screen
+    xlim([-6*ft Field.L + 5*ft])					% [m]	set figure limits for x-axis
+    ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
+    %xlim([-30 30])
+    %ylim([-20 20])
+    set(f1,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default
+    grid on							% draw a grid on the figure
+    hold on							% ensure multiple drawing commands are overlaid on the figure
+    % without erasing figure first
+end
 
 Field.t = 0;
