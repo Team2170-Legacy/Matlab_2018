@@ -85,9 +85,33 @@ Field.BSwitch.LeftP.tr_y = Field.RSwitch.LeftP.tr_y;
 Field.BSwitch.LeftP.br_x = Field.BSwitch.LeftP.tr_x;
 Field.BSwitch.LeftP.br_y =Field.RSwitch.LeftP.br_y;
 
-%Top Platform of Scale from Looking Down POV
 
-%Field.Scale.TopP.br_x
+%Top Plate of Scale from Looking Down (Red side is on the right)
+Field.Scale.TopP.br_x = 29.5 * ft;
+Field.Scale.TopP.br_y = 18*ft;
+
+Field.Scale.TopP.bl_x = 25.5*ft;
+Field.Scale.TopP.bl_y = Field.Scale.TopP.br_y;
+
+Field.Scale.TopP.tl_x = Field.Scale.TopP.bl_x;
+Field.Scale.TopP.tl_y = 22*ft;
+
+Field.Scale.TopP.tr_x = Field.Scale.TopP.br_x;
+Field.Scale.TopP.tr_y = Field.Scale.TopP.tl_y;
+
+%Bottom Plate of Scale from Looking Down (Red side is on the right)
+Field.Scale.BottP.br_x = Field.Scale.TopP.br_x;
+Field.Scale.BottP.br_y = 5*ft;
+
+Field.Scale.BottP.bl_x = Field.Scale.TopP.bl_x;
+Field.Scale.BottP.bl_y = Field.Scale.BottP.br_y;
+
+Field.Scale.BottP.tl_x = Field.Scale.TopP.tl_x;
+Field.Scale.BottP.tl_y = 9*ft;
+
+Field.Scale.BottP.tr_x = Field.Scale.TopP.tr_x;
+Field.Scale.BottP.tr_y = Field.Scale.BottP.tl_y;
+
 
 
 %auto lines
@@ -103,3 +127,95 @@ AutoLineBlue.C2_y = AutoLineRed.C2_y;
 
 Field.AutoLineRed = AutoLineRed;
 Field.AutoLineBlue = AutoLineBlue;
+
+
+
+
+%Cubes
+%Cubes in Red Platform Zone
+space = 26.2/12*ft;
+Field.RedPlatZone.Cube1_x = 18.542667*ft;
+Field.RedPlatZone.Cube1_y = 8.041667*ft;
+
+Field.RedPlatZone.Cube2_x = Field.RedPlatZone.Cube1_x;
+Field.RedPlatZone.Cube2_y = Field.RedPlatZone.Cube1_y + space;
+
+Field.RedPlatZone.Cube3_x = Field.RedPlatZone.Cube1_x;
+Field.RedPlatZone.Cube3_y = Field.RedPlatZone.Cube1_y + space*2;
+
+Field.RedPlatZone.Cube4_x = Field.RedPlatZone.Cube1_x;
+Field.RedPlatZone.Cube4_y = Field.RedPlatZone.Cube1_y + space*3;
+
+Field.RedPlatZone.Cube5_x = Field.RedPlatZone.Cube1_x;
+Field.RedPlatZone.Cube5_y = Field.RedPlatZone.Cube1_y + space*4;
+
+Field.RedPlatZone.Cube6_x = Field.RedPlatZone.Cube1_x;
+Field.RedPlatZone.Cube6_y = Field.RedPlatZone.Cube1_y + space*5;
+
+
+%Cubes in Red Pyramid
+Field.RedPyramid.Cube1_x = 13.458333*ft;
+Field.RedPyramid.Cube1_y = 13.5*ft;
+
+Field.RedPyramid.Cube2_x = Field.RedPyramid.Cube1_x;
+Field.RedPyramid.Cube2_y = 14.58333*ft;
+
+Field.RedPyramid.Cube3_x = Field.RedPyramid.Cube1_x;
+Field.RedPyramid.Cube3_y = 12.41667*ft;
+
+Field.RedPyramid.Cube4_x = 12.375*ft;
+Field.RedPyramid.Cube4_y = 14.041667*ft;
+
+Field.RedPyramid.Cube5_x = Field.RedPyramid.Cube4_x;
+Field.RedPyramid.Cube5_y = 12.958333*ft;
+
+Field.RedPyramid.Cube6_x = 11.291667*ft;
+Field.RedPyramid.Cube6_y = Field.RedPyramid.Cube1_y;
+
+% Cubes in Blue Platform Zone 
+
+Field.BluePlatZone.Cube1_x = 35.45733*ft;
+Field.BluePlatZone.Cube1_y = Field.RedPlatZone.Cube1_y;
+
+Field.BluePlatZone.Cube2_x = Field.BluePlatZone.Cube1_x;
+Field.BluePlatZone.Cube2_y = Field.RedPlatZone.Cube1_y + space;
+
+Field.BluePlatZone.Cube3_x = Field.BluePlatZone.Cube1_x;
+Field.BluePlatZone.Cube3_y = Field.RedPlatZone.Cube1_y + space*2;
+
+Field.BluePlatZone.Cube4_x = Field.BluePlatZone.Cube1_x;
+Field.BluePlatZone.Cube4_y = Field.RedPlatZone.Cube1_y + space*3;
+
+Field.BluePlatZone.Cube5_x = Field.BluePlatZone.Cube1_x;
+Field.BluePlatZone.Cube5_y = Field.RedPlatZone.Cube1_y + space*4;
+
+Field.BluePlatZone.Cube6_x = Field.BluePlatZone.Cube1_x;
+Field.BluePlatZone.Cube6_y = Field.RedPlatZone.Cube1_y + space*5;
+
+%Cubes in Blue Pyramid
+Field.BluePyramid.Cube1_x = Field.L - Field.RedPyramid.Cube1_x;
+Field.BluePyramid.Cube1_y = Field.RedPyramid.Cube1_y;
+
+Field.BluePyramid.Cube2_x = Field.L - Field.RedPyramid.Cube2_x;
+Field.BluePyramid.Cube2_y = Field.RedPyramid.Cube2_y;
+
+Field.BluePyramid.Cube3_x = Field.L - Field.RedPyramid.Cube3_x;
+Field.BluePyramid.Cube3_y = Field.RedPyramid.Cube3_y;
+
+Field.BluePyramid.Cube4_x = Field.L - Field.RedPyramid.Cube4_x;
+Field.BluePyramid.Cube4_y = Field.RedPyramid.Cube4_y;
+
+Field.BluePyramid.Cube5_x = Field.L - Field.RedPyramid.Cube5_x;
+Field.BluePyramid.Cube5_y = Field.RedPyramid.Cube5_y;
+
+Field.BluePyramid.Cube6_x = Field.L - Field.RedPyramid.Cube6_x;
+Field.BluePyramid.Cube6_y = Field.RedPyramid.Cube6_y;
+
+
+
+
+
+
+
+
+
