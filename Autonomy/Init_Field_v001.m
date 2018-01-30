@@ -24,7 +24,7 @@ Field.BSL.y = Field.W - Field.RSR.y;
 Field.RSwitch.LVT_x = 11.875*ft;
 Field.RSwitch.LVT_y = 18*ft;
 
-Field.RSwitch.RVT_x = 11.875*ft;
+Field.RSwitch.RVT_x = Field.RSwitch.LVT_x;
 Field.RSwitch.RVT_y = 9*ft;
 
 Field.BSwitch.LVT_x = Field.L - Field.RSwitch.LVT_x;
