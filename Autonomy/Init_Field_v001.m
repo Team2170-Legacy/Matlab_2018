@@ -129,16 +129,16 @@ Field.RedExchangeZone.bl_y = Field.RedExchangeZone.br_y;
 % Blue Exchange Zone
 
 Field.BlueExchangeZone.tl_x = Field.L;
-Field.BlueExchangeZone.tl_y = Field.RedExchangeZone.tl_y;
+Field.BlueExchangeZone.tl_y = Field.W - Field.RedExchangeZone.tl_y;
 
 Field.BlueExchangeZone.tr_x = Field.L - Field.RedExchangeZone.tr_x;
-Field.BlueExchangeZone.tr_y = Field.RedExchangeZone.tl_y;
+Field.BlueExchangeZone.tr_y = Field.W - Field.RedExchangeZone.tl_y;
 
 Field.BlueExchangeZone.br_x = Field.L - Field.RedExchangeZone.tr_x;
-Field.BlueExchangeZone.br_y = Field.RedExchangeZone.br_y;
+Field.BlueExchangeZone.br_y = Field.W - Field.RedExchangeZone.br_y;
 
 Field.BlueExchangeZone.bl_x = Field.L - Field.RedExchangeZone.tl_x;
-Field.BlueExchangeZone.bl_y = Field.RedExchangeZone.br_y;
+Field.BlueExchangeZone.bl_y = Field.W - Field.RedExchangeZone.br_y;
 
 %auto lines
 AutoLineRed.C1_x = 10*ft;
