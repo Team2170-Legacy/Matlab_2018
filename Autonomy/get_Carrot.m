@@ -16,7 +16,7 @@ end
 
 cum_distance = [0 ; cumsum(distances)];
 full_distance = sum(distances);
-cum_percentage = cum_distance ./full_distance*100;
+cum_percentage = cum_distance ./ full_distance*100;
 
 
 
@@ -25,7 +25,7 @@ index = 1;
 
 %find the segment the spot is in
 for j=1:(N-1)
-    if (spot<=cum_distance(j))
+    if (spot<=cum_distance(j+1))
         index = j;
         break;
     end
@@ -46,11 +46,13 @@ absolute_segment_percentage = percentage - cum_percentage(index);
 if(absolute_segment_percentage < eps)
     relative_segment_percentage = 0;
 else
-    relative_segment_percentage = segment_percentage/absolute_segment_percentage*100;
+%OLD    relative_segment_percentage = segment_percentage/absolute_segment_percentage*100;
+    relative_segment_percentage = absolute_segment_percentage/segment_percentage*100;
 end
+disp(relative_segment_percentage)
 
-carrot_location.x = trajectory.x(index)+(trajectory.x(index+1) -trajectory.x(index))*relative_segment_percentage/100;
-carrot_location.y = trajectory.y(index)+(trajectory.y(index+1)-trajectory.x(index))*relative_segment_percentage/100;
+carrot_location.x = trajectory.x(index)+(trajectory.x(index+1)-trajectory.x(index))*relative_segment_percentage/100;
+carrot_location.y = trajectory.y(index)+(trajectory.y(index+1)-trajectory.y(index))*relative_segment_percentage/100;
 
 
 
