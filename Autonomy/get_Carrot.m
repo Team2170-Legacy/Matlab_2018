@@ -31,12 +31,11 @@ index = 1;
 
 %find the segment the spot is in
 for j=1:(N-1)
-    if (spot<=cum_distance(j+1))
+%    if (spot<=cum_distance(j+1))
+    if spot<= ( cum_distance(j+1) + 10*eps )
         index = j;
         break;
     end
-    
-    
 end
 
 
@@ -55,7 +54,7 @@ else
 %OLD    relative_segment_percentage = segment_percentage/absolute_segment_percentage*100;
     relative_segment_percentage = absolute_segment_percentage/segment_percentage*100;
 end
-disp(relative_segment_percentage)
+
 
 carrot_location.x = trajectory.x(index)+(trajectory.x(index+1)-trajectory.x(index))*relative_segment_percentage/100;
 carrot_location.y = trajectory.y(index)+(trajectory.y(index+1)-trajectory.y(index))*relative_segment_percentage/100;

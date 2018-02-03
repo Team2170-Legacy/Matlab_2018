@@ -48,7 +48,7 @@ Robot.wR0		= 0;		% [rad/s]	initial left wheel angular velocity
 %	Initialize simulation parameters
 Ts			= Robot.Ts;			% [s]		Simulation sample time
 % FRC_2018      tfinal      = all_t(end);
-tfinal      = 4;
+tfinal      = 5;
 all_t       = (0:Ts:tfinal);
 
 fps         = 25/2;                % [frames/s]    Camera frame rate
@@ -78,7 +78,9 @@ Robot.target_distance_all = zeros(N,1);	% [m]  robot camera distance to target
 vWriter = VideoWriter('Robot_Movie','MPEG-4');	% initialize vide capture of simulation frames
 open(vWriter);									% open movie file
 
-f1		= figure;				% open figure
+f1		= figure; % open figure
+pos = get(f1, 'position');
+set(f1,'position', [50 50 pos(3)*2 pos(4)*1.7]);
 hold on							% ensure multiple drawing commands are overlaid on the figure
 draw_Field_v001
 draw_Trajectory(trajectory);
@@ -180,7 +182,7 @@ for i=2:N
     
     % 3. Percentage = Current time/total trajectory time
     percentage = t/total_time*100;
-    percentage
+    
     % Get carrot
     [carrot] = get_Carrot(percentage, trajectory);
     
@@ -209,7 +211,7 @@ for i=2:N
     
     
     if (t>=t_auto_end) && (target_distance>18*in) && (t_camera>=Ts_camera),
-        t_camera            = Ts
+        t_camera            = Ts;
         
         %   Calculate e_Gear_x [pixels]
         %   given Robot.x, Robot.y, Robot.theta
@@ -228,7 +230,7 @@ for i=2:N
         e_Gear_x_previous       = e_Gear_x;
         e_Gear_x        = N_pixel * theta_target / camera_view;
     else
-        t_camera        = t_camera + Ts
+        t_camera        = t_camera + Ts;
     end
     
     %   Use a Ts_camera delayed image error to simulate a delay in
