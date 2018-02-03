@@ -2,7 +2,7 @@
 %
 %   For FRC 2018 PowerUp
 %   Modified for FRC 2018 Control by Adonis Canada
-%   
+%
 %   Based on FRC_2017 Matlab simulator:
 %	Jacob Krucinski
 %	jacob1576@gmail.com
@@ -17,6 +17,25 @@
 init_Constants;
 Init_Robot_v002
 Init_Field_v001
+init_Trajectories
+
+% Select trajectories to simulate
+trajectory = RSMR;
+
+N   = length(trajectory.x);       % number of via points
+distances   = zeros(N-1,1);       % reserve memory space for all distances and initialize to zero
+
+for j=1:(N-1)
+    dx              = trajectory.x(j+1) - trajectory.x(j);
+    dy              = trajectory.y(j+1) - trajectory.y(j);
+    distances(j)    = sqrt(dx^2 + dy^2);
+    
+    
+end
+
+traj_length = sum(distances);
+total_time = traj_length/trajectory.v;
+
 %***2018 init_Robot_v002;        % MK init_Robot_v002 now calls init_Field_002
 
 %	initial robot wheel velocities & radius
@@ -28,7 +47,7 @@ Robot.wR0		= 0;		% [rad/s]	initial left wheel angular velocity
 %	Initialize simulation parameters
 Ts			= Robot.Ts;			% [s]		Simulation sample time
 % FRC_2018      tfinal      = all_t(end);
-tfinal      = 2;
+tfinal      = 6;
 all_t       = (0:Ts:tfinal);
 
 fps         = 25/2;                % [frames/s]    Camera frame rate
@@ -55,8 +74,8 @@ Robot.vFwd_all		= zeros(N,1);	% [m/s]		robot forward velocity (in the direction 
 Robot.e_Gear_x_all  = zeros(N,1);	% [pixels]  robot gear target vision error
 Robot.target_distance_all = zeros(N,1);	% [m]  robot camera distance to target
 
-v = VideoWriter('Robot_Movie','MPEG-4');	% initialize vide capture of simulation frames
-open(v);									% open movie file
+vWriter = VideoWriter('Robot_Movie','MPEG-4');	% initialize vide capture of simulation frames
+open(vWriter);									% open movie file
 
 f1		= figure;				% open figure
 hold on							% ensure multiple drawing commands are overlaid on the figure
@@ -115,8 +134,9 @@ t_camera        = 0;        % Time since last camera frame grabbed
 % UNSTABLE Kp      = 0.002; %0.001666;
 % Kp      = 0.001; %0.001666;
 Kp = 0.004;
-camera_delay = Ts_camera;
 
+%FRC2018 camera_delay = Ts_camera;
+camera_delay = 0;
 %   Peg selection
 %    Peg                 = Field.RP1;
 %***2018 Peg                 = eval(end_pos);
@@ -132,11 +152,11 @@ for i=2:N
     Robot.t				= t;
     Field.t             = t;
     
-%***2018     Robot.wL			= all_omega_L(i);			% [rad/s]	Trajectory planned wheel velocities
-%***2018     Robot.wR			= all_omega_R(i);
-
-%   Temporary wheel angular velocities to simualte robot
-
+    %***2018     Robot.wL			= all_omega_L(i);			% [rad/s]	Trajectory planned wheel velocities
+    %***2018     Robot.wR			= all_omega_R(i);
+    
+    %   Temporary wheel angular velocities to simualte robot
+    
     Robot.R             = 0.1;
     
     %*******************************************************************************************
@@ -144,30 +164,39 @@ for i=2:N
     %***Robot.wL            = 2*pi*6;
     %***Robot.wR            = 2*pi*5;
     %*******************************************************************************************
-
+    
     %**** FRC2018 Controller code
     
     
     % Calculate trajectory percent as a function of time
-        % 1. Calculate length of trajectory
-        % 2. Calculate total time for trajectory i.e trajectory
-        % length/robot.v_max
-        % 3. Percentage = Current time/total trajectory time
+    % 1. Calculate length of trajectory
     
-    % Calculate distance/angle
     
+    % 2. Calculate total time for trajectory i.e trajectory
+    %        total_time = traj_length/robot.v_max;
+    
+    
+    % 3. Percentage = Current time/total trajectory time
+    percentage = t/total_time*100;
     
     % Get carrot
+    [carrot] = get_Carrot(percentage, trajectory);
+    
+    % Calculate distance/angle
+    [angle,distance] = calcAngleandDistance(carrot,Robot);
     
     
     % Controller code
-    
+    [v,omega] = Controller_v001(distance, angle, Robot);
     
     % Convert v and omega to omega_l and omega_r, i.e Robot.wL, Robot.wR
+    %   vL - left wheel surface velocity [m/s] (NOT angular)
+    %   vR - right          -"-
     
+    vL          = v - omega*Robot.d/2;
+    vR          = v + omega*Robot.d/2;;
     
-    
-    
+    %   Rest of simulator code starts here
     
     delta_vL            = 0;
     delta_vR            = 0;
@@ -230,8 +259,8 @@ for i=2:N
     Robot.theta			= Robot.theta + Robot.omega * Ts;	% [rad]	Integrate robot angle
     
     draw_Robot(Robot);						% Call function to draw Robot in figure
-%***   plot( Robot.x, Robot.y , 'o');           % 2018 Simple single point robot for now
-   
+    %***   plot( Robot.x, Robot.y , 'o');           % 2018 Simple single point robot for now
+    
     %****draw_Field_v001(Field);
     draw_Field_v001
     
@@ -253,10 +282,10 @@ for i=2:N
     Robot.e_Gear_x_all(i)   = e_Gear_x;
     Robot.target_distance_all(i)    = target_distance;
     
-    writeVideo(v, Robot_Image);			% Write screenshot image to video file
+    writeVideo(vWriter, Robot_Image);			% Write screenshot image to video file
 end
 
-close(v)			% Close robot simulation video file
+close(vWriter)			% Close robot simulation video file
 
 f2		= figure;				% open figure
 set(f2,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default

@@ -39,6 +39,7 @@ Robot.W = 24.5*in;
 %Robot.v_max = 3.048;    % Robot max velocity (on each R / L drive wheel)
 Robot.v_max = 1.25;    % Robot max velocity (on each R / L drive wheel)
 Robot.a_max = 3;        %Robot assumed acceleration
+Robot.omega_max = 1; % Robot max angular velocity (rad/s)
 
 %init_Field_v002;
 % FRC2018  init_Field_v005;
