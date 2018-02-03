@@ -21,7 +21,7 @@ init_Trajectories
 
 
 % Select trajectories to simulate
-trajectory = RSMR;
+trajectory = BSMR;
 
 N   = length(trajectory.x);       % number of via points
 distances   = zeros(N-1,1);       % reserve memory space for all distances and initialize to zero
@@ -32,6 +32,12 @@ for j=1:(N-1)
     distances(j)    = sqrt(dx^2 + dy^2);
     
     
+end
+
+if trajectory.x == BSML.x
+    Robot.Start_Pos.theta = 180*deg;
+else 
+    Robot.Start_Pos.theta = 0;
 end
 
 traj_length = sum(distances);
@@ -48,7 +54,7 @@ Robot.wR0		= 0;		% [rad/s]	initial left wheel angular velocity
 %	Initialize simulation parameters
 Ts			= Robot.Ts;			% [s]		Simulation sample time
 % FRC_2018      tfinal      = all_t(end);
-tfinal      = 5;
+tfinal      = 7;
 all_t       = (0:Ts:tfinal);
 
 fps         = 25/2;                % [frames/s]    Camera frame rate
