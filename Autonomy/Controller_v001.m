@@ -1,7 +1,7 @@
 function [v,omega] = Controller_v001(distance, angle ,Robot) 
 
-Kp = 1.0;
-Kp_omega = 1.0;
+Kp = 2.0;
+Kp_omega = 3.0;
     
 % Angle
 
