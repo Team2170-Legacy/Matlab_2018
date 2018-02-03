@@ -180,7 +180,7 @@ for i=2:N
     
     % 3. Percentage = Current time/total trajectory time
     percentage = t/total_time*100;
-    
+    percentage
     % Get carrot
     [carrot] = get_Carrot(percentage, trajectory);
     
@@ -196,7 +196,7 @@ for i=2:N
     %   vR - right          -"-
     
     vL          = v - omega*Robot.d/2;
-    vR          = v + omega*Robot.d/2;;
+    vR          = v + omega*Robot.d/2;
     Robot.wL    = vL / Robot.R;
     Robot.wR    = vR / Robot.R;
     
