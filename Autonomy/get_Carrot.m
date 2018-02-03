@@ -3,6 +3,12 @@ function [carrot_location] = get_Carrot(percentage, trajectory)
 %   Step 1: calculate distances between each via point and store in new
 %           vector (array) named distances
 
+if percentage<0
+    percentage =0;
+elseif percentage>100
+    percentage = 100;
+end 
+
 N   = length(trajectory.x);       % number of via points
 distances   = zeros(N-1,1);       % reserve memory space for all distances and initialize to zero
 

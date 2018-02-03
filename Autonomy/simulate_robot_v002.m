@@ -19,6 +19,7 @@ Init_Robot_v002
 Init_Field_v001
 init_Trajectories
 
+
 % Select trajectories to simulate
 trajectory = RSMR;
 
@@ -47,7 +48,7 @@ Robot.wR0		= 0;		% [rad/s]	initial left wheel angular velocity
 %	Initialize simulation parameters
 Ts			= Robot.Ts;			% [s]		Simulation sample time
 % FRC_2018      tfinal      = all_t(end);
-tfinal      = 6;
+tfinal      = 4;
 all_t       = (0:Ts:tfinal);
 
 fps         = 25/2;                % [frames/s]    Camera frame rate
@@ -80,13 +81,14 @@ open(vWriter);									% open movie file
 f1		= figure;				% open figure
 hold on							% ensure multiple drawing commands are overlaid on the figure
 draw_Field_v001
+draw_Trajectory(trajectory);
 
 axis('equal')					% ensure x & y directions are scale equally on screen
 xlim([-6*ft Field.L + 5*ft])					% [m]	set figure limits for x-axis
 ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
 %xlim([-30 30])
 %ylim([-20 20])
-set(f1,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default
+set(f1,'DefaultLineLineWidth',3);% set figure to draw with thick lines by default
 grid on							% draw a grid on the figure
 % without erasing figure first
 
@@ -96,8 +98,8 @@ Field.t = 0;
 
 %	Initial conditions
 
-Robot.x				= Robot.Start_Pos.x;		% [m] Robot center x-position
-Robot.y				= Robot.Start_Pos.y;		% [m] Robot center y-position
+Robot.x				= trajectory.x(1);		% [m] Robot center x-position
+Robot.y				= trajectory.y(1);		% [m] Robot center y-position
 Robot.theta			= Robot.Start_Pos.theta;	% [rad] Robot angle CCW from x-axis
 
 Robot.wL			= Robot.wL0;	% [rad/s]	robot Left wheel angular velocity
@@ -195,6 +197,8 @@ for i=2:N
     
     vL          = v - omega*Robot.d/2;
     vR          = v + omega*Robot.d/2;;
+    Robot.wL    = vL / Robot.R;
+    Robot.wR    = vR / Robot.R;
     
     %   Rest of simulator code starts here
     
@@ -263,6 +267,8 @@ for i=2:N
     
     %****draw_Field_v001(Field);
     draw_Field_v001
+    draw_Trajectory(trajectory);
+    draw_Carrot(carrot);	
     
     Robot_Figure		= getframe(f1);		% Capture screenshot image of figure
     Robot_Image			= Robot_Figure.cdata;

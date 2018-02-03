@@ -9,7 +9,7 @@ test = test2;
 figure
 hold on
 plot(test.x,test.y, 'c-');
-for j=0:100
+for j=-20:120
     %disp(j)
     carrot = get_Carrot(j,test);
   

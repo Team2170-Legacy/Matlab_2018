@@ -18,9 +18,9 @@ Robot.Ts        = 0.010;        % [s]
 
 t_auto_end      = 0;
 
-Robot.Start_Pos.x   = 1;
-Robot.Start_Pos.y   = 2;
-Robot.Start_Pos.theta   = 45*deg;
+%Robot.Start_Pos.x   = 1;
+%Robot.Start_Pos.y   = 2;
+Robot.Start_Pos.theta   = 0*deg;
 
 
 %% Robot dimensions and velocity
