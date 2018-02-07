@@ -21,7 +21,11 @@ init_Trajectories
 
 
 % Select trajectories to simulate
-trajectory = BSMR;
+if ~exist('trajectory', 'var')
+    trajectory = RSMR;
+    disp(' Using a default trajectory RSMR');
+end
+
 
 N   = length(trajectory.x);       % number of via points
 distances   = zeros(N-1,1);       % reserve memory space for all distances and initialize to zero
@@ -36,7 +40,7 @@ end
 
 if trajectory.x == BSML.x
     Robot.Start_Pos.theta = 180*deg;
-else 
+else
     Robot.Start_Pos.theta = 0;
 end
 
@@ -155,6 +159,9 @@ camera_delay = 0;
 
 Target.x        = 4;
 Target.y        = 2;
+
+Robot.wL_all		= zeros(N,1);	% [rad/s]	robot Left wheel angular velocities
+Robot.wR_all		= zeros(N,1);	% [rad/s]	robot Right wheel angular velocities
 
 %	Main simulation loop
 for i=2:N
@@ -276,7 +283,7 @@ for i=2:N
     %****draw_Field_v001(Field);
     draw_Field_v001
     draw_Trajectory(trajectory);
-    draw_Carrot(carrot);	
+    draw_Carrot(carrot);
     
     Robot_Figure		= getframe(f1);		% Capture screenshot image of figure
     Robot_Image			= Robot_Figure.cdata;
@@ -333,3 +340,12 @@ ylabel('theta [rad]')
 
 xlabel('t [s]')
 
+
+Robot.wL_all(1)		= Robot.wL;
+Robot.wR_all(1)		= Robot.wR;
+
+all_omega_R     = Robot.wR_all;
+all_omega_L     = Robot.wL_all;
+
+t_auto_end      = all_t(end);
+i_auto_end      = length(all_t);

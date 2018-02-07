@@ -5,7 +5,7 @@ Robot.W = 2*ft; % Needs to be changed
 
 
 %   init_Robot_v002.m
-%
+%Robot.
 %   Jacob Krucinski (jacob1576@gmail.com)
 %
 %   03/02/2017  Updated Martin Krucinski to re-arranged field starting
