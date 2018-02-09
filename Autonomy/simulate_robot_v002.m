@@ -19,6 +19,10 @@ Init_Robot_v002
 Init_Field_v001
 init_Trajectories
 
+%   Martin Krucinski 02/08/2018
+%   Select trajectory for testing
+trajectory = BSMR %BSML
+
 
 % Select trajectories to simulate
 if ~exist('trajectory', 'var')
@@ -200,7 +204,8 @@ for i=2:N
     [carrot] = get_Carrot(percentage, trajectory);
     
     % Calculate distance/angle
-    [angle,distance] = calcAngleandDistance(carrot,Robot);
+%    [angle,distance] = calcAngleandDistance(carrot,Robot);
+    [angle,distance] = calcAngleandDistance_v2(carrot,Robot);
     
     
     % Controller code
