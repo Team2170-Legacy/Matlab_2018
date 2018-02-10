@@ -21,7 +21,7 @@ init_Trajectories
 
 %   Martin Krucinski 02/08/2018
 %   Select trajectory for testing
-trajectory = BSMR %BSML
+%trajectory = BSMR %BSML
 
 
 % Select trajectories to simulate
@@ -63,7 +63,7 @@ Robot.wR0		= 0;		% [rad/s]	initial left wheel angular velocity
 %	Initialize simulation parameters
 Ts			= Robot.Ts;			% [s]		Simulation sample time
 % FRC_2018      tfinal      = all_t(end);
-tfinal      = 7;
+tfinal      = 5;
 all_t       = (0:Ts:tfinal);
 
 fps         = 25/2;                % [frames/s]    Camera frame rate
@@ -90,7 +90,7 @@ Robot.vFwd_all		= zeros(N,1);	% [m/s]		robot forward velocity (in the direction 
 Robot.e_Gear_x_all  = zeros(N,1);	% [pixels]  robot gear target vision error
 Robot.target_distance_all = zeros(N,1);	% [m]  robot camera distance to target
 
-vWriter = VideoWriter('Robot_Movie','MPEG-4');	% initialize vide capture of simulation frames
+vWriter = VideoWriter('Robot_Movie_','MPEG-4');	% initialize vide capture of simulation frames
 open(vWriter);									% open movie file
 
 f1		= figure; % open figure
