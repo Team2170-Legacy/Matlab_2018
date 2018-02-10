@@ -42,10 +42,11 @@ for j=1:(N-1)
     
 end
 
-if trajectory.x == BSML.x
+if trajectory.x == Field.BSML.x
     Robot.Start_Pos.theta = 180*deg;
+    
 else
-    Robot.Start_Pos.theta = 0;
+    Robot.Start_Pos.theta = 0*deg;
 end
 
 traj_length = sum(distances);
@@ -289,6 +290,8 @@ for i=2:N
     draw_Field_v001
     draw_Trajectory(trajectory);
     draw_Carrot(carrot);
+    text(Field.L/2, Field.W/2-1, ['a = ' num2str(angle/deg)]);
+    text(Field.L/2, Field.W/2-2, ['d = ' num2str(distance)]);
     
     Robot_Figure		= getframe(f1);		% Capture screenshot image of figure
     Robot_Image			= Robot_Figure.cdata;
