@@ -11,10 +11,22 @@ angle = atan2(sidey,sidex)-Robot.theta;
 %     distance = -distance;
 % end 
 
+
+if (angle<-180*deg)
+   angle = angle + 360*deg;
+end
+   
+   if (angle>180*deg)
+       angle = angle - 360*deg;
+   end
+   
+   
 if(angle<-90*deg && angle>-270*deg || angle>90*deg && angle<270*deg)
     distance = -distance;
 end
 
+
+   
 %   Find projection of carrot onto the robot center line in the direction
 %   of travel
 

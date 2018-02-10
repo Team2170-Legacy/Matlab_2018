@@ -2,13 +2,13 @@
 %Version 1
 
 %RSLL: Red Start Left to Left Switch
-BSML.x = [Field.BSM.x, Field.BSM.x - Robot.L, Field.BSM.x - Robot.L - 3*ft, Field.BSwitch.LVT_x + Robot.L/2];
-BSML.y = [Field.BSM.y, Field.BSM.y, Field.BSwitch.RVT_y, Field.BSwitch.RVT_y];
-BSML.v = 1.0;
-
-BSMR.x = BSML.x;
-BSMR.y = [Field.BSM.y, Field.BSM.y, Field.BSwitch.LVT_y, Field.BSwitch.LVT_y];
+BSMR.x = [Field.BSM.x, Field.BSM.x - Robot.L, Field.BSM.x - Robot.L - 3*ft, Field.BSwitch.LVT_x + Robot.L/2];
+BSMR.y = [Field.BSM.y, Field.BSM.y, Field.BSwitch.RVT_y, Field.BSwitch.RVT_y];
 BSMR.v = 1.0;
+
+BSML.x = BSMR.x;
+BSML.y = [Field.BSM.y, Field.BSM.y, Field.BSwitch.LVT_y, Field.BSwitch.LVT_y];
+BSML.v = 1.0;
 
 RSMR.x = [Field.RSM.x, Field.RSM.x + Robot.L, Field.RSM.x + Robot.L + 3*ft, Field.RSwitch.LVT_x - Robot.L/2];
 RSMR.y = [Field.RSM.y, Field.RSM.y, Field.RSwitch.RVT_y, Field.RSwitch.RVT_y];
