@@ -36,7 +36,7 @@ for traj = 1:length(all_Trajectories)
         copy_command    = ['!copy Robot_Movie.mp4 ' 'Movies\' movie_file_name];
         eval(copy_command);
         close all;
-        
+    
        %Init_Robot_v002
     end
 end

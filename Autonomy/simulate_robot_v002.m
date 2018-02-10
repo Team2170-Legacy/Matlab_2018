@@ -90,7 +90,7 @@ Robot.vFwd_all		= zeros(N,1);	% [m/s]		robot forward velocity (in the direction 
 Robot.e_Gear_x_all  = zeros(N,1);	% [pixels]  robot gear target vision error
 Robot.target_distance_all = zeros(N,1);	% [m]  robot camera distance to target
 
-vWriter = VideoWriter('Robot_Movie_','MPEG-4');	% initialize vide capture of simulation frames
+vWriter = VideoWriter('Robot_Movie','MPEG-4');	% initialize vide capture of simulation frames
 open(vWriter);									% open movie file
 
 f1		= figure; % open figure
