@@ -290,8 +290,13 @@ for i=2:N
     draw_Field_v001
     draw_Trajectory(trajectory);
     draw_Carrot(carrot);
-    text(Field.L/2, Field.W/2-1, ['a = ' num2str(angle/deg)]);
-    text(Field.L/2, Field.W/2-2, ['d = ' num2str(distance)]);
+    
+    
+    displayangle = (round(angle/deg * 100)/100);
+    displaydistance = (round(distance*100)/100);
+    
+    text(Field.L/2-1, Field.W/2, ['alfa = ' num2str(displayangle) '°']);
+    text(Field.L/2-1, Field.W/2-1/2, ['distance = ' num2str(displaydistance) ' m']);
     
     Robot_Figure		= getframe(f1);		% Capture screenshot image of figure
     Robot_Image			= Robot_Figure.cdata;

@@ -3,7 +3,7 @@
 %hold on
 
 title_text = title('FRC Team 2170 Robot Simulator');
-text(Field.L/2, Field.W/2, ['t = ' num2str(Field.t) ' s']);
+text(Field.L/2-1, Field.W/2+1/2, ['time = ' num2str(Field.t) ' secs']);
 % Plot field
 %OutsideSquare = plot([0 0 Field.L Field.L 0], [0 Field.L Field.L 0 0], 'g');
 
