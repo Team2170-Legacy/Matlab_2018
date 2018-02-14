@@ -42,7 +42,7 @@ for j=1:(N-1)
     
 end
 
-if trajectory.x == Field.BSML.x
+if trajectory.x(1) == Field.BSML.x(1)
     Robot.Start_Pos.theta = 180*deg;
     
 else
