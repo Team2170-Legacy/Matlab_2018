@@ -63,7 +63,7 @@ Robot.wR0		= 0;		% [rad/s]	initial left wheel angular velocity
 %	Initialize simulation parameters
 Ts			= Robot.Ts;			% [s]		Simulation sample time
 % FRC_2018      tfinal      = all_t(end);
-tfinal      = 10;
+tfinal      = trajectory.t_final;
 all_t       = (0:Ts:tfinal);
 
 fps         = 25/2;                % [frames/s]    Camera frame rate

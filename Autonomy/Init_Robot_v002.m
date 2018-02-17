@@ -1,5 +1,5 @@
-Robot.L = 2*ft; % Needs to be changed
-Robot.W = 2*ft; % Needs to be changed
+%Robot.L = 2*ft; % Needs to be changed
+%Robot.W = 2*ft; % Needs to be changed
 
 %   This code is from FRC 2017 Steamworks
 
@@ -24,10 +24,11 @@ Robot.Start_Pos.theta   = 0*deg;
 
 
 %% Robot dimensions and velocity
-Robot.d	= 21*in;		% distance between wheel centerlines
-Robot.R = 2*in;         % [m]		Robot wheel radius
-Robot.L = 22*in;		% Robot length (along the driving direction)
-Robot.W = 24.5*in;
+Robot.d	= 9.46*in;		% distance between wheel centerlines
+Robot.R = 2.5*in;         % [m]		Robot wheel radius
+Robot.BL = 7.5*in; % bumper length
+Robot.L = 27*in+Robot.BL;		% Robot length (along the driving direction)
+Robot.W = 27*in+Robot.BL;
 %
 %   Updated Martin Krucinski 03/03/2017
 %   Per info on our robot, max speed is 12.6 fps, which is 3.84 m/s

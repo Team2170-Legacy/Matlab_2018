@@ -18,4 +18,6 @@ draw_Trajectory(RSMRS);
 draw_Trajectory(RSMLS);
 draw_Trajectory(BSMRS);
 draw_Trajectory(BSMLS);
+draw_Trajectory(Arc);
+draw_Trajectory(Straight);
 

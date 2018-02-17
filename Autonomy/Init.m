@@ -1,5 +1,5 @@
-clear all
+
 init_Constants
-Init_Robot_v001
+Init_Robot_v002
 Init_Field_v001
-draw_Field_v001
+init_Trajectories_v002
