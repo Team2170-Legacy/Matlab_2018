@@ -2,19 +2,27 @@
 init_Constants
 Init_Robot_v002
 Init_Field_v001
-init_Trajectories
+init_Trajectories_v002
 all_Trajectories = {
-    BSML;
-    BSMR;
-    RSML;
-    RSMR;
+    %BSML;
+    BSMLS;
+    %BSMR;
+    BSMRS;
+   % RSML;
+    RSMLS;
+  %  RSMR;
+    RSMRS;
     };
 
 all_Trajectories_String = {
-    'BSML'
-    'BSMR'
-    'RSML'
-    'RSMR'
+    %'BSML'
+    'BSMLS'
+   % 'BSMR'
+    'BSMRS'
+  %  'RSML'
+    'RSMLS'
+ %   'RSMR'
+    'RSMRS'
     };
 
 for traj = 1:length(all_Trajectories)

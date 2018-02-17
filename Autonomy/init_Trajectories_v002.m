@@ -25,8 +25,22 @@ RSML.x = [Field.RSM.x, Field.RSM.x + Robot.L, 1.25, 1.35, 1.5, 1.7, 2, Field.RSw
 RSML.y = [Field.RSM.y, Field.RSM.y, 4.25, 4.6, 5, 5.3, Field.RSwitch.LVT_y, Field.RSwitch.LVT_y]; 
 RSML.v = 1.0;
 
-%RSMLS.x = [Field.RSM.x, Field.RSM.x + Robot.L, Field.RSM.x + Robot.L];
-%RSMLS.y = [Field.RSM.y, Field.RSM.y, Field.RSwitch.LVT_y + .5];
+RSMLS.x = [Field.RSM.x, Field.RSM.x + Robot.L, 1.57, 2.17, 3.17, 4.17, 4.47, 4.47];
+RSMLS.y = [Field.RSM.y, Field.RSM.y, 6.5, 7, 7.2, 7, 6.6, Field.RSwitch.LeftP.tl_y+Robot.L/2];
+RSMLS.v = 1.0;
+
+RSMRS.x = RSMLS.x;
+RSMRS.y = [Field.RSM.y, Field.RSM.y, 1.5, 1, 0.8, 1, 1.4, 1.8];
+RSMRS.v = 1.0;
+
+BSMLS.x = [Field.BSM.x, 15.2, 14.9, 14.3, 13.3, 12.3, 12, 12];
+BSMLS.y = Field.W - RSMLS.y;
+BSMLS.v = 1.0;
+
+BSMRS.x = BSMLS.x;
+BSMRS.y = Field.W - RSMRS.y;
+BSMRS.v = 1.0;
+
 
 % RSTL.x = RSMR.x;
 % RSTL.y = [Field.RSL.y, Field.RSL.y, Field.RSwitch.LVT_y, Field.RSwitch.LVT_y];

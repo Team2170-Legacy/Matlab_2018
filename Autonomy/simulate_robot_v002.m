@@ -17,7 +17,7 @@
 init_Constants;
 Init_Robot_v002
 Init_Field_v001
-init_Trajectories
+init_Trajectories_v002
 
 %   Martin Krucinski 02/08/2018
 %   Select trajectory for testing
@@ -63,7 +63,7 @@ Robot.wR0		= 0;		% [rad/s]	initial left wheel angular velocity
 %	Initialize simulation parameters
 Ts			= Robot.Ts;			% [s]		Simulation sample time
 % FRC_2018      tfinal      = all_t(end);
-tfinal      = 5;
+tfinal      = 10;
 all_t       = (0:Ts:tfinal);
 
 fps         = 25/2;                % [frames/s]    Camera frame rate
