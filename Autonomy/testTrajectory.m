@@ -12,7 +12,7 @@ draw_AutoLine();
 draw_Switch();
 draw_Scale();
 draw_ExchangeZone();
-init_Trajectories_v002
+init_Trajectories_v003
 
 draw_Trajectory(RSMRS);
 draw_Trajectory(RSMLS);

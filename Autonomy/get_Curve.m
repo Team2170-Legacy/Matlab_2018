@@ -5,7 +5,8 @@ function [Points] = get_Curve(startangle, endangle, direction, n, radius, center
 %radius is radius of the arc
 %centerx and centery are the center points of the arc
 
-
+%figure
+%hold on 
 
 interval = (endangle - startangle) / n;
 for j=0:(n)
@@ -13,6 +14,7 @@ for j=0:(n)
     y = sin(j*interval+startangle) * radius + centery;
    Points.x(j+1) = x;
    Points.y(j+1) = y; 
+  % plot(x,y);
 end
 if(direction == 1)
  Points.x = fliplr(Points.x);
