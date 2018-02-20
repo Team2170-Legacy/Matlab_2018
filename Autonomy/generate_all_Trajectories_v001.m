@@ -6,15 +6,15 @@ init_Trajectories_v002
 all_Trajectories = {
   Arc;
   Straight;
-BSML;
-    BSMLS;
-    BSMR;
-    BSMRS;
-   RSML;
-    RSMLS;
-  RSMR;
-    RSMRS;
-    };
+    };% BSML;
+%     BSMLS;
+%     BSMR;
+%     BSMRS;
+%    RSML;
+%     RSMLS;
+%   RSMR;
+%     RSMRS;
+
 
 all_Trajectories_String = {
     'Arc'

@@ -13,7 +13,7 @@ BSMR.t_final = 5.0;
 %BSML.x = [Field.BSM.x, Field.BSM.x - Robot.L, 15.25, 15, 14.75, 14.5, 14.25, Field.BSwitch.LVT_x + Robot.L/2];
 %BSML.y = [Field.BSM.y, Field.BSM.y, 4, 3.4, 3.1, 2.9, Field.BSwitch.LVT_y, Field.BSwitch.LVT_y];
 
-BSML.x = [Field.BSM.x, Field.BSM.x - Robot.L, 15.25, 15, 14.75, 14.5, 14.25, Field.BSwitch.LVT_x + Robot.L/2];
+BSML.x = [Field.BSM.x, Field.BSM.x - Robot.W/2, 15.25, 15, 14.75, 14.5, 14.25, Field.BSwitch.LVT_x + Robot.L/2];
 BSML.y = [Field.BSM.y, Field.BSM.y, 4, 3.4, 3.1, 2.9, Field.BSwitch.LVT_y, Field.BSwitch.LVT_y];
 BSML.v = 1.0;
 BSML.t_final = 5.0;
@@ -46,7 +46,7 @@ RSML.y = [...
 RSML.v = 1.0;
 RSML.t_final = 5.0;
 
-RSMLSArc = get_Curve(20*deg,130*deg,1,20,1.5207,3.15,6.15);
+RSMLSArc = get_Curve(20*deg,130*deg,1,20,1.5207,3.15,5.3);
 %RSMLS.x = [Field.RSM.x, Field.RSM.x + Robot.L, 1.57, 2.17, 3.17, 4.17, (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2, (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2];
 %RSMLS.y = [Field.RSM.y, Field.RSM.y, 6.5, 7, 7.2, 7, 7, Field.RSwitch.LeftP.tl_y+Robot.L/2];
 RSMLS.x = [[Field.RSM.x, Field.RSM.x + 1*ft, 1.0706, 1.4335], RSMLSArc.x,  (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2];
