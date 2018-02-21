@@ -177,10 +177,6 @@ for i=2:N
     %***2018     Robot.wL			= all_omega_L(i);			% [rad/s]	Trajectory planned wheel velocities
     %***2018     Robot.wR			= all_omega_R(i);
     
-    %   Temporary wheel angular velocities to simualte robot
-    
-    Robot.R             = 0.1;
-    
     %*******************************************************************************************
     %*** Open Loop Control
     %***Robot.wL            = 2*pi*6;
@@ -205,7 +201,7 @@ for i=2:N
     [carrot] = get_Carrot(percentage, trajectory);
     
     % Calculate distance/angle
-%    [angle,distance] = calcAngleandDistance(carrot,Robot);
+    %    [angle,distance] = calcAngleandDistance(carrot,Robot);
     [angle,distance] = calcAngleandDistance_v2(carrot,Robot);
     
     

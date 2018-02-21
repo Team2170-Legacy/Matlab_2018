@@ -1,4 +1,4 @@
-figure 
+figure
 hold on
 init_Constants
 Init_Robot_v002

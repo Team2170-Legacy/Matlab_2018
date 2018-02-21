@@ -1,7 +1,7 @@
 Field.L = 54*ft;
 Field.W = 27*ft;
 
-% Starting Points, needs to be changed 
+% Starting Points, needs to be changed
 Field.RSR.x = Robot.L/2;
 Field.RSR.y = 6*ft; % Needs to be changed
 
@@ -20,7 +20,7 @@ Field.BSM.y = Field.W - Field.RSM.y;
 Field.BSL.x = Field.L - Robot.L/2;
 Field.BSL.y = Field.W - Field.RSR.y;
 
-% vision targets on switch 
+% vision targets on switch
 Field.RSwitch.LVT_x = 11.875*ft;
 Field.RSwitch.LVT_y = 18*ft;
 
@@ -198,7 +198,7 @@ Field.RedPyramid.Cube5_y = 12.958333*ft;
 Field.RedPyramid.Cube6_x = 9.291667*ft;
 Field.RedPyramid.Cube6_y = Field.RedPyramid.Cube1_y;
 
-% Cubes in Blue Platform Zone 
+% Cubes in Blue Platform Zone
 
 Field.BluePlatZone.Cube1_x = 35.45733*ft;
 Field.BluePlatZone.Cube1_y = Field.RedPlatZone.Cube1_y;

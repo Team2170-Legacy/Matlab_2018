@@ -1,4 +1,4 @@
-%init_Trajectories 
+%init_Trajectories
 %Version 3
 
 
@@ -30,27 +30,27 @@ RSMR.t_final = 5.0;
 
 
 %RSML.x = [Field.RSM.x, Field.RSM.x + Robot.L, 1.25, 1.35, 1.5, 1.7, 2, Field.RSwitch.LVT_x - Robot.L/2];
-%RSML.y = [Field.RSM.y, Field.RSM.y, 4.25, 4.6, 5, 5.3, Field.RSwitch.LVT_y, Field.RSwitch.LVT_y]; 
+%RSML.y = [Field.RSM.y, Field.RSM.y, 4.25, 4.6, 5, 5.3, Field.RSwitch.LVT_y, Field.RSwitch.LVT_y];
 
 RSML.x = [ ...
-    Field.RSM.x, 
-    Field.RSM.x + Robot.W/2, 
-    1.25, 
-    1.35, 
-    1.5, 
-    1.7, 
-    2, 
+    Field.RSM.x,
+    Field.RSM.x + Robot.W/2,
+    1.25,
+    1.35,
+    1.5,
+    1.7,
+    2,
     Field.RSwitch.LVT_x - Robot.L/2 ];
 RSML.y = [...
-    Field.RSM.y, Field.RSM.y, 4.25, 4.6, 5, 5.3, Field.RSwitch.LVT_y, Field.RSwitch.LVT_y]; 
+    Field.RSM.y, Field.RSM.y, 4.25, 4.6, 5, 5.3, Field.RSwitch.LVT_y, Field.RSwitch.LVT_y];
 RSML.v = 1.0;
 RSML.t_final = 5.0;
 
-RSMLSArc = get_Curve(20*deg,130*deg,1,20,1.5207,3.15,5.3);
+RSMLSArc = get_Curve(0*deg,130*deg,1,20,1,3.6,6.6);
 %RSMLS.x = [Field.RSM.x, Field.RSM.x + Robot.L, 1.57, 2.17, 3.17, 4.17, (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2, (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2];
 %RSMLS.y = [Field.RSM.y, Field.RSM.y, 6.5, 7, 7.2, 7, 7, Field.RSwitch.LeftP.tl_y+Robot.L/2];
-RSMLS.x = [[Field.RSM.x, Field.RSM.x + 1*ft, 1.0706, 1.4335], RSMLSArc.x,  (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2];
-RSMLS.y = [[Field.RSM.y, Field.RSM.y, 4.04, 5.1723], RSMLSArc.y, Field.RSwitch.LeftP.tl_y+Robot.L/2];
+RSMLS.x = [[Field.RSM.x, Field.RSM.x + 1*ft, 1.0706, 1.4335], RSMLSArc.x, (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2, (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2];
+RSMLS.y = [[Field.RSM.y, Field.RSM.y, 4.04, 5.1723], RSMLSArc.y, Field.RSwitch.LeftP.tl_y+Robot.L/2 + .5, Field.RSwitch.LeftP.tl_y+Robot.L/2];
 RSMLS.v = 1.0;
 RSMLS.t_final = 10.0;
 
@@ -91,19 +91,19 @@ Arc.y = [Arc.y(1) Arc.y Arc.y(length(Arc.y))];
 % RSTL.x = RSMR.x;
 % RSTL.y = [Field.RSL.y, Field.RSL.y, Field.RSwitch.LVT_y, Field.RSwitch.LVT_y];
 % RSTL.v = 1.0;
-% 
+%
 % RSTR.x = RSMR.x;
 % RSTR.y = [Field.RSL.y, Field.RSL.y, Field.RSwitch.RVT_y, Field.RSwitch.RVT_y];
 % RSTR.v = 1.0;
-% 
+%
 % % Go Straight
-% 
+%
 % RSLS.x = [Field.RSM.x, 10*ft + Robot.L];
 % RSLS.y = [Field.RSL.y, Field.RSL.y];
 % RSLS.v = 1.0;
-% 
+%
 % Field.RSTS = RSTS;
-% 
+%
 Field.BSML = BSML;
 Field.BSMR = BSMR;
 Field.RSMR = RSMR;
