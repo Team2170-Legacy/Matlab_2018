@@ -4,29 +4,30 @@ Init_Robot_v002
 Init_Field_v001
 init_Trajectories_v003
 all_Trajectories = {
-    Arc;
-    Straight;
-    };% BSML;
+   Arc;
+   Straight;
+     BSML;
 %     BSMLS;
-%     BSMR;
+     BSMR;
 %     BSMRS;
-%    RSML;
+ RSML;
 %     RSMLS;
-%   RSMR;
+ RSMR;
 %     RSMRS;
+};
 
 
 all_Trajectories_String = {
-    'Arc'
-    'Straight'
+   'Arc'
+   'Straight'
     'BSML'
-    'BSMLS'
+ %   'BSMLS'
     'BSMR'
-    'BSMRS'
+ %   'BSMRS'
     'RSML'
-    'RSMLS'
+ %   'RSMLS'
     'RSMR'
-    'RSMRS'
+   % 'RSMRS'
     };
 
 for traj = 1:length(all_Trajectories)

@@ -7,7 +7,7 @@
 BSMR.x = [Field.BSM.x, Field.BSM.x - Robot.L, Field.BSM.x - Robot.L - 3*ft, Field.BSwitch.LVT_x + Robot.L/2];
 BSMR.y = [Field.BSM.y, Field.BSM.y, Field.BSwitch.RVT_y, Field.BSwitch.RVT_y];
 BSMR.v = 1.0;
-BSMR.t_final = 5.0;
+BSMR.t_final = 6.0;
 
 
 %BSML.x = [Field.BSM.x, Field.BSM.x - Robot.L, 15.25, 15, 14.75, 14.5, 14.25, Field.BSwitch.LVT_x + Robot.L/2];
@@ -16,13 +16,13 @@ BSMR.t_final = 5.0;
 BSML.x = [Field.BSM.x, Field.BSM.x - Robot.W/2, 15.25, 15, 14.75, 14.5, 14.25, Field.BSwitch.LVT_x + Robot.L/2];
 BSML.y = [Field.BSM.y, Field.BSM.y, 4, 3.4, 3.1, 2.9, Field.BSwitch.LVT_y, Field.BSwitch.LVT_y];
 BSML.v = 1.0;
-BSML.t_final = 5.0;
+BSML.t_final = 6.0;
 
 %works
 RSMR.x = [Field.RSM.x, Field.RSM.x + Robot.L, Field.RSM.x + Robot.L + 3*ft, Field.RSwitch.LVT_x - Robot.L/2];
 RSMR.y = [Field.RSM.y, Field.RSM.y, Field.RSwitch.RVT_y, Field.RSwitch.RVT_y];
 RSMR.v = 1.0;
-RSMR.t_final = 5.0;
+RSMR.t_final = 6.0;
 
 %change this
 %RSML.x = [Field.RSM.x, Field.RSM.x + Robot.L, Field.RSM.x + Robot.L + 3*ft, Field.RSwitch.LVT_x - Robot.L/2];
@@ -44,9 +44,9 @@ RSML.x = [ ...
 RSML.y = [...
     Field.RSM.y, Field.RSM.y, 4.25, 4.6, 5, 5.3, Field.RSwitch.LVT_y, Field.RSwitch.LVT_y];
 RSML.v = 1.0;
-RSML.t_final = 5.0;
+RSML.t_final = 6.0;
 
-RSMLSArc = get_Curve(0*deg,130*deg,1,20,1,3.6,6.6);
+RSMLSArc = get_Curve(10*deg,130*deg,1,20,1,3.6,6.6);
 %RSMLS.x = [Field.RSM.x, Field.RSM.x + Robot.L, 1.57, 2.17, 3.17, 4.17, (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2, (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2];
 %RSMLS.y = [Field.RSM.y, Field.RSM.y, 6.5, 7, 7.2, 7, 7, Field.RSwitch.LeftP.tl_y+Robot.L/2];
 RSMLS.x = [[Field.RSM.x, Field.RSM.x + 1*ft, 1.0706, 1.4335], RSMLSArc.x, (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2, (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2];
@@ -74,7 +74,7 @@ BSMRS.t_final = 10.0;
 Straight.x = [Field.RSR.x, Field.RSR.x+10*ft];
 Straight.y = [Field.RSR.y, Field.RSR.y];
 Straight.v = 1;
-Straight.t_final = 5;
+Straight.t_final = 6;
 
 
 %TurnTest.x = [Field.RSR.x];
