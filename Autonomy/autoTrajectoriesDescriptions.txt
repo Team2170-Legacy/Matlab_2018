@@ -1,0 +1,39 @@
+Arc 
+- 0 ft change in x from start to end
+- 10 ft chnage in y from start to end
+- 180 degree arc
+- about 1.5 meters on each side of the arc
+- about 3 by 3 meters space used
+- takes 10-11 seconds
+- only for robot testing purposes
+
+Straight
+- 10 feet straight forward
+- About 5-6 seconds
+
+RSML
+- 9.0019 ft change in x from start to end
+- 3 ft chnage in y
+- goes forward about a meter
+- turns right, about 45 degrees
+- goes straight, turns right back to original angle
+- takes about 3 by 4 meter space
+- 6 seconds
+
+RSMR
+- 9.0019 ft change in x from start to end
+- 3 ft change in y
+- goes forward about 9 meters
+- turns right about 45 degrees
+- goes straight, turns back to original angle 
+- takes 2 by 4 space, 6 seconds
+
+BSMR
+- 9.0019 ft change in x from start to end
+- 3 ft change in y
+- reflection of RSMR, (goes the other way)
+
+BSML
+- 9.0019 ft change in x from start to end
+- 6 ft change in y from start to end
+- reflection of RSML, (goes the other way)
