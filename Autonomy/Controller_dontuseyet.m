@@ -1,4 +1,4 @@
-function [v,omega] = Controller_v002(distance, angle ,Robot, trajectory) 
+function [v,omega] = Controller_dontuseyet(distance, angle ,Robot, trajectory) 
 
 Kp = 2.0;
 Kp_omega = 8.0;

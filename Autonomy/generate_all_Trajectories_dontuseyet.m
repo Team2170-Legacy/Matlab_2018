@@ -39,7 +39,7 @@ for traj = 1:length(all_Trajectories)
     make_movies = true;
     if make_movies
         
-        simulate_robot_v003;
+        simulate_robot_dontuseyet;
         t_final     = all_t(end);
         
         %   copy movie file

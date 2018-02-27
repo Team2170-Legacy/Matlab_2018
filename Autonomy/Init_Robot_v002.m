@@ -14,7 +14,8 @@
 init_Constants
 
 %% Simulation sampling time
-Robot.Ts        = 0.010;        % [s]
+%Robot.Ts        = 0.010;        % [s]
+Robot.Ts        = 0.020;        % [s]
 
 t_auto_end      = 0;
 
