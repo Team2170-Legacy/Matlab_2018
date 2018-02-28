@@ -1,39 +1,52 @@
-Arc 
-- 0 ft change in x from start to end
-- 10 ft chnage in y from start to end
-- 180 degree arc
-- about 1.5 meters on each side of the arc
-- about 3 by 3 meters space used
-- takes 10-11 seconds
-- only for robot testing purposes
+2/27/2018   By Adonis Canada, Priyanshu Agrawal, Baris Sengezen
+
+*All robots must start against the nearest wall*
+
+Left Starting Position
+    - 1.563 ft. away from left wall
+
+Middle Starting Position
+    - 0.5633 ft. away from right of red exchange zone
+
+Right Starting Position
+    - 1.83 ft. away from right wall
+
+Arc
+    - 0 ft. change in x from start to end
+    - 10 ft. chnage in y from start to end
+    - 180° arc
+    - About 1.5 meters on each side of the arc
+    - About 3 by 3 meters space used
+    - Takes 10-11 seconds
+    - Only for robot testing purposes
 
 Straight
-- 10 feet straight forward
-- About 5-6 seconds
+    - 10 feet straight forward
+    - About 5-6 seconds
 
 RSML
-- 9.0019 ft change in x from start to end
-- 3 ft chnage in y
-- goes forward about a meter
-- turns right, about 45 degrees
-- goes straight, turns right back to original angle
-- takes about 3 by 4 meter space
-- 6 seconds
+    - 9.0019 ft. change in x from start to end
+    - 3 ft. change in y
+    - Goes forward about 1 meter
+    - Turns right, about 45°
+    - Goes straight, turns right back to original angle
+    - Takes about 3 by 4 meters of space
+    - 6 seconds
 
 RSMR
-- 9.0019 ft change in x from start to end
-- 3 ft change in y
-- goes forward about 9 meters
-- turns right about 45 degrees
-- goes straight, turns back to original angle 
-- takes 2 by 4 space, 6 seconds
+    - 9.0019 ft. change in x from start to end
+    - 3 ft. change in y
+    - Goes forward about 9 meters
+    - Turns right about 45°
+    - Goes straight and returns back to original angle 
+    - Takes 2 by 4 space, 6 seconds
 
 BSMR
-- 9.0019 ft change in x from start to end
-- 3 ft change in y
-- reflection of RSMR, (goes the other way)
+    - 9.0019 ft. change in x from start to end
+    - 3 ft. change in y
+    - Reflection of RSMR, (goes the other way)
 
 BSML
-- 9.0019 ft change in x from start to end
-- 6 ft change in y from start to end
-- reflection of RSML, (goes the other way)
+    - 9.0019 ft. change in x from start to end
+    - 6 ft. change in y from start to end
+    - Reflection of RSML (goes the other way)
