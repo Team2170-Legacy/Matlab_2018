@@ -1,15 +1,25 @@
 2/27/2018   By Adonis Canada, Priyanshu Agrawal, Baris Sengezen
 
+
+From the red side:
+Robot moving left makes the robot gain y 
+Robot moving right makes the robot lose y
+Robot moving straight causes an increase in x
+Robot moving backwards causes a decrease in x
+
+
+
 *All robots must start against the nearest wall*
 
+Ignore the Left and Right Starting Positions
 Left Starting Position
-    - 1.563 ft. away from left wall
+    - 1.563 ft. away from the closest edge of robot toleft wall
 
 Middle Starting Position
-    - 0.5633 ft. away from right of red exchange zone
+    - 0.5633 ft. away from the closest edge of robot to right side of red exchange zone
 
 Right Starting Position
-    - 1.83 ft. away from right wall
+    - 1.83 ft. away from closest edge of  from right wall
 
 Arc
     - 0 ft. change in x from start to end
