@@ -46,5 +46,11 @@ for traj = 1:length(all_Trajectories)
 end
 
 for traj = 1:length(all_Trajectories),
-    disp([ all_Trajectories_String{traj} char(9) roundNumber(2,changeinx(traj)) char(9) roundNumber(2,changeiny(traj))]);
+    disp([ all_Trajectories_String{traj} char(9) roundNumber(2,changeinx(traj)) 'ft' char(9) roundNumber(2,changeiny(traj)) 'ft' ]);
 end
+
+disp ('From the red side:')
+disp('Robot moving left makes the robot gain y')
+disp('Robot moving right makes the robot lose y')
+disp('Robot moving straight causes an increase in x')
+disp('Robot moving backwards causes a decrease in x')
