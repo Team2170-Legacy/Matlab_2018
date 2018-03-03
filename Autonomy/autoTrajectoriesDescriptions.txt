@@ -52,7 +52,7 @@ Straight
 
 RSML
     - 9.0019 ft. change in x from start to end
-    - 3 ft. change in y
+    - 6 ft. change in y
     - Goes forward about 1 meter
     - Turns right, about 45°
     - Goes straight, turns right back to original angle
@@ -61,8 +61,8 @@ RSML
 
 RSMR
     - 9.0019 ft. change in x from start to end
-    - 3 ft. change in y
-    - Goes forward about 9 meters
+    - -3 ft. change in y
+    - Goes forward about 1 meters
     - Turns right about 45°
     - Goes straight and returns back to original angle 
     - Takes 2 by 4 space, 6 seconds
