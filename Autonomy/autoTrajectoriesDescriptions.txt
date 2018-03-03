@@ -10,6 +10,22 @@ Robot moving backwards causes a decrease in x
 
 
 *All robots must start against the nearest wall*
+Wheel centerline distance
+24 7/8 in = 0.6318 m (not 25")
+
+Robot moves 118 3/4 in  on the 120 in move
+Encoder error was 20 - 24 counts
+
+Change values to:
+Robot.R = 0.0642
+
+Rbot.d = 
+
+On 180 deg arc move.
+Final angle error is 12 deg, i.e.6.7% off.
+Increase simulator spacing by 6.7%,
+i.e. 24 7/8 * 1.067
+
 
 Ignore the Left and Right Starting Positions
 Left Starting Position
@@ -20,7 +36,7 @@ Middle Starting Position
 
 Right Starting Position
     - 1.83 ft. away from closest edge of  from right wall
-
+C:\Users\Martin\Documents\FRC_2018\FRC_2018_Matlab\Autonomy
 Arc
     - 0 ft. change in x from start to end
     - 10 ft. chnage in y from start to end

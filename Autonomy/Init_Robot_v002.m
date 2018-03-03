@@ -25,8 +25,19 @@ Robot.Start_Pos.theta   = 0*deg;
 
 
 %% Robot dimensions and velocity
-Robot.d	= 25*in;		% distance between wheel centerlines
-Robot.R = 2.5*in;         % [m]		Robot wheel radius
+
+%   Update 03/03/2018 Martin Krucinski to account for experimental
+%   differences
+%Robot.d	= 25*in;		% distance between wheel centerlines
+
+Robot.d	= (24 + 7/8)*1.067*in;		% distance between wheel centerlines
+
+%   Update 03/03/2018 Martin Krucinski to account for experimental
+%   differences
+%Robot.R = 2.5*in;         % [m]		Robot wheel radius
+Robot.R = 2.5*in  * (118+3/4)/120;         % [m]		Robot wheel radius
+
+
 Robot.BL = 7.5*in; % bumper length
 Robot.L = 27*in+Robot.BL;		% Robot length (along the driving direction)
 Robot.W = 27*in+Robot.BL;
