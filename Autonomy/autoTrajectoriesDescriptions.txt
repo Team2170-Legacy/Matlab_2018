@@ -30,6 +30,21 @@ This did NOT improve the move distance much, still a bit short.
 Try decreaseing Robot.R by 2% to have the robot move 2% further:
 Robot.R = 2.5*in  * (118+3/4)/120 / 1.02;         % [m]		Robot wheel radius
 
+with REAL robot:
+Straight: 10 ft move: 123 in
+Arc: 	> 190 deg
+
+Revert LAST changes to dimensions! Change back to:
+Robot.d	= (24 + 7/8)*1.067*in;		% distance between wheel centerlines
+Robot.R = 2.5*in  * (118+3/4)/120;         % [m]		Robot wheel radius
+
+Most likely cause of the robot NOT driving far enough into the switch (6-8 in short)
+is a DIMENSIONAL mismatch in the simulator.
+
+Test: Switch left is 8 in short. 
+Straight is 121" (1 in over)
+Arc is 190 deg, couple inches too far
+
 
 
 On 180 deg arc move.
