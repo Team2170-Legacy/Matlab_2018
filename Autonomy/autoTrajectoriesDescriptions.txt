@@ -138,7 +138,7 @@ RSML.x(8)/in = 125.34
 So it seems the simulator uses a move distance of approx 108 in, which is 2.5 in too far,
 which corresponds to the extra 2.5 in in calculation of RMSL.x(8)
 
-BUT
+*** BUT ***
 
 during tests we were 2.5 in short of move distance, I believe 105.5 instead of 108 in,
 but this SHOULD HAVE BEEN the correct move distance according to drawings,
