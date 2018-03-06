@@ -6,16 +6,15 @@ init_Trajectories_v003
 
 
 all_Trajectories_String = {
-%    'Arc'
-%    'Straight'
+    'Arc'
+    'Straight'
+    'RSML'
+    'RSMR'
 %    'BSML'
 %    'BSMLS'
 %    'BSMR'
 %    'BSMRS'
-
-    'RSML'
 %    'RSMLS'
-%    'RSMR'
 %    'RSMRS'
     };
 

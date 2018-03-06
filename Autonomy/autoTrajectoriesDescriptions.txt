@@ -61,10 +61,11 @@ i.e. 24 7/8 * 1.067
 
 Ignore the Left and Right Starting Positions
 Left Starting Position
-    - 1.563 ft. away from the closest edge of robot toleft wall
+    - 1.563 ft. away from the closest edge of robot to left wall
 
 Middle Starting Position
     - 0.5633 ft. away from the closest edge of robot to right side of red exchange zone
+	= 6.8 in away
 
 Right Starting Position
     - 1.83 ft. away from closest edge of  from right wall

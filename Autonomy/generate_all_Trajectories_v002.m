@@ -8,20 +8,20 @@ Init_Robot_v002
 Init_Field_v001
 init_Trajectories_v003
 
-make_movies = false %true %false
+make_movies = true %false
 
 all_Trajectories_String = {
-    'Arc'
-    'Straight'
+%    'Arc'
+%    'Straight'
+    'RSML'
+%    'RSMR'
+%    'RSRL'
+%    'RSMLS'
+%    'RSMRS'
     %    'BSML'
     %    'BSMLS'
     %    'BSMR'
     %    'BSMRS'
-    
-    'RSML'
-    %    'RSMLS'
-    'RSMR'
-    %    'RSMRS'
     };
 
 for traj = 1:length(all_Trajectories_String)
@@ -47,7 +47,9 @@ for traj = 1:length(all_Trajectories)
         %   copy movie file
         
         movie_file_name = [ 'Robot_Movie_' trajString '.mp4' ];
+        del_command     = ['!del Movies\' movie_file_name];
         copy_command    = ['!copy Robot_Movie.mp4 ' 'Movies\' movie_file_name];
+        eval(del_command);
         eval(copy_command);
         close all;
     end

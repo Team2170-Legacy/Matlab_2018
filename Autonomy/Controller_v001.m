@@ -1,11 +1,19 @@
 function [v,omega] = Controller_v001(distance, angle ,Robot) 
 
 Kp = 2.0;
-Kp_omega = 8.0;
+
+%   2018-03-05  Martin Krucinski
+%   Try to get robot to track angle better, increase Kp_omega from 8.0 to
+%   larger value, OR IS IT Robot.omega_max that limits this???
+%   Robot.omega_max  was set to 1.0!!
+Kp_omega = 16.0;
+%Kp_omega = 32;
     
 % Angle
 
-omega_max = Robot.omega_max;
+%omega_max = Robot.omega_max;
+omega_max   = 4.0;          %   Martin Krucinski - override Robot.omega_max
+
 
 omega_temp = Kp_omega*angle;
 

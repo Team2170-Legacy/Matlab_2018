@@ -38,7 +38,11 @@ Robot.d	= (24 + 7/8)*1.067*in;		% distance between wheel centerlines
 Robot.R = 2.5*in  * (118+3/4)/120;         % [m]		Robot wheel radius
 
 
-Robot.BL = 7.5*in; % bumper length
+%Robot.BL = 7.5*in; % bumper length
+%   2018-03-05  Martin Krucinski, measured at field in Windsor
+Robot.BL = 6.5*in; % bumper length
+
+
 Robot.L = 27*in+Robot.BL;		% Robot length (along the driving direction)
 Robot.W = 27*in+Robot.BL;
 %
