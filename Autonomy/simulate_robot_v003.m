@@ -296,8 +296,10 @@ for i=2:N
         displayangle = (round(angle/deg * 100)/100);
         displaydistance = (round(distance*100)/100);
         
-        text(Field.L/2-1, Field.W/2, ['alfa = ' num2str(displayangle) '°']);
+        text(Field.L/2-1, Field.W/2, ['alpha = ' num2str(displayangle) '°']);
         text(Field.L/2-1, Field.W/2-1/2, ['distance = ' num2str(displaydistance) ' m']);
+        
+        text(Field.L/2-1, Field.W - 0.5, trajectory.name);
         
         Robot_Figure		= getframe(f1);		% Capture screenshot image of figure
         Robot_Image			= Robot_Figure.cdata;

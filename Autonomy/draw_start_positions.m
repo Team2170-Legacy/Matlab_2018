@@ -23,5 +23,10 @@ draw_Robot(Robot)
 
 %   RSRx
 
+Robot.x     = RSRL.x(1);       
+Robot.y     = RSRL.y(1);
+Robot.theta = 0;
+
+draw_Robot(Robot)
 
 

@@ -42,7 +42,7 @@ Robot.R = 2.5*in  * (118+3/4)/120;         % [m]		Robot wheel radius
 %   2018-03-05  Martin Krucinski, measured at field in Windsor
 Robot.BL = 6.5*in; % bumper length
 
-
+%   Martin Krucinski 2018-03-07
 Robot.L = 27*in+Robot.BL;		% Robot length (along the driving direction)
 Robot.W = 27*in+Robot.BL;
 %
@@ -54,9 +54,12 @@ Robot.W = 27*in+Robot.BL;
 %   0.80 * 0.80 = 0.64, i.e. 64% of max velocity
 
 %Robot.v_max = 3.048;    % Robot max velocity (on each R / L drive wheel)
-Robot.v_max = 1.25;    % Robot max velocity (on each R / L drive wheel)
+%Robot.v_max = 1.25;    % Robot max velocity (on each R / L drive wheel)
+%   Martin Krucinski 2018-03-07
+Robot.v_max = 1.6;    % Robot max velocity (on each R / L drive wheel)
+
 Robot.a_max = 3;        %Robot assumed acceleration
-Robot.omega_max = 1; % Robot max angular velocity (rad/s)
+Robot.omega_max = 6; % Robot max angular velocity (rad/s)
 
 %init_Field_v002;
 % FRC2018  init_Field_v005;

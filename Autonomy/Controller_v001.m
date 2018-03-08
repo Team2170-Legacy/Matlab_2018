@@ -1,6 +1,9 @@
 function [v,omega] = Controller_v001(distance, angle ,Robot) 
 
-Kp = 2.0;
+
+%   Martin Krucinski 2018-03-07
+%Kp = 2.0;
+Kp = 4.0;
 
 %   2018-03-05  Martin Krucinski
 %   Try to get robot to track angle better, increase Kp_omega from 8.0 to

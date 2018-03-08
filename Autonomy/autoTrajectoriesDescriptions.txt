@@ -176,4 +176,27 @@ ans =
 
   107.8704
 
+--------------------------------------------------------------------------
+Notes 03/07/2018
+--------------------------------------------------------------------------
+
+
+R03. In the STARTING CONFIGURATION, the maximum ROBOT size (excluding BUMPERS) must be
+constrained to a volume of 33 in. by 28 in. by 55 in. tall (~83 cm by ~71 cm by ~139 cm tall).
+Minor protrusions permitted in R01 and R02 (that are less than ¼ in. (~6.3 mm) such as bolt
+heads, fastener ends, weld beads, and rivets) are exempt from the 33 in. and 28 in. limits.
+
+With bumpers:
+
+Bumpers are approx. 1 + 2 1/2 in = 3 1/2 in, i.e. a total on two sides of 7 in.
+
+So max robot dimensions are 
+33 + 7 = 40 in  by
+28 + 7 = 35 in
+
+Use these in setup of start positions!
+As middle M start position, use the current position of y = 12 ft,
+which puts our robot 7 in to the right of the Exchange Zone tape.
+As right R start position, use a distance of max robot width 40 in + 10 in safety margin = 50 in
+to the right of M.
 

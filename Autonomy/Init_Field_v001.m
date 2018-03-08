@@ -1,16 +1,23 @@
 Field.L = 54*ft;
 Field.W = 27*ft;
 
-% Starting Points, needs to be changed
-Field.RSR.x = Robot.L/2;
-Field.RSR.y = 6*ft; % Needs to be changed
-
+%-------------------------------------------------------------------------
+% Starting Points RED side, needs to be changed
+%-------------------------------------------------------------------------
 Field.RSM.x = Robot.L/2;
-Field.RSM.y = 12*ft; % Needs to be changed
+Field.RSM.y = 12*ft; % Keep this location, 7 in to the right of the Exchange zone tape for our robot
+
+Field.RSR.x = Robot.L/2;
+%Field.RSR.y = 6*ft; % Needs to be changed
+Field.RSR.y = Field.RSM.y - (40 + 10)*in;   % use 40 in max robot width and 10 in safety margin
 
 Field.RSL.x = Robot.L/2;
-Field.RSL.y = 24*ft; % Needs to be changed
+%Field.RSL.y = 24*ft; % Needs to be changed
+Field.RSL.y = Field.W/2 + 12*in + 48*in + 7*in   + Robot.W/2;   % 7 in to the left of the Exchange Tape
 
+%-------------------------------------------------------------------------
+% Starting Points BLUE side (not used at this time)
+%-------------------------------------------------------------------------
 Field.BSR.x = Field.L - Robot.L/2;
 Field.BSR.y = Field.W - Field.RSL.y;
 
@@ -19,6 +26,8 @@ Field.BSM.y = Field.W - Field.RSM.y;
 
 Field.BSL.x = Field.L - Robot.L/2;
 Field.BSL.y = Field.W - Field.RSR.y;
+
+%-------------------------------------------------------------------------
 
 % vision targets on switch
 Field.RSwitch.LVT_x = 11.875*ft;

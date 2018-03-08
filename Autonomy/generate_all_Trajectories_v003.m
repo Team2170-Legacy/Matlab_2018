@@ -1,29 +1,31 @@
 %
-%   generate_all_Trajectories_v002.m
+%   generate_all_Trajectories_v003.m
 %
 %   03/04/2018
 
 init_Constants
 Init_Robot_v002
 Init_Field_v001
-init_Trajectories_v004
+% 03/07/2018    New trajectory names
+init_Trajectories_v005
 
 make_movies = true %false
 
 all_Trajectories_String = {
-    %'Arc'
-%    'Straight'
-%    'RSML'
-%    'RSMR'
-%    'RSRL'
-%    'RSLL'
-%    'RSMLS'
-%    'RSMRS'
+    'Arc'
+    'Straight'
+    'RSMLF'
+    'RSMRF'
+    'RSMLS'
+    'RSMRS'
+    'RSLLF'
+    'RSLRF'
+    'RSLLS'
+    'RSLRS'
+    'RSRLF'
+    'RSRRF'
     'RSRLS'
-    %    'BSML'
-    %    'BSMLS'
-    %    'BSMR'
-    %    'BSMRS'
+    'RSRRS'
     };
 
 for traj = 1:length(all_Trajectories_String)
@@ -37,10 +39,6 @@ for traj = 1:length(all_Trajectories)
     trajectory  = all_Trajectories{traj};
     trajString  = all_Trajectories_String{traj};
     
-    
-    
-    
-    %simulate_robot_v002;
     simulate_robot_v003;
     
     t_final     = all_t(end);
