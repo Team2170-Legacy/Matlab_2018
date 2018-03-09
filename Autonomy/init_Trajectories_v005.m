@@ -62,47 +62,47 @@ N_switch_pos        = length(all_switch_pos);
 %-------------------------------------------------------------------------
 %   From SM
 
-RSMLF.add_x   = +12*in%0.0;      %   additional x-move distance at the end of trajectory
-RSMLF.add_y   = +12*in%8.0*in;   %   additional y-move distance, per 03/05/18 Team Paragon testing
+RSMLF.add_x   = 0.0;            %   additional x-move distance at the end of trajectory
+RSMLF.add_y   = 0.0;            %   additional y-move distance
 
-RSMRF.add_x   = +12*in%0.0;      %   additional x-move distance at the end of trajectory
-RSMRF.add_y   = +12*in%0.0;      %   additional y-move distance at the end of trajectory
+RSMRF.add_x   = 0.0;            %   additional x-move distance at the end of trajectory
+RSMRF.add_y   = 0.0;            %   additional y-move distance at the end of trajectory
 
-RSMLS.add_x   = +12*in%-14*in;      %   additional x-move distance at the end of trajectory
-RSMLS.add_y   = +12*in%0*in;   %   additional y-move distance, per 03/05/18 Team Paragon testing
+RSMLS.add_x   = 0.0;            %   additional x-move distance at the end of trajectory
+RSMLS.add_y   = 0.0;            %   additional y-move distance
 
-RSMRS.add_x   = +12*in%-14*in;      %   additional x-move distance at the end of trajectory
-RSMRS.add_y   = +12*in%5*in;   %   additional y-move distance, per 03/05/18 Team Paragon testing
+RSMRS.add_x   = 0.0;            %   additional x-move distance at the end of trajectory
+RSMRS.add_y   = 0.0;            %   additional y-move distance
 
 %-------------------------------------------------------------------------
 %   From SL
 
-RSLLF.add_x   = +12*in%0.0;      %   additional x-move distance at the end of trajectory
-RSLLF.add_y   = +12*in%0.0;      %   additional y-move distance
+RSLLF.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
+RSLLF.add_y   = 0.0;      %   additional y-move distance
 
-RSLRF.add_x   = +12*in%0.0;      %   additional x-move distance at the end of trajectory
-RSLRF.add_y   = +12*in%0.0;      %   additional y-move distance
+RSLRF.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
+RSLRF.add_y   = 0.0;      %   additional y-move distance
 
-RSLLS.add_x   = +12*in%0.0;      %   additional x-move distance at the end of trajectory
-RSLLS.add_y   = +12*in%0.0;      %   additional y-move distance
+RSLLS.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
+RSLLS.add_y   = 0.0;      %   additional y-move distance
 
-RSLRS.add_x   = +12*in%0.0;      %   additional x-move distance at the end of trajectory
-RSLRS.add_y   = +12*in%0.0;      %   additional y-move distance
+RSLRS.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
+RSLRS.add_y   = 0.0;      %   additional y-move distance
 
 %-------------------------------------------------------------------------
 %   From SR
 
-RSRLF.add_x   = +12*in%0.0;      %   additional x-move distance at the end of trajectory
-RSRLF.add_y   = +12*in%0.0;      %   additional y-move distance
+RSRLF.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
+RSRLF.add_y   = 0.0;      %   additional y-move distance
 
-RSRRF.add_x   = +12*in%0.0;      %   additional x-move distance at the end of trajectory
-RSRRF.add_y   = +12*in%0.0;      %   additional y-move distance, per 03/05/18 Team Paragon testing
+RSRRF.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
+RSRRF.add_y   = 0.0;      %   additional y-move distance, per 03/05/18 Team Paragon testing
 
-RSRLS.add_x   = +12*in%0;     %   additional x-move distance at the end of trajectory
-RSRLS.add_y   = +12*in%0;       %   additional y-move distance
+RSRLS.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
+RSRLS.add_y   = 0.0;      %   additional y-move distance
 
-RSRRS.add_x   = +12*in%0.0;      %   additional x-move distance at the end of trajectory
-RSRRS.add_y   = +12*in%0.0;      %   additional y-move distance
+RSRRS.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
+RSRRS.add_y   = 0.0;      %   additional y-move distance
 
 %-------------------------------------------------------------------------
 %   Generate all trajectories depending on
@@ -119,7 +119,7 @@ for c=1:N_traj_color,
             for p=1:N_switch_pos,
                 
                 trajString  = [ all_traj_color(c) 'S' all_start_points(s) ...
-                    all_switch_loc(l) all_switch_pos(p) ]
+                    all_switch_loc(l) all_switch_pos(p) ];
                 
                 clear traj
                 
@@ -138,7 +138,17 @@ for c=1:N_traj_color,
                     traj.x(3)   = traj.x(2) + 3*ft;
                     traj.x(4)   = Field.RSwitch.LVT_x - Robot.L/2 + traj.add_x;
                     if all_switch_loc(l) == 'L',    %   LEFT switch
-                        traj.y(3)   = Field.RSwitch.LVT_y - traj.add_y;
+                        
+                        %traj.y(3)   = Field.RSwitch.LVT_y - traj.add_y;
+                        
+                        % MKrucinski 2018-03-08 Keep sign of add_y in the
+                        % POSITIVE direction for ALL the FRONT moves,
+                        %   i.e. positive add_y will increase y, i.e. shift
+                        %   end position to the LEFT
+                        %   this is DIFFERENT from SIDE position where
+                        %   positive add_y drives the robot FURTHER into
+                        %   the switch
+                        traj.y(3)   = Field.RSwitch.LVT_y + traj.add_y;
                         traj.y(4)   = traj.y(3);
                     else % switch_loc == 'R'        %   RIGHT switch
                         traj.y(3)   = Field.RSwitch.RVT_y + traj.add_y;
@@ -169,8 +179,8 @@ for c=1:N_traj_color,
                 
                 traj.v      = 1.6;
                 traj.t_final= ( traj_length(traj) / traj.v ) * 1.3;
-                
-                eval([ trajString ' = traj' ])
+                disp([ trajString ' via points initialized...' ] )
+                eval([ trajString ' = traj;' ])
                 
             end
         end

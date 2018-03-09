@@ -1,5 +1,5 @@
 %
-%   generate_all_Trajectories_v003.m
+%   generate_all_Trajectories_v004.m
 %
 %   03/04/2018
 
