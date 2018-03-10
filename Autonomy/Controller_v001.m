@@ -14,9 +14,7 @@ Kp_omega = 16.0;
     
 % Angle
 
-%omega_max = Robot.omega_max;
-omega_max   = 4.0;          %   Martin Krucinski - override Robot.omega_max
-
+omega_max = Robot.omega_max;
 
 omega_temp = Kp_omega*angle;
 

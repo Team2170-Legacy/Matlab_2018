@@ -1,4 +1,4 @@
-%	simulate_robot_v003.m
+%	simulate_robot_v004.m
 %
 %   For FRC 2018 PowerUp
 %   Modified for FRC 2018 Control by Adonis Canada
@@ -16,10 +16,10 @@
 %   2018-03-04      Martin Krucinski    Added selection of make_movies flag
 
 %   Initialize conversion constants and field elements
-init_Constants;
-Init_Robot_v002
-Init_Field_v002
-init_Trajectories_v003
+%init_Constants;
+%Init_Robot_v002
+%Init_Field_v002
+%init_Trajectories_v003
 
 %   Martin Krucinski 02/08/2018
 %   Select trajectory for testing
@@ -44,7 +44,7 @@ for j=1:(N-1)
     
 end
 
-if trajectory.x(1) == Field.BSML.x(1)
+if trajectory.x(1) ~= Field.RSM.x(1)
     Robot.Start_Pos.theta = 180*deg;
     
 else
@@ -338,11 +338,11 @@ f2		= figure;				% open figure
 set(f2,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default
 grid on							% draw a grid on the figure
 hold on
-plot(all_t, Robot.wL_all, 'b');	% Plot left wheel velocities in Blue
-plot(all_t, Robot.wR_all, 'r');	% Plot right wheel velocities in Red
+plot(all_t, Robot.wL_all*Robot.R, 'b');	% Plot left wheel velocities in Blue
+plot(all_t, Robot.wR_all*Robot.R, 'r');	% Plot right wheel velocities in Red
 hold off
 xlabel('t [s]')
-ylabel('omega [rad/s]')
+ylabel('v [m/s]')
 
 
 f3		= figure;				% open figure

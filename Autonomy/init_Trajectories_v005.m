@@ -62,10 +62,10 @@ N_switch_pos        = length(all_switch_pos);
 %-------------------------------------------------------------------------
 %   From SM
 
-RSMLF.add_x   = 0.0;            %   additional x-move distance at the end of trajectory
+RSMLF.add_x   = 6.0*in;            %   additional x-move distance at the end of trajectory
 RSMLF.add_y   = 0.0;            %   additional y-move distance
 
-RSMRF.add_x   = 0.0;            %   additional x-move distance at the end of trajectory
+RSMRF.add_x   = 6.0*in;            %   additional x-move distance at the end of trajectory
 RSMRF.add_y   = 0.0;            %   additional y-move distance at the end of trajectory
 
 RSMLS.add_x   = 0.0;            %   additional x-move distance at the end of trajectory
@@ -77,10 +77,10 @@ RSMRS.add_y   = 0.0;            %   additional y-move distance
 %-------------------------------------------------------------------------
 %   From SL
 
-RSLLF.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
+RSLLF.add_x   = 6.0*in;      %   additional x-move distance at the end of trajectory
 RSLLF.add_y   = 0.0;      %   additional y-move distance
 
-RSLRF.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
+RSLRF.add_x   = 6.0*in;      %   additional x-move distance at the end of trajectory
 RSLRF.add_y   = 0.0;      %   additional y-move distance
 
 RSLLS.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
@@ -92,10 +92,10 @@ RSLRS.add_y   = 0.0;      %   additional y-move distance
 %-------------------------------------------------------------------------
 %   From SR
 
-RSRLF.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
+RSRLF.add_x   = 6.0*in;      %   additional x-move distance at the end of trajectory
 RSRLF.add_y   = 0.0;      %   additional y-move distance
 
-RSRRF.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
+RSRRF.add_x   = 6.0*in;      %   additional x-move distance at the end of trajectory
 RSRRF.add_y   = 0.0;      %   additional y-move distance, per 03/05/18 Team Paragon testing
 
 RSRLS.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
@@ -157,9 +157,14 @@ for c=1:N_traj_color,
                     % RSMR.x = [Field.RSM.x, Field.RSM.x + Robot.L, Field.RSM.x + Robot.L + 3*ft, Field.RSwitch.LVT_x - Robot.L/2 + RSMR.add_x];
                     % RSMR.y = [Field.RSM.y, Field.RSM.y, Field.RSwitch.RVT_y + RSMR.add_y, Field.RSwitch.RVT_y + RSMR.add_y];
                     
+                    traj.v      = 2.0;
+                    traj.t_final= ( traj_length(traj) / traj.v ) * 1.3;
+                    
                 else %switch_pos(p) == 'S'  % SIDE  switch position
-%                    traj.x(3)   = traj.x(2);
-                    traj.x(3)   = traj.x(2) + 1.0;
+                    %                    traj.x(3)   = traj.x(2);
+%                   traj.x(3)   = traj.x(2) + 1.0;
+% MKrucinski 03/10/18 Make turn 90 deg in order to avoid other robots
+                    traj.x(3)   = traj.x(2) + 0.0;
                     traj.x(4)   = (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2 + traj.add_x;
                     traj.x(5)   = traj.x(4);
                     if all_switch_loc(l) == 'L',    %   LEFT switch
@@ -175,10 +180,11 @@ for c=1:N_traj_color,
                     end
                     
                     %(Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2*[1.01 1]+add_x
+                    
+                    traj.v      = 2.0;
+                    traj.t_final= ( traj_length(traj) / traj.v ) * 1.3;
                 end
                 
-                traj.v      = 1.6;
-                traj.t_final= ( traj_length(traj) / traj.v ) * 1.3;
                 disp([ trajString ' via points initialized...' ] )
                 eval([ trajString ' = traj;' ])
                 
