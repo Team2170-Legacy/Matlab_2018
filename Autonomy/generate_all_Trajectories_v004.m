@@ -9,7 +9,7 @@ Init_Field_v002
 % 03/07/2018    New trajectory names
 init_Trajectories_v005
 
-make_movies = false %true %false
+make_movies = true %false
 
 all_Trajectories_String = {
     'Arc'
