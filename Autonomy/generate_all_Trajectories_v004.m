@@ -5,27 +5,29 @@
 
 init_Constants
 Init_Robot_v002
-Init_Field_v002
+Init_Field_v003
 % 03/07/2018    New trajectory names
-init_Trajectories_v005
+init_Trajectories_v006
 
 make_movies = true %false
 
 all_Trajectories_String = {
-    'Arc'
-    'Straight'
-    'RSMLF'
-    'RSMRF'
-    'RSMLS'
-    'RSMRS'
-    'RSLLF'
-    'RSLRF'
-    'RSLLS'
-    'RSLRS'
-    'RSRLF'
-    'RSRRF'
-    'RSRLS'
-    'RSRRS'
+%     'Arc'
+%     'Straight'
+%     'RSMLF'
+%     'RSMRF'
+%     'RSMLS'
+%     'RSMRS'
+%     'RSLLF'
+%     'RSLRF'
+%     'RSLLS'
+%     'RSLRS'
+%     'RSRLF'
+%     'RSRRF'
+%     'RSRLS'
+%     'RSRRS'
+'RSLCLS'
+'RSRCLS'
     };
 
 for traj = 1:length(all_Trajectories_String)

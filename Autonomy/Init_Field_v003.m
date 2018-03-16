@@ -260,6 +260,12 @@ the_dist3    = Field.RSL.y - Robot.W/2 - Field.RedExchangeZone.tl_y;
 disp([ 'RSL.y distance to the LEFT of Red Exchange tape edge = ' ...
     num2str(the_dist3) ' [m] = ' num2str(the_dist3/in) ' [in]' ]);
 
+Field.RSLC.x = Robot.L/2;
+Field.RSLC.y = Field.W - Robot.W/2 - 8.5*in;
+
+Field.RSRC.x = Robot.L/2;
+Field.RSRC.y = Robot.W/2 + 8.5*in;
+
 %-------------------------------------------------------------------------
 % Starting Points BLUE side (not used at this time)
 %-------------------------------------------------------------------------
