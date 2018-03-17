@@ -116,6 +116,10 @@ RSRCLB.add_y = 0.0;
 RSLCRB.add_x = 0.0;
 RSLCRB.add_y = 0.0;
 
+SecondCubeLeftSwitch.add_x = 0.0;
+SecondCubeLeftSwitch.add_y = 0.0;
+
+
 
 
 
@@ -220,6 +224,9 @@ disp ('RSLCRB via points initialized...');
 
 init_TrajectoryRSRCLB
 disp ('RSRCLB via points initialized...');
+
+init_Trajectory2ndCubeLeftSwitch
+disp ('SecondCubeLeftSwitch via points initialized...');
 
 
 
