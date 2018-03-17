@@ -18,5 +18,6 @@ init_Trajectories_v006
 % draw_Trajectory(Straight);
 
 draw_Trajectory(RSLCLS);
-draw_Trajectory(RSRCLS);
-
+draw_Trajectory(RSRCRS);
+draw_Trajectory(RSRCLB);
+draw_Trajectory(RSLCRB);

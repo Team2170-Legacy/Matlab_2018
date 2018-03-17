@@ -26,8 +26,10 @@ all_Trajectories_String = {
 %     'RSRRF'
 %     'RSRLS'
 %     'RSRRS'
-'RSLCLS'
-'RSRCLS'
+%'RSLCLS'
+%'RSRCLS'
+'RSLCRB'
+'RSRCLB'
     };
 
 for traj = 1:length(all_Trajectories_String)

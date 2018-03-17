@@ -77,6 +77,9 @@ Field.BSwitch.LeftP.tr_y = Field.RSwitch.LeftP.tr_y;
 Field.BSwitch.LeftP.br_x = Field.BSwitch.LeftP.tr_x;
 Field.BSwitch.LeftP.br_y =Field.RSwitch.LeftP.br_y;
 
+% Scale Ramps (Areas below scale)
+
+
 
 %Top Plate of Scale from Looking Down (Red side is on the right)
 Field.Scale.TopP.br_x = 29.5 * ft;

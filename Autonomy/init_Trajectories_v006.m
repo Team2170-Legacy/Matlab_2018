@@ -104,6 +104,21 @@ RSRLS.add_y   = 0.0;      %   additional y-move distance
 RSRRS.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
 RSRRS.add_y   = 0.0;      %   additional y-move distance
 
+RSLCLS.add_x = 0.0;
+RSLCLS.add_y = 0.0;
+
+RSRCRS.add_x = 0.0;
+RSRCRS.add_y = 0.0;
+
+RSRCLB.add_x = 0.0;
+RSRCLB.add_y = 0.0;
+
+RSLCRB.add_x = 0.0;
+RSLCRB.add_y = 0.0;
+
+
+
+
 %-------------------------------------------------------------------------
 %   Generate all trajectories depending on
 %   the color,
@@ -197,7 +212,13 @@ end
 init_TrajectoryRSLCLS
 disp ('RSLCLS via points initialized...');
 
-init_TrajectoryRSRCLS
+init_TrajectoryRSRCRS
 disp ('RSRCLS via points initialized...');
+
+init_TrajectoryRSRCLB
+disp ('RSRCLB via points initialized...');
+
+init_TrajectoryRSLCRB
+disp ('RSLCRB via points initialized...');
 
 
