@@ -1,40 +1,24 @@
 Field.L = 54*ft;
 Field.W = 27*ft;
 
-%-------------------------------------------------------------------------
-% Starting Points RED side, needs to be changed
-%-------------------------------------------------------------------------
-Field.RSM.x = Robot.L/2;
-Field.RSM.y = 12*ft; % Keep this location, 7 in to the right of the Exchange zone tape for our robot
-
-Field.RSR.x = Robot.L/2;
-%Field.RSR.y = 6*ft; % Needs to be changed
-Field.RSR.y = Field.RSM.y - (40 + 10)*in;   % use 40 in max robot width and 10 in safety margin
-
-Field.RSL.x = Robot.L/2;
-%Field.RSL.y = 24*ft; % Needs to be changed
-Field.RSL.y = Field.W/2 + 12*in + 48*in + 7*in   + Robot.W/2;   % 7 in to the left of the Exchange Tape
-
-%-------------------------------------------------------------------------
-% Starting Points BLUE side (not used at this time)
-%-------------------------------------------------------------------------
-Field.BSR.x = Field.L - Robot.L/2;
-Field.BSR.y = Field.W - Field.RSL.y;
-
-Field.BSM.x = Field.L - Robot.L/2;
-Field.BSM.y = Field.W - Field.RSM.y;
-
-Field.BSL.x = Field.L - Robot.L/2;
-Field.BSL.y = Field.W - Field.RSR.y;
+%   STARTING POSITIONS MOVED TO END OF THIS FILE SINCE THEY NEED FIELD
+%   DIMENSIONS TO BE CALCULATED
 
 %-------------------------------------------------------------------------
 
 % vision targets on switch
-Field.RSwitch.LVT_x = 11.875*ft;
-Field.RSwitch.LVT_y = 18*ft;
+
+%Field.RSwitch.LVT_x = 11.875*ft;
+%   UPDATED 03/08/2018 Martin Krucinski
+Field.RSwitch.LVT_x = 140*in;
+
+%Field.RSwitch.LVT_y = 18*ft;
+%   UPDATED 03/08/2018 Martin Krucinski
+Field.RSwitch.LVT_y = Field.W/2 + (12/2 - 3/2)*ft;  % THIS IS ACTUALLY 18 FT
 
 Field.RSwitch.RVT_x = Field.RSwitch.LVT_x;
-Field.RSwitch.RVT_y = 9*ft;
+%Field.RSwitch.RVT_y = 9*ft;
+Field.RSwitch.RVT_y = Field.W/2 - (12/2 - 3/2)*ft;  % THIS IS ACTUALLY9 FT
 
 Field.BSwitch.LVT_x = Field.L - Field.RSwitch.LVT_x;
 Field.BSwitch.LVT_y = Field.RSwitch.RVT_y;
@@ -47,9 +31,8 @@ Field.RSwitch.RightP.bl_x = 12*ft;
 Field.RSwitch.RightP.bl_y = 7.5*ft;
 
 Field.RSwitch.RightP.tl_x = Field.RSwitch.RightP.bl_x;
-Field.RSwitch.RightP.tl_y = 10.5*ft;
-
-Field.RSwitch.RightP.tr_x = 18*ft;
+Field.RSwitch.RightP.tl_y = 10.5*ft+2.25*in;
+Field.RSwitch.RightP.tr_x = 16*ft+1.5*in;
 Field.RSwitch.RightP.tr_y = Field.RSwitch.RightP.tl_y;
 
 Field.RSwitch.RightP.br_x = Field.RSwitch.RightP.tr_x;
@@ -60,7 +43,7 @@ Field.RSwitch.LeftP.bl_x = Field.RSwitch.RightP.bl_x;
 Field.RSwitch.LeftP.bl_y = 16.5*ft;
 
 Field.RSwitch.LeftP.tl_x = Field.RSwitch.RightP.bl_x;
-Field.RSwitch.LeftP.tl_y = Field.RSwitch.LeftP.bl_y+3*ft;
+Field.RSwitch.LeftP.tl_y = Field.RSwitch.LeftP.bl_y+3*ft+2.25*in;
 
 Field.RSwitch.LeftP.tr_x = Field.RSwitch.RightP.tr_x;
 Field.RSwitch.LeftP.tr_y = Field.RSwitch.LeftP.tl_y;
@@ -124,13 +107,19 @@ Field.Scale.BottP.tr_y = Field.Scale.BottP.tl_y;
 % Red Exchange Zone
 
 Field.RedExchangeZone.tl_x = 0;
-Field.RedExchangeZone.tl_y = 18*ft;
+%Field.RedExchangeZone.tl_y = 18*ft;
+%   UPDATED 03/08/2018 Martin Krucinski
+Field.RedExchangeZone.tl_y = Field.W/2 + 12*in + 48*in;
 
-Field.RedExchangeZone.tr_x = 4*ft;
+%Field.RedExchangeZone.tr_x = 4*ft;
+%   UPDATED 03/08/2018 Martin Krucinski
+Field.RedExchangeZone.tr_x = 36*in;
 Field.RedExchangeZone.tr_y = Field.RedExchangeZone.tl_y;
 
 Field.RedExchangeZone.br_x = Field.RedExchangeZone.tr_x;
-Field.RedExchangeZone.br_y = 14*ft;
+%Field.RedExchangeZone.br_y = 14*ft;
+%   UPDATED 03/08/2018 Martin Krucinski
+Field.RedExchangeZone.br_y = Field.W/2 + 12*in;
 
 Field.RedExchangeZone.bl_x = Field.RedExchangeZone.tl_x;
 Field.RedExchangeZone.bl_y = Field.RedExchangeZone.br_y;
@@ -169,7 +158,7 @@ Field.AutoLineBlue = AutoLineBlue;
 %Cubes
 %Cubes in Red Platform Zone
 space = 26.2/12*ft;
-Field.RedPlatZone.Cube1_x = 18.542667*ft;
+Field.RedPlatZone.Cube1_x = Field.RSwitch.RightP.br_x+13/2*in;
 Field.RedPlatZone.Cube1_y = 8.041667*ft;
 
 Field.RedPlatZone.Cube2_x = Field.RedPlatZone.Cube1_x;
@@ -209,7 +198,7 @@ Field.RedPyramid.Cube6_y = Field.RedPyramid.Cube1_y;
 
 % Cubes in Blue Platform Zone
 
-Field.BluePlatZone.Cube1_x = 35.45733*ft;
+Field.BluePlatZone.Cube1_x = Field.L - Field.RedPlatZone.Cube1_x;
 Field.BluePlatZone.Cube1_y = Field.RedPlatZone.Cube1_y;
 
 Field.BluePlatZone.Cube2_x = Field.BluePlatZone.Cube1_x;
@@ -246,7 +235,48 @@ Field.BluePyramid.Cube5_y = Field.RedPyramid.Cube5_y;
 Field.BluePyramid.Cube6_x = Field.L - Field.RedPyramid.Cube6_x;
 Field.BluePyramid.Cube6_y = Field.RedPyramid.Cube6_y;
 
+%-------------------------------------------------------------------------
+% Starting Points RED side, needs to be changed
+%-------------------------------------------------------------------------
+Field.RSM.x = Robot.L/2;
+%Field.RSM.y = 12*ft; % Keep this location, 7 in to the right of the Exchange zone tape for our robot
+%   New location is robot eddge to be 8.5 in to the right of Exchange zone tape
+Field.RSM.y = Field.RedExchangeZone.bl_y - 8.5*in - Robot.W/2;
+the_dist1   = Field.RedExchangeZone.bl_y - (Field.RSM.y + Robot.W/2);
+disp([ 'RSM.y distance to the RIGHT of Red Exchange tape edge = ' ...
+    num2str(the_dist1) ' [m] = ' num2str(the_dist1/in) ' [in]' ]);
 
+Field.RSR.x = Robot.L/2;
+%Field.RSR.y = 6*ft; % Needs to be changed
+Field.RSR.y = Field.RSM.y - (40 + 10)*in;   % use 40 in max robot width and 10 in safety margin
+the_dist2    = Field.RedExchangeZone.bl_y - (Field.RSR.y + Robot.W/2);
+disp([ 'RSR.y distance to the RIGHT of Red Exchange tape edge = ' ...
+    num2str(the_dist2) ' [m] = ' num2str(the_dist2/in) ' [in]' ]);
+
+Field.RSL.x = Robot.L/2;
+%Field.RSL.y = 24*ft; % Needs to be changed
+Field.RSL.y = Field.W/2 + 12*in + 48*in + 8.5*in + Robot.W/2;   % 8.5 in to the left of the Exchange Tape
+the_dist3    = Field.RSL.y - Robot.W/2 - Field.RedExchangeZone.tl_y;
+disp([ 'RSL.y distance to the LEFT of Red Exchange tape edge = ' ...
+    num2str(the_dist3) ' [m] = ' num2str(the_dist3/in) ' [in]' ]);
+
+Field.RSLC.x = Robot.L/2;
+Field.RSLC.y = Field.W - Robot.W/2 - 8.5*in;
+
+Field.RSRC.x = Robot.L/2;
+Field.RSRC.y = Robot.W/2 + 8.5*in;
+
+%-------------------------------------------------------------------------
+% Starting Points BLUE side (not used at this time)
+%-------------------------------------------------------------------------
+Field.BSR.x = Field.L - Robot.L/2;
+Field.BSR.y = Field.W - Field.RSL.y;
+
+Field.BSM.x = Field.L - Robot.L/2;
+Field.BSM.y = Field.W - Field.RSM.y;
+
+Field.BSL.x = Field.L - Robot.L/2;
+Field.BSL.y = Field.W - Field.RSR.y;
 
 
 

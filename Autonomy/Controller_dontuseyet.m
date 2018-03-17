@@ -1,16 +1,7 @@
-function [v,omega] = Controller_v001(distance, angle ,Robot) 
+function [v,omega] = Controller_dontuseyet(distance, angle ,Robot, trajectory) 
 
-
-%   Martin Krucinski 2018-03-07
-%Kp = 2.0;
-Kp = 4.0;
-
-%   2018-03-05  Martin Krucinski
-%   Try to get robot to track angle better, increase Kp_omega from 8.0 to
-%   larger value, OR IS IT Robot.omega_max that limits this???
-%   Robot.omega_max  was set to 1.0!!
-Kp_omega = 16.0;
-%Kp_omega = 32;
+Kp = 2.0;
+Kp_omega = 8.0;
     
 % Angle
 
@@ -39,3 +30,8 @@ elseif v_temp < -v_max
 else
     v = v_temp;
 end
+
+% multiply robot velocity with carrot velocity so robot keeps up with
+% carrot
+v = v * trajectory.v;
+omega = omega*trajectory.v;

@@ -206,7 +206,7 @@ for i=2:N
     
     
     % Controller code
-    [v,omega] = Controller_v001(distance, angle, Robot);
+    [v,omega] = Controller_dontuseyet(distance, angle, Robot, trajectory);
     
     % Convert v and omega to omega_l and omega_r, i.e Robot.wL, Robot.wR
     %   vL - left wheel surface velocity [m/s] (NOT angular)

@@ -1,4 +1,4 @@
-%	simulate_robot_v002.m
+%	simulate_robot_v004.m
 %
 %   For FRC 2018 PowerUp
 %   Modified for FRC 2018 Control by Adonis Canada
@@ -12,12 +12,14 @@
 %
 %   2017-03-02      Martin Krucinski  Updated with init_Robot_v002,
 %   init_Field_v002
+%
+%   2018-03-04      Martin Krucinski    Added selection of make_movies flag
 
 %   Initialize conversion constants and field elements
-init_Constants;
-Init_Robot_v002
-Init_Field_v001
-init_Trajectories_v003
+%init_Constants;
+%Init_Robot_v002
+%Init_Field_v002
+%init_Trajectories_v003
 
 %   Martin Krucinski 02/08/2018
 %   Select trajectory for testing
@@ -26,8 +28,8 @@ init_Trajectories_v003
 
 % Select trajectories to simulate
 if ~exist('trajectory', 'var')
-    trajectory = RSMR;
-    disp(' Using a default trajectory RSMR');
+    trajectory = RSML;
+    disp(' Using a default trajectory RSML');
 end
 
 
@@ -42,7 +44,7 @@ for j=1:(N-1)
     
 end
 
-if trajectory.x(1) == Field.BSML.x(1)
+if trajectory.x(1) ~= Field.RSM.x(1)
     Robot.Start_Pos.theta = 180*deg;
     
 else
@@ -90,27 +92,29 @@ Robot.vFwd_all		= zeros(N,1);	% [m/s]		robot forward velocity (in the direction 
 Robot.e_Gear_x_all  = zeros(N,1);	% [pixels]  robot gear target vision error
 Robot.target_distance_all = zeros(N,1);	% [m]  robot camera distance to target
 
-vWriter = VideoWriter('Robot_Movie','MPEG-4');	% initialize vide capture of simulation frames
-open(vWriter);									% open movie file
-
-f1		= figure; % open figure
-pos = get(f1, 'position');
-set(f1,'position', [50 50 pos(3)*2 pos(4)*1.7]);
-hold on							% ensure multiple drawing commands are overlaid on the figure
-draw_Field_v001
-draw_Trajectory(trajectory);
-
-axis('equal')					% ensure x & y directions are scale equally on screen
-xlim([-6*ft Field.L + 5*ft])					% [m]	set figure limits for x-axis
-ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
-%xlim([-30 30])
-%ylim([-20 20])
-set(f1,'DefaultLineLineWidth',3);% set figure to draw with thick lines by default
-grid on							% draw a grid on the figure
-% without erasing figure first
-
-Field.t = 0;
-%***2018 draw_Field_v002(Field)
+if make_movies,
+    vWriter = VideoWriter('Robot_Movie','MPEG-4');	% initialize vide capture of simulation frames
+    open(vWriter);									% open movie file
+    
+    f1		= figure; % open figure
+    pos = get(f1, 'position');
+    set(f1,'position', [50 50 pos(3)*2 pos(4)*1.7]);
+    hold on							% ensure multiple drawing commands are overlaid on the figure
+    draw_Field_v001
+    draw_Trajectory(trajectory);
+    
+    axis('equal')					% ensure x & y directions are scale equally on screen
+    xlim([-6*ft Field.L + 5*ft])					% [m]	set figure limits for x-axis
+    ylim([-2*ft Field.W + 2*ft])					% [m]	set figure limits for y-axis
+    %xlim([-30 30])
+    %ylim([-20 20])
+    set(f1,'DefaultLineLineWidth',3);% set figure to draw with thick lines by default
+    grid on							% draw a grid on the figure
+    % without erasing figure first
+    
+    Field.t = 0;
+    %***2018 draw_Field_v002(Field)
+end
 
 
 %	Initial conditions
@@ -279,28 +283,37 @@ for i=2:N
     Robot.y				= Robot.y + Robot.vy * Ts;			% [m]	Integrate robot y-position
     Robot.theta			= Robot.theta + Robot.omega * Ts;	% [rad]	Integrate robot angle
     
-    draw_Robot(Robot);						% Call function to draw Robot in figure
-    %***   plot( Robot.x, Robot.y , 'o');           % 2018 Simple single point robot for now
-    
-    %****draw_Field_v001(Field);
-    draw_Field_v001
-    draw_Trajectory(trajectory);
-    draw_Carrot(carrot);
-    
-    
-    displayangle = (round(angle/deg * 100)/100);
-    displaydistance = (round(distance*100)/100);
-    
-    text(Field.L/2-1, Field.W/2, ['alfa = ' num2str(displayangle) '°']);
-    text(Field.L/2-1, Field.W/2-1/2, ['distance = ' num2str(displaydistance) ' m']);
-    
-    Robot_Figure		= getframe(f1);		% Capture screenshot image of figure
-    Robot_Image			= Robot_Figure.cdata;
-    %	pause
-    
-    if i < N
-        cla         % Erase figure in preparation for next simulation step
+    if make_movies,
+        draw_Robot(Robot);						% Call function to draw Robot in figure
+        %***   plot( Robot.x, Robot.y , 'o');           % 2018 Simple single point robot for now
+        
+        %****draw_Field_v001(Field);
+        draw_Field_v001
+        draw_Trajectory(trajectory);
+        draw_Carrot(carrot);
+        
+        
+        displayangle = (round(angle/deg * 100)/100);
+        displaydistance = (round(distance*100)/100);
+        
+        text(Field.L/2-1, Field.W/2, ['alpha = ' num2str(displayangle) '°']);
+        text(Field.L/2-1, Field.W/2-1/2, ['distance = ' num2str(displaydistance) ' m']);
+        
+        text(Field.L/2-1, Field.W - 0.5, trajectory.name);
+        
+        Robot_Figure		= getframe(f1);		% Capture screenshot image of figure
+        Robot_Image			= Robot_Figure.cdata;
+        %	pause
+        
+        if i < N
+            cla         % Erase figure in preparation for next simulation step
+        end
+
+    else
+        clc
+        t
     end
+
     
     Robot.x_all(i)		= Robot.x;		% Store all robot variables in storage arrays
     Robot.y_all(i)		= Robot.y;
@@ -312,20 +325,24 @@ for i=2:N
     Robot.e_Gear_x_all(i)   = e_Gear_x;
     Robot.target_distance_all(i)    = target_distance;
     
-    writeVideo(vWriter, Robot_Image);			% Write screenshot image to video file
+    if make_movies,
+        writeVideo(vWriter, Robot_Image);			% Write screenshot image to video file
+    end
 end
 
-close(vWriter)			% Close robot simulation video file
+if make_movies,
+    close(vWriter)			% Close robot simulation video file
+end
 
 f2		= figure;				% open figure
 set(f2,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default
 grid on							% draw a grid on the figure
 hold on
-plot(all_t, Robot.wL_all, 'b');	% Plot left wheel velocities in Blue
-plot(all_t, Robot.wR_all, 'r');	% Plot right wheel velocities in Red
+plot(all_t, Robot.wL_all*Robot.R, 'b');	% Plot left wheel velocities in Blue
+plot(all_t, Robot.wR_all*Robot.R, 'r');	% Plot right wheel velocities in Red
 hold off
 xlabel('t [s]')
-ylabel('omega [rad/s]')
+ylabel('v [m/s]')
 
 
 f3		= figure;				% open figure

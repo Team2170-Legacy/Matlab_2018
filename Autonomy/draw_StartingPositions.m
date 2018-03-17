@@ -6,3 +6,11 @@ ARSR = plot(Field.RSR.x, Field.RSR.y, 'rx');
 ABSL = plot(Field.BSL.x, Field.BSL.y, 'bx');
 ABSM = plot(Field.BSM.x, Field.BSM.y, 'bx');
 ABSR = plot(Field.BSR.x, Field.BSR.y, 'bx');
+ 
+% left corner red side 
+ARSLC = plot(Field.RSLC.x, Field.RSLC.y, 'rx');
+
+% right corner red side 
+ARSRC = plot(Field.RSRC.x, Field.RSRC.y, 'rx');
+
+
