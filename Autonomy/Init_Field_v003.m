@@ -92,10 +92,10 @@ Field.ScaleRamp.br_y = Field.ScaleRamp.bl_y;
 
 
 %Top Plate of Scale from Looking Down (Red side is on the right)
-Field.Scale.TopP.br_x = Field.L/2+2*ft;
+Field.Scale.TopP.br_x = (Field.L/2)+2*ft;
 Field.Scale.TopP.br_y = 18*ft;
 
-Field.Scale.TopP.bl_x = Field.L/2-2*ft;
+Field.Scale.TopP.bl_x = (Field.L/2)-2*ft;
 Field.Scale.TopP.bl_y = Field.Scale.TopP.br_y;
 
 Field.Scale.TopP.tl_x = Field.Scale.TopP.bl_x;

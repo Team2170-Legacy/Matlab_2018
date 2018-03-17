@@ -13,6 +13,7 @@ make_movies = true
 %make_movies = false 
 
 all_Trajectories_String = {
+<<<<<<< HEAD
 %     'Arc'
 %     'Straight'
 %     'RSMLF'
@@ -32,6 +33,26 @@ all_Trajectories_String = {
 % 'RSLCRB'
 % 'RSRCLB'
 'SecondCubeLeftSwitch'
+=======
+    'Arc'
+    'Straight'
+    'RSMLF'
+    'RSMRF'
+    'RSMLS'
+    'RSMRS'
+    'RSLLF'
+    'RSLRF'
+    'RSLLS'
+    'RSLRS'
+    'RSRLF'
+    'RSRRF'
+    'RSRLS'
+    'RSRRS'
+'RSLCLS'
+'RSRCRS'
+'RSLCRB'
+'RSRCLB'
+>>>>>>> refs/remotes/origin/master
     };
 
 for traj = 1:length(all_Trajectories_String)
