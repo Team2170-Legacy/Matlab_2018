@@ -1,4 +1,4 @@
-%	simulate_robot_v004.m
+%	simulate_robot_v005.m
 %
 %   For FRC 2018 PowerUp
 %   Modified for FRC 2018 Control by Adonis Canada
@@ -51,8 +51,8 @@ end
 %     Robot.Start_Pos.theta = 0*deg;
 % end
 
-if exist('trajectory.theta_start', 'var')
-    Robot.Start_Pos.theta = trajectory.thetha_start;
+if isfield(trajectory, 'theta_start')
+    Robot.Start_Pos.theta = trajectory.theta_start;
 else 
     Robot.Start_Pos.theta = 0*deg;
 end 
@@ -208,12 +208,20 @@ for i=2:N
     percentage = t/total_time*100;
     
     % Get carrot
-    [carrot] = get_Carrot(percentage, trajectory);
+   % [carrot] = get_Carrot(percentage, trajectory);
+    [carrot, forward_flag] = get_Carrot_v002(percentage, trajectory);
     
     % Calculate distance/angle
     %    [angle,distance] = calcAngleandDistance(carrot,Robot);
     [angle,distance] = calcAngleandDistance_v2(carrot,Robot);
     
+    if (~forward_flag)
+        if (angle<=0)
+        angle = (angle+180*deg);
+        else 
+        angle = (angle-180*deg);
+        end 
+    end
     
     % Controller code
     [v,omega] = Controller_v001(distance, angle, Robot);

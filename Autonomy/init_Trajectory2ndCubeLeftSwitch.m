@@ -1,13 +1,3 @@
-init_Constants
-Init_Robot_v002
-Init_Field_v003
-f1=figure;
-hold on;
-draw_Field_v001
-axis equal;
-
-% init_Trajectories_v006
-% edge of cube and corner of cube to center of mass of robot is 18"
 
 dx1             = sqrt(18*in^2/2);
 dy1             = dx1;
@@ -32,4 +22,17 @@ y = [...
     cube_corner_y+dy1
     ];
 
-plot (x, y, 'c-o');
+SecondCubeLeftSwitch.x = x;
+SecondCubeLeftSwitch.y = y;
+SecondCubeLeftSwitch.v = 2.0;
+SecondCubeLeftSwitch.t_final = 3.0;
+SecondCubeLeftSwitch.name = 'SecondCubeLeftSwitch';
+SecondCubeLeftSwitch.theta_start = -90*deg;
+SecondCubeLeftSwitch.Drive_Forward = [...
+    false
+    false
+    false
+    true
+    true
+    ];
+

@@ -9,9 +9,11 @@ Init_Field_v003
 % 03/07/2018    New trajectory names
 init_Trajectories_v006
 
-make_movies = true %false
+make_movies = true
+%make_movies = false 
 
 all_Trajectories_String = {
+<<<<<<< HEAD
 %     'Arc'
 %     'Straight'
 %     'RSMLF'
@@ -26,10 +28,31 @@ all_Trajectories_String = {
 %     'RSRRF'
 %     'RSRLS'
 %     'RSRRS'
-%'RSLCLS'
-%'RSRCLS'
+% 'RSLCLS'
+% 'RSRCRS'
+% 'RSLCRB'
+% 'RSRCLB'
+'SecondCubeLeftSwitch'
+=======
+    'Arc'
+    'Straight'
+    'RSMLF'
+    'RSMRF'
+    'RSMLS'
+    'RSMRS'
+    'RSLLF'
+    'RSLRF'
+    'RSLLS'
+    'RSLRS'
+    'RSRLF'
+    'RSRRF'
+    'RSRLS'
+    'RSRRS'
+'RSLCLS'
+'RSRCRS'
 'RSLCRB'
 'RSRCLB'
+>>>>>>> refs/remotes/origin/master
     };
 
 for traj = 1:length(all_Trajectories_String)
@@ -43,7 +66,7 @@ for traj = 1:length(all_Trajectories)
     trajectory  = all_Trajectories{traj};
     trajString  = all_Trajectories_String{traj};
     
-    simulate_robot_v004;
+    simulate_robot_v005;
     
     t_final     = all_t(end);
     
