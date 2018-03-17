@@ -5,4 +5,4 @@ RSRCRS.y = [Field.RSRC.y, Field.RSRC.y, Field.RSwitch.RightP.br_y-Robot.L/2 + RS
 RSRCRS.v = 2.0;
 %RSRCRS.t_final = traj_length(RSRCRS) / RSRCRS.v  * 1.3;
 RSRCRS.t_final = traj_length(RSRCRS) / RSRCRS.v  * 1.3;
-RSRCRS.name = 'RSRCLS';
+RSRCRS.name = 'RSRCRS';

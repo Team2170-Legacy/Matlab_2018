@@ -215,10 +215,11 @@ disp ('RSLCLS via points initialized...');
 init_TrajectoryRSRCRS
 disp ('RSRCLS via points initialized...');
 
+init_TrajectoryRSLCRB
+disp ('RSLCRB via points initialized...');
+
 init_TrajectoryRSRCLB
 disp ('RSRCLB via points initialized...');
 
-init_TrajectoryRSLCRB
-disp ('RSLCRB via points initialized...');
 
 

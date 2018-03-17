@@ -26,8 +26,8 @@ all_Trajectories_String = {
 %     'RSRRF'
 %     'RSRLS'
 %     'RSRRS'
-%'RSLCLS'
-%'RSRCLS'
+'RSLCLS'
+'RSRCRS'
 'RSLCRB'
 'RSRCLB'
     };

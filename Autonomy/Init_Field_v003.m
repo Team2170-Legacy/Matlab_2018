@@ -78,14 +78,24 @@ Field.BSwitch.LeftP.br_x = Field.BSwitch.LeftP.tr_x;
 Field.BSwitch.LeftP.br_y =Field.RSwitch.LeftP.br_y;
 
 % Scale Ramps (Areas below scale)
+Field.ScaleRamp.bl_x = 261.47*in;
+Field.ScaleRamp.bl_y = 95.25*in;
 
+Field.ScaleRamp.tl_x = 261.47*in;
+Field.ScaleRamp.tl_y = Field.W - Field.ScaleRamp.bl_y;
+
+Field.ScaleRamp.tr_x = Field.L - Field.ScaleRamp.tl_x;
+Field.ScaleRamp.tr_y = Field.ScaleRamp.tl_y;
+
+Field.ScaleRamp.br_x = Field.ScaleRamp.tr_x;
+Field.ScaleRamp.br_y = Field.ScaleRamp.bl_y;
 
 
 %Top Plate of Scale from Looking Down (Red side is on the right)
-Field.Scale.TopP.br_x = 29.5 * ft;
+Field.Scale.TopP.br_x = Field.L/2+2*ft;
 Field.Scale.TopP.br_y = 18*ft;
 
-Field.Scale.TopP.bl_x = 25.5*ft;
+Field.Scale.TopP.bl_x = Field.L/2-2*ft;
 Field.Scale.TopP.bl_y = Field.Scale.TopP.br_y;
 
 Field.Scale.TopP.tl_x = Field.Scale.TopP.bl_x;
