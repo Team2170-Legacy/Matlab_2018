@@ -10,49 +10,28 @@ Init_Field_v003
 init_Trajectories_v006
 
 make_movies = true
-%make_movies = false 
+%make_movies = false
 
 all_Trajectories_String = {
-<<<<<<< HEAD
-%     'Arc'
-%     'Straight'
-%     'RSMLF'
-%     'RSMRF'
-%     'RSMLS'
-%     'RSMRS'
-%     'RSLLF'
-%     'RSLRF'
-%     'RSLLS'
-%     'RSLRS'
-%     'RSRLF'
-%     'RSRRF'
-%     'RSRLS'
-%     'RSRRS'
-% 'RSLCLS'
-% 'RSRCRS'
-% 'RSLCRB'
-% 'RSRCLB'
-'SecondCubeLeftSwitch'
-=======
-    'Arc'
-    'Straight'
-    'RSMLF'
-    'RSMRF'
-    'RSMLS'
-    'RSMRS'
-    'RSLLF'
-    'RSLRF'
-    'RSLLS'
-    'RSLRS'
-    'RSRLF'
-    'RSRRF'
-    'RSRLS'
-    'RSRRS'
-'RSLCLS'
-'RSRCRS'
-'RSLCRB'
-'RSRCLB'
->>>>>>> refs/remotes/origin/master
+    %     'Arc'
+    %     'Straight'
+    %     'RSMLF'
+    %     'RSMRF'
+    %     'RSMLS'
+    %     'RSMRS'
+    %     'RSLLF'
+    %     'RSLRF'
+    %     'RSLLS'
+    %     'RSLRS'
+    %     'RSRLF'
+    %     'RSRRF'
+    %     'RSRLS'
+    %     'RSRRS'
+    % 'RSLCLS'
+    % 'RSRCRS'
+    % 'RSLCRB'
+    % 'RSRCLB'
+    'SecondCubeLeftSwitch'
     };
 
 for traj = 1:length(all_Trajectories_String)
