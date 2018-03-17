@@ -291,6 +291,12 @@ Field.BSM.y = Field.W - Field.RSM.y;
 Field.BSL.x = Field.L - Robot.L/2;
 Field.BSL.y = Field.W - Field.RSR.y;
 
+Field.BSLC.x = Field.L - Robot.L/2;
+Field.BSLC.y = Field.W - Field.RSLC.y;
+
+Field.BSRC.x = Field.L - Robot.L/2;
+Field.BSRC.y = Field.W - Field.RSRC.y;
+
 
 
 

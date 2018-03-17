@@ -13,4 +13,8 @@ ARSLC = plot(Field.RSLC.x, Field.RSLC.y, 'rx');
 % right corner red side 
 ARSRC = plot(Field.RSRC.x, Field.RSRC.y, 'rx');
 
+% Left Corner Blue Side
+ABSLC = plot(Field.BSLC.x, Field.BSLC.y, 'bx');
 
+% Right Corner Blue Side
+ABSRC = plot(Field.BSRC.x, Field.BSRC.y, 'bx');
