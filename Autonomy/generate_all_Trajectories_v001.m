@@ -6,8 +6,8 @@ init_Trajectories_v003
 
 
 all_Trajectories_String = {
-%    'Arc'
-%    'Straight'
+    'Arc'
+    'Straight'
 %    'BSML'
 %    'BSMLS'
 %    'BSMR'

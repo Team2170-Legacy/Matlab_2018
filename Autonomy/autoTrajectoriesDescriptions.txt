@@ -19,7 +19,33 @@ Encoder error was 20 - 24 counts
 Change values to:
 Robot.R = 0.0642
 
-Rbot.d = 
+Robot.d	= (24 + 7/8)*1.067*in;		% distance between wheel centerlines
+
+Increased further after RSML was short on the move, and slightly under-angled at the end
+increase andother 3.3%
+Robot.d	= (24 + 7/8)*1.067*1.033*in;		% distance between wheel centerlines
+
+This did NOT improve the move distance much, still a bit short.
+
+Try decreaseing Robot.R by 2% to have the robot move 2% further:
+Robot.R = 2.5*in  * (118+3/4)/120 / 1.02;         % [m]		Robot wheel radius
+
+with REAL robot:
+Straight: 10 ft move: 123 in
+Arc: 	> 190 deg
+
+Revert LAST changes to dimensions! Change back to:
+Robot.d	= (24 + 7/8)*1.067*in;		% distance between wheel centerlines
+Robot.R = 2.5*in  * (118+3/4)/120;         % [m]		Robot wheel radius
+
+Most likely cause of the robot NOT driving far enough into the switch (6-8 in short)
+is a DIMENSIONAL mismatch in the simulator.
+
+Test: Switch left is 8 in short. 
+Straight is 121" (1 in over)
+Arc is 190 deg, couple inches too far
+
+
 
 On 180 deg arc move.
 Final angle error is 12 deg, i.e.6.7% off.
@@ -52,6 +78,14 @@ Straight
 
 RSML
     - 9.0019 ft. change in x from start to end
+
+Trial 1: 105 in, 3 in short
+Trial 2: 106 in, 2 in short
+Trial 3: 10 ft straight move: 10 ft exactly,
+so DON'T change wheel R
+Increase
+
+
     - 6 ft. change in y
     - Goes forward about 1 meter
     - Turns right, about 45°
