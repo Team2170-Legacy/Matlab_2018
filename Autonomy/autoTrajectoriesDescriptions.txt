@@ -1,4 +1,5 @@
-2/27/2018   By Adonis Canada, Priyanshu Agrawal, Baris Sengezen
+2/27/2018   	By Adonis Canada, Priyanshu Agrawal, Baris Sengezen
+3/3/2018	Calibration by Martin Krucinski
 
 
 From the red side:
@@ -10,6 +11,10 @@ Robot moving backwards causes a decrease in x
 
 
 *All robots must start against the nearest wall*
+
+--------------------------------------------------------------------------
+Notes 03/03/2018
+--------------------------------------------------------------------------
 Wheel centerline distance
 24 7/8 in = 0.6318 m (not 25")
 
@@ -27,21 +32,21 @@ Robot.d	= (24 + 7/8)*1.067*1.033*in;		% distance between wheel centerlines
 
 This did NOT improve the move distance much, still a bit short.
 
-Try decreaseing Robot.R by 2% to have the robot move 2% further:
+Try decreasing Robot.R by 2% to have the robot move 2% further:
 Robot.R = 2.5*in  * (118+3/4)/120 / 1.02;         % [m]		Robot wheel radius
 
 with REAL robot:
 Straight: 10 ft move: 123 in
 Arc: 	> 190 deg
 
-Revert LAST changes to dimensions! Change back to:
-Robot.d	= (24 + 7/8)*1.067*in;		% distance between wheel centerlines
-Robot.R = 2.5*in  * (118+3/4)/120;         % [m]		Robot wheel radius
+REVERT LAST changes to dimensions! Change back to:
+Robot.d	= (24 + 7/8)*1.067*in;              % distance between wheel centerlines
+Robot.R = 2.5*in  * (118+3/4)/120;          % [m]		Robot wheel radius
 
 Most likely cause of the robot NOT driving far enough into the switch (6-8 in short)
 is a DIMENSIONAL mismatch in the simulator.
 
-Test: Switch left is 8 in short. 
+Test: Switch left is 8 in short. WHAT WAS THE ABSOLUTE MOVE DISTANCE?
 Straight is 121" (1 in over)
 Arc is 190 deg, couple inches too far
 
@@ -52,13 +57,15 @@ Final angle error is 12 deg, i.e.6.7% off.
 Increase simulator spacing by 6.7%,
 i.e. 24 7/8 * 1.067
 
+--------------------------------------------------------------------------
 
 Ignore the Left and Right Starting Positions
 Left Starting Position
-    - 1.563 ft. away from the closest edge of robot toleft wall
+    - 1.563 ft. away from the closest edge of robot to left wall
 
 Middle Starting Position
     - 0.5633 ft. away from the closest edge of robot to right side of red exchange zone
+	= 6.8 in away
 
 Right Starting Position
     - 1.83 ft. away from closest edge of  from right wall
@@ -110,3 +117,86 @@ BSML
     - 9.0019 ft. change in x from start to end
     - 6 ft. change in y from start to end
     - Reflection of RSML (goes the other way)
+
+--------------------------------------------------------------------------
+Notes 03/04/2018
+--------------------------------------------------------------------------
+
+Reviewed field dimensions.
+Wrote script "check_Robot_moves_v001" to check the robot move distances.
+
+According to field dimensions, robot should move 105.5 in along x.
+Switch is 140 in away from base line.
+
+Our scripts wants to move robot 108.09 in.
+This is because the ending position is back calculated from Field.RSwitch.LVT_x
+which is more than the 140 in.
+Field.RSwitch.LVT_x/in = 142.59
+(Field.RSwitch.LVT_x - Robot.L/2 ) /in = 125.34
+Ending x-position in RSML trajectory is:
+RSML.x(8)/in = 125.34
+
+So it seems the simulator uses a move distance of approx 108 in, which is 2.5 in too far,
+which corresponds to the extra 2.5 in in calculation of RMSL.x(8)
+
+*** BUT ***
+
+during tests we were 2.5 in short of move distance, I believe 105.5 instead of 108 in,
+but this SHOULD HAVE BEEN the correct move distance according to drawings,
+but this was 8 in SHORT of our Switch location.... Why????
+
+
+>> save sim_results_RSML
+>> check_Robot_moves_v001
+RSML move - Start Middle to Left Switch [in]
+
+test1_str =
+
+    '(RSML.x(8) - RSML.x(1))/in'
+
+
+ans =
+
+  108.0935
+
+Switch distance - robot length [in]
+
+test2_str =
+
+    '(140*in - Robot.L)/in'
+
+
+ans =
+
+  105.5000
+
+>> (Robot.x_all(end) - Robot.x_all(1))/in
+
+ans =
+
+  107.8704
+
+--------------------------------------------------------------------------
+Notes 03/07/2018
+--------------------------------------------------------------------------
+
+
+R03. In the STARTING CONFIGURATION, the maximum ROBOT size (excluding BUMPERS) must be
+constrained to a volume of 33 in. by 28 in. by 55 in. tall (~83 cm by ~71 cm by ~139 cm tall).
+Minor protrusions permitted in R01 and R02 (that are less than ¼ in. (~6.3 mm) such as bolt
+heads, fastener ends, weld beads, and rivets) are exempt from the 33 in. and 28 in. limits.
+
+With bumpers:
+
+Bumpers are approx. 1 + 2 1/2 in = 3 1/2 in, i.e. a total on two sides of 7 in.
+
+So max robot dimensions are 
+33 + 7 = 40 in  by
+28 + 7 = 35 in
+
+Use these in setup of start positions!
+As middle M start position, use the current position of y = 12 ft,
+which puts our robot 7 in to the right of the Exchange Zone tape.
+As right R start position, use a distance of max robot width 40 in + 10 in safety margin = 50 in
+to the right of M.
+
