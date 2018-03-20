@@ -1,13 +1,15 @@
+% Top Left Corner
 
+plot([0 36*in], [Field.W - 29.69*in Field.W], 'b-');
 
-% Red Side Right Corner
-plot([Field.CornerLine.RR.P1_x, Field.CornerLine.RR.P2_x], [Field.CornerLine.RR.P1_y, Field.CornerLine.RR.P2_y], 'r-');
+% Top Right Corner
 
-% Red Side Left Corner
-plot([Field.CornerLine.RL.P1_x, Field.CornerLine.RL.P2_x], [Field.CornerLine.RL.P1_y, Field.CornerLine.RL.P2_y], 'r-');
+plot([Field.L - 36*in Field.L], [Field.W Field.W - 29.69*in], 'r-');
 
-% Blue Side Right Corner
-plot([Field.CornerLine.BR.P1_x, Field.CornerLine.BR.P2_x ], [Field.CornerLine.BR.P1_y, Field.CornerLine.BR.P2_y], 'b-');
+% Bottom Left Corner
 
-% Blue Left Corner
-plot([Field.CornerLine.BL.P1_x, Field.CornerLine.BL.P2_x ], [Field.CornerLine.BL.P1_y, Field.CornerLine.BL.P2_y], 'b-');
+plot([0 36*in], [29.69*in 0], 'b-');
+
+% Bottom Right Corner
+
+plot([Field.L - 36*in Field.L], [0 29.69*in], 'r-');

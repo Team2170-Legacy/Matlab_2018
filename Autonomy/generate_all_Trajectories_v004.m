@@ -27,12 +27,11 @@ all_Trajectories_String = {
     %     'RSRRF'
     %     'RSRLS'
     %     'RSRRS'
-    'RSLCLS'
+    % 'RSLCLS'
     % 'RSRCRS'
     % 'RSLCRB'
     % 'RSRCLB'
     'SecondCubeLeftSwitch'
-    'SecondCubeLeftSwitchFoward'
     };
 
 for traj = 1:length(all_Trajectories_String)
