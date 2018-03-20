@@ -1,5 +1,5 @@
 %   init_Trajectories
-%   Version 5
+%   Version 6
 %
 %    Adonis Canada, Priyanshu Agrawal, Baris Sengezen
 %
@@ -228,5 +228,7 @@ disp ('RSRCLB via points initialized...');
 init_Trajectory2ndCubeLeftSwitch
 disp ('SecondCubeLeftSwitch via points initialized...');
 
+init_Trajectory2ndCubeLeftSwitchForward
+disp ('SecondCubeLeftSwitchForward via points initialized...');
 
 

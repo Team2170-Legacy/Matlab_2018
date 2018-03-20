@@ -1,3 +1,4 @@
+
 Field.L = 54*ft;
 Field.W = 27*ft;
 
@@ -248,6 +249,34 @@ Field.BluePyramid.Cube5_y = Field.RedPyramid.Cube5_y;
 Field.BluePyramid.Cube6_x = Field.L - Field.RedPyramid.Cube6_x;
 Field.BluePyramid.Cube6_y = Field.RedPyramid.Cube6_y;
 
+% Corner Line
+% First Point for red touches alliance station
+% Second Point for blue touches alliance station
+
+% Red Right
+Field.CornerLine.RR.P1_x = 0*in;
+Field.CornerLine.RR.P1_y = 29.69*in;
+Field.CornerLine.RR.P2_x = 36*in;
+Field.CornerLine.RR.P2_y = 0*in;
+
+% Red Left
+Field.CornerLine.RL.P1_x = 0*in;
+Field.CornerLine.RL.P1_y = Field.W - Field.CornerLine.RR.P1_y;
+Field.CornerLine.RL.P2_x = 36*in;
+Field.CornerLine.RL.P2_y = Field.W;
+
+% Blue Right
+Field.CornerLine.BR.P1_x = Field.L - 36*in;
+Field.CornerLine.BR.P1_y = Field.W;
+Field.CornerLine.BR.P2_x = Field.L;
+Field.CornerLine.BR.P2_y = Field.W - 26.29*in;
+
+%Blue Left 
+Field.CornerLine.BL.P1_x = Field.L - 36*in;
+Field.CornerLine.BL.P1_y = 0;
+Field.CornerLine.BL.P2_x = Field.L;
+Field.CornerLine.BL.P2_y = 26.29*in;
+
 %-------------------------------------------------------------------------
 % Starting Points RED side, needs to be changed
 %-------------------------------------------------------------------------
@@ -274,10 +303,10 @@ disp([ 'RSL.y distance to the LEFT of Red Exchange tape edge = ' ...
     num2str(the_dist3) ' [m] = ' num2str(the_dist3/in) ' [in]' ]);
 
 Field.RSLC.x = Robot.L/2;
-Field.RSLC.y = Field.W - Robot.W/2 - 8.5*in;
+Field.RSLC.y = Field.CornerLine.RL.P1_y - Robot.W/2 - 8.5*in;
 
 Field.RSRC.x = Robot.L/2;
-Field.RSRC.y = Robot.W/2 + 8.5*in;
+Field.RSRC.y = Field.CornerLine.RR.P1_y + Robot.W/2 + 8.5*in;
 
 %-------------------------------------------------------------------------
 % Starting Points BLUE side (not used at this time)
@@ -296,9 +325,7 @@ Field.BSLC.y = Field.W - Field.RSLC.y;
 
 Field.BSRC.x = Field.L - Robot.L/2;
 Field.BSRC.y = Field.W - Field.RSRC.y;
-
-
-
+ 
 
 
 
