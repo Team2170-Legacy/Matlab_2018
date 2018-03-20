@@ -10,7 +10,7 @@ x = [ ...
     cube_corner_x+Robot.L
     cube_corner_x+2*Robot.L-4*in
     cube_corner_x+Robot.L
-    cube_corner_x+dx1
+    cube_corner_x+dx1+Robot.L/sqrt(2)
     ];
 
 y = [...
@@ -19,7 +19,7 @@ y = [...
     cube_corner_y+Robot.L
     cube_corner_y+2*Robot.L-4*in
     cube_corner_y+Robot.L
-    cube_corner_y+dy1
+    cube_corner_y+dy1+Robot.L/sqrt(2)
     ];
 
 SecondCubeLeftSwitch.x = x;

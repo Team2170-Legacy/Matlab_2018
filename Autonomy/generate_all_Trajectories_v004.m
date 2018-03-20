@@ -45,7 +45,7 @@ for traj = 1:length(all_Trajectories)
     trajectory  = all_Trajectories{traj};
     trajString  = all_Trajectories_String{traj};
     
-    simulate_robot_v005;
+    simulate_robot_v006;
     
     t_final     = all_t(end);
     
