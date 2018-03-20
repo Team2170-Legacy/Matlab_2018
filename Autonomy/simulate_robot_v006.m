@@ -182,7 +182,13 @@ Robot.wL_all		= zeros(N,1);	% [rad/s]	robot Left wheel angular velocities
 Robot.wR_all		= zeros(N,1);	% [rad/s]	robot Right wheel angular velocities
 
 switch_direction    = false;        % flag to keep track of when trajectory direction switches
-prev_forward_flag   = trajectory.Drive_Forward(1);
+% prev_forward_flag   = trajectory.Drive_Forward(1);
+
+prev_forward_flag = true;
+if isfield(trajectory, 'Drive_Forward')
+    prev_forward_flag   = trajectory.Drive_Forward(1);
+end
+
 prev_distance       = 0;
 distance            = 0;
 timer               = 0.0;
