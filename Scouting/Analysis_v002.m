@@ -21,6 +21,8 @@ disp("Teams with this value...");
 disp(num2str(medianFriendlySwitchCubes_TeamNums));
 disp("Mean of friendly switch cubes: " + meanFriendlySwitchCubes);
 
+% Plot data (possibly)
+
 %% Find median/mean of opposing switch cubes and corresponding team number
 meanOpposingSwitchCubes = mean(WaterburyData.OpposingSwitchCubes);
 
@@ -59,18 +61,54 @@ end
 
 % Find num successful climbs per team
 numSuccessfulClimbs_AllTeams = zeros(1, numTeams);
+allClimbs = find(WaterburyData.Climbing == 2);
+allClimbs_Teams = WaterburyData.TeamNumber(allClimbs);
 
-for i = 1:numTeams
-    allClimbs = find(WaterburyData.Climbing == 2);
-    allClimbs_Teams = WaterburyData.TeamNumber(allClimbs);
-
-    for j = 1:size(allClimbs, 1)
-        
+for i = 1:size(allClimbs_Teams, 1)
+    for j = 1:numTeams
+        if (allClimbs_Teams(i) == allTeams(j))
+            numSuccessfulClimbs_AllTeams(j) =  numSuccessfulClimbs_AllTeams(j) + 1;
+        end
     end
+end
 
-    numSuccessfulClimbs_AllTeams = 
+successfulClimbEquation = numSuccessfulClimbs_AllTeams' ./ totalNumMatches_AllTeams' .* 100;     % ./ is element wise division
+
+% Plot this data
+% X-axis: Teams
+% Y-axis: % sucessful climbs
+figure;
+bar(successfulClimbEquation);
+allTeams_cells = cellstr(str2mat(num2str(allTeams)));
+a1 = gca;
+set(a1, 'XTickLabels', allTeams_cells);
+set(a1, 'XTick', [1:size(allTeams, 1)]);
+xlabel('Team #');
+ylabel('% of successful climbs');
+set(a1, 'XTickLabelRotation', 45);
+title('FRC Team 2170 Scouting Data')
 
 %% Mean and median of scale cubes
+meanScaleCubes = mean(WaterburyData.ScaleCubes);
+medianScaleCubes = median(WaterburyData.ScaleCubes);
+
+medianScaleCubes_TeamIdxs = find(WaterburyData.OpposingSwitchCubes == medianScaleCubes);            % Find team indexes in table for friend switch cubes equal to median
+medianScaleCubes_TeamNums = WaterburyData.TeamNumber(medianScaleCubes_TeamIdxs);                    % Corresponding teams for those values
+medianScaleCubes_TeamNums = unique(medianScaleCubes_TeamNums);                                      % updated with no team number reptitions and sorted
+
+minScaleCubes = min(WaterburyData.ScaleCubes);
+maxScaleCubes = max(WaterburyData.ScaleCubes);
+maxScaleCubes_TeamNum = WaterburyData.TeamNumber(find(WaterburyData.ScaleCubes == maxScaleCubes));
+
+% Display part
+disp("----------------------------------------------------------------------------------------------");
+disp("Median number of scale cubes: " + num2str(medianScaleCubes));
+disp("Teams with this value...");
+disp(num2str(medianScaleCubes_TeamNums));
+disp("Mean of scale cubes: " + meanScaleCubes);
+disp("Minimum scale cubes: " + minScaleCubes);
+%str1 = sprintf('Maximum opposing switch cubes: ' + maxOpposingSwitchCubes + '\t' + '(Team ' + maxOpposingSwitchCubes_TeamNum + 
+disp("Maximum opposing switch cubes: " + maxScaleCubes + "     " + "(Team " + maxScaleCubes_TeamNum + ")");
 
 %% Mean and median of vault cubes
 
