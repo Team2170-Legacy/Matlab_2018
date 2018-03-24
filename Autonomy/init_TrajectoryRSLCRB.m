@@ -8,8 +8,8 @@ RSLCRB.x = [...
 RSLCRB.y = [...
     Field.RSLC.y,  
     Field.RSLC.y,
-    Field.RSRC.y, 
-    Field.RSRC.y,  
+    Field.RSRC.y-.2, 
+    Field.RSRC.y-.2,  
     Field.RSwitch.RightP.br_y + RSRCLB.add_y - Robot.L/2];
 RSLCRB.v = 2.0;
 %RSLCRB.t_final = traj_length(RSLCRB) / RSLCRB.v  * 1.3;
