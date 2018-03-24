@@ -17,8 +17,8 @@ grid on
 
 draw_Trajectory(RSLCLS);
 draw_Trajectory(RSRCRS);
-%draw_Trajectory(RSRCLB);
-%draw_Trajectory(RSLCRB);
+draw_Trajectory(RSRCLB);
+draw_Trajectory(RSLCRB);
 draw_Trajectory(SecondCubeRightSwitch);
 draw_Trajectory(SecondCubeRightSwitchForward);
 draw_Trajectory(SecondCubeLeftSwitch);

@@ -125,8 +125,8 @@ SecondCubeLeftSwitchForward.add_y = 3*in/sqrt(2);
 SecondCubeRightSwitch.add_x = -15*in/sqrt(2);
 SecondCubeRightSwitch.add_y = -15*in/sqrt(2);
 
-SecondCubeRightSwitchForward.add_x = 0.0;
-SecondCubeRightSwitchForward.add_y = 0.0;
+SecondCubeRightSwitchForward.add_x = 3*in/sqrt(2);
+SecondCubeRightSwitchForward.add_y = -3*in/sqrt(2);
 
 
 

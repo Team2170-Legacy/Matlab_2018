@@ -171,9 +171,12 @@ Field.AutoLineBlue = AutoLineBlue;
 
 %Cubes
 %Cubes in Red Platform Zone
-space = 26.2/12*ft;
+spaceBetweenSwitches = Field.RSwitch.LeftP.tl_y - Field.RSwitch.RightP.bl_y;
+space = (spaceBetweenSwitches- 6*13*in)/5  + 13*in;
+
 Field.RedPlatZone.Cube1_x = Field.RSwitch.RightP.br_x+13/2*in;
-Field.RedPlatZone.Cube1_y = 8.041667*ft;
+Field.RedPlatZone.Cube1_y = Field.RSwitch.RightP.br_y+13/2*in;
+%Field.RedPlatZone.Cube1_y = 8.041667*ft;
 
 Field.RedPlatZone.Cube2_x = Field.RedPlatZone.Cube1_x;
 Field.RedPlatZone.Cube2_y = Field.RedPlatZone.Cube1_y + space;
