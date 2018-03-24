@@ -1,14 +1,12 @@
 figure
 hold on
-init_Constants
-Init_Robot_v002
-Init_Field_v001
+ Init 
+ draw_Field_v001
 
 Arcade = plot([0 Field.L Field.L 0 0], [0 0 Field.W Field.W 0],'gre');
 
 grid on
-draw_Field_v001
-init_Trajectories_v006
+
 
 % draw_Trajectory(RSMRS);
 % draw_Trajectory(RSMLS);
@@ -19,5 +17,11 @@ init_Trajectories_v006
 
 draw_Trajectory(RSLCLS);
 draw_Trajectory(RSRCRS);
-draw_Trajectory(RSRCLB);
-draw_Trajectory(RSLCRB);
+%draw_Trajectory(RSRCLB);
+%draw_Trajectory(RSLCRB);
+draw_Trajectory(SecondCubeRightSwitch);
+draw_Trajectory(SecondCubeRightSwitchForward);
+draw_Trajectory(SecondCubeLeftSwitch);
+draw_Trajectory(SecondCubeLeftSwitchForward);
+
+

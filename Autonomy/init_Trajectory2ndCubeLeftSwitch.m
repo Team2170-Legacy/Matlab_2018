@@ -8,18 +8,18 @@ x = [ ...
     (Field.RSwitch.LeftP.tl_x+Field.RSwitch.LeftP.tr_x)/2
     (Field.RSwitch.LeftP.tl_x+Field.RSwitch.LeftP.tr_x)/2
     cube_corner_x+Robot.L
-    cube_corner_x+2*Robot.L-4*in
+    cube_corner_x+2*Robot.L-4*in-.5
     cube_corner_x+Robot.L
-    cube_corner_x+dx1+Robot.L/sqrt(2)
+    cube_corner_x+dx1+Robot.L/sqrt(2)+ SecondCubeLeftSwitch.add_x;
     ];
 
 y = [...
     Field.RSwitch.LeftP.tl_y+Robot.L/2
     cube_corner_y+Robot.L
     cube_corner_y+Robot.L
-    cube_corner_y+2*Robot.L-4*in
+    cube_corner_y+2*Robot.L-4*in-.5
     cube_corner_y+Robot.L
-    cube_corner_y+dy1+Robot.L/sqrt(2)
+    cube_corner_y+dy1+Robot.L/sqrt(2)+SecondCubeLeftSwitch.add_y;
     ];
 
 SecondCubeLeftSwitch.x = x;

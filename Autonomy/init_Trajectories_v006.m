@@ -116,10 +116,17 @@ RSRCLB.add_y = 0.0;
 RSLCRB.add_x = 0.0;
 RSLCRB.add_y = 0.0;
 
-SecondCubeLeftSwitch.add_x = 0.0;
-SecondCubeLeftSwitch.add_y = 0.0;
+SecondCubeLeftSwitch.add_x =  -15*in/sqrt(2);
+SecondCubeLeftSwitch.add_y = -15*in/sqrt(2);
 
+SecondCubeLeftSwitchForward.add_x = 3*in/sqrt(2);
+SecondCubeLeftSwitchForward.add_y = 3*in/sqrt(2);
 
+SecondCubeRightSwitch.add_x = -15*in/sqrt(2);
+SecondCubeRightSwitch.add_y = -15*in/sqrt(2);
+
+SecondCubeRightSwitchForward.add_x = 0.0;
+SecondCubeRightSwitchForward.add_y = 0.0;
 
 
 
@@ -230,5 +237,11 @@ disp ('SecondCubeLeftSwitch via points initialized...');
 
 init_Trajectory2ndCubeLeftSwitchForward
 disp ('SecondCubeLeftSwitchForward via points initialized...');
+
+init_Trajectory2ndCubeRightSwitch
+disp ('SecondCubeRightSwitch via points initialized...');
+
+init_Trajectory2ndCubeRightSwitchForward
+disp ('SecondCubeRightSwitchForward via points initialized...');
 
 
