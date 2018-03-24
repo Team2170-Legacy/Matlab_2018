@@ -244,4 +244,8 @@ disp ('SecondCubeRightSwitch via points initialized...');
 init_Trajectory2ndCubeRightSwitchForward
 disp ('SecondCubeRightSwitchForward via points initialized...');
 
+init_Trajectory2ndCubeLeftSwitchArc
+disp ('SecondCubeLeftSwitchArc via points initialized...');
+
+
 

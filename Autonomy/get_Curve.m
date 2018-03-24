@@ -1,6 +1,6 @@
 function [Points] = get_Curve(startangle, endangle, direction, n, radius, centerx, centery)
 %%angle is angle of curve in radians
-%dierection is 1 or 0, 1 makes curve go forward
+%direction is 1 or 0, 1 makes curve go forward
 %n is number of points
 %radius is radius of the arc
 %centerx and centery are the center points of the arc

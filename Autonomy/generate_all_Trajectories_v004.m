@@ -34,8 +34,9 @@ all_Trajectories_String = {
   % 'SecondCubeLeftSwitch'
 % 'SecondCubeLeftSwitchForward'
 
-   'SecondCubeRightSwitch'
- 'SecondCubeRightSwitchForward'
+ %  'SecondCubeRightSwitch'
+% 'SecondCubeRightSwitchForward'
+'SecondCubeLeftSwitchArc'
     };
 
 for traj = 1:length(all_Trajectories_String)
