@@ -18,4 +18,6 @@ SecondCubeLeftSwitchArc.Drive_Forward = [...
     true
     true
     true
+    true
+    true
     ];
