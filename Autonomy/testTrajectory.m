@@ -26,4 +26,5 @@ grid on
 % 
 
  draw_Trajectory(SecondCubeLeftSwitchArc);
+  draw_Trajectory(SecondCubeLeftSwitchArcForward);
 

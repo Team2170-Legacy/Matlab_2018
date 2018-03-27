@@ -128,8 +128,11 @@ SecondCubeRightSwitch.add_y = -15*in/sqrt(2);
 SecondCubeRightSwitchForward.add_x = 3*in/sqrt(2);
 SecondCubeRightSwitchForward.add_y = -3*in/sqrt(2);
 
+SecondCubeLeftSwitchArc.add_x =  0;
+SecondCubeLeftSwitchArc.add_y = 0;
 
-
+SecondCubeLeftSwitchArcForward.add_x =  0;
+SecondCubeLeftSwitchArcForward.add_y = 0;
 %-------------------------------------------------------------------------
 %   Generate all trajectories depending on
 %   the color,
@@ -247,5 +250,13 @@ disp ('SecondCubeRightSwitchForward via points initialized...');
 init_Trajectory2ndCubeLeftSwitchArc
 disp ('SecondCubeLeftSwitchArc via points initialized...');
 
+init_Trajectory2ndCubeLeftSwitchArcForward
+disp ('SecondCubeLeftSwitchArcForward via points initialized...');
+
+init_Trajectory2ndCubeRightSwitchArc
+disp ('SecondCubeLeftSwitchArc via points initialized...');
+
+init_Trajectory2ndCubeRightSwitchArcForward
+disp ('SecondCubeLeftSwitchArcForward via points initialized...');
 
 
