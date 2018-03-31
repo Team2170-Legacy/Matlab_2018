@@ -147,6 +147,12 @@ SecondCubeLeftSwitchv2.add_y = 0;
 
 SecondCubeLeftSwitchForwardv2.add_x = 0;
 SecondCubeLeftSwitchForwardv2.add_y = 0;
+
+RSRCLBv2.add_x = 0.0;
+RSRCLBv2.add_y = 0.0;
+
+RSLCRBv2.add_x = 0.0;
+RSLCRBv2.add_y = 0.0;
 %-------------------------------------------------------------------------
 %   Generate all trajectories depending on
 %   the color,
@@ -243,13 +249,15 @@ disp ('RSLCLS via points initialized...');
 init_TrajectoryRSRCRS
 disp ('RSRCLS via points initialized...');
 
+
+
+% following trajectoies from this to next comment no longer in use
 init_TrajectoryRSLCRB
 disp ('RSLCRB via points initialized...');
 
 init_TrajectoryRSRCLB
 disp ('RSRCLB via points initialized...');
 
-% following trajectoies from this to next comment no longer in use
 init_Trajectory2ndCubeLeftSwitch
 disp ('SecondCubeLeftSwitch via points initialized...');
 
@@ -281,5 +289,8 @@ disp ('SecondCubeLeftSwitchv2 via points initialized...');
 init_Trajectory2ndCubeLeftSwitchForwardv2
 disp ('SecondCubeLeftSwitchForwardv2 via points initialized...');
 
+init_TrajectoryRSLCRBv2
+disp ('RSLCRBv2 via points initialized...');
 
-
+init_TrajectoryRSRCLBv2
+disp ('RSRCLBv2 via points initialized...');

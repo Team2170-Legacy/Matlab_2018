@@ -9,43 +9,45 @@ Init_Field_v003
 % 03/07/2018    New trajectory names
 init_Trajectories_v006
 
-make_movies = true
-%make_movies = false
+%make_movies = true
+make_movies = false
 
 all_Trajectories_String = {
-%          'Arc'
-%          'Straight'
-%          'RSMLF'
-%          'RSMRF'
-%          'RSMLS'
-%          'RSMRS'
-%          'RSLLF'
-%          'RSLRF'
-%          'RSLLS'
-%          'RSLRS'
-%          'RSRLF'
-%          'RSRRF'
-%          'RSRLS'
-%          'RSRRS'
-%      'RSLCLS'
-%      'RSRCRS'
-%  'RSLCRB'
-% 'RSRCLB'
-
-'SecondCubeLeftSwitchv2'
-'SecondCubeLeftSwitchForwardv2'
-
-
-% The following trajectories are no longer in use
-%   'SecondCubeLeftSwitch'
-% 'SecondCubeLeftSwitchForward'
-%   'SecondCubeRightSwitch'
-% 'SecondCubeRightSwitchForward'
-%'SecondCubeLeftSwitchArc'
-%'SecondCubeLeftSwitchArcForward'
-%'SecondCubeRightSwitchArc'
-%'SecondCubeRightSwitchArcForward'
-
+    %          'Arc'
+    %          'Straight'
+    %          'RSMLF'
+    %          'RSMRF'
+    %          'RSMLS'
+    %          'RSMRS'
+    %          'RSLLF'
+    %          'RSLRF'
+    %          'RSLLS'
+    %          'RSLRS'
+    %          'RSRLF'
+    %          'RSRRF'
+    %          'RSRLS'
+    %          'RSRRS'
+    %      'RSLCLS'
+    %      'RSRCRS'
+     'RSLCRBv2'
+    'RSRCLBv2'
+    
+    %'SecondCubeLeftSwitchv2'
+    %'SecondCubeLeftSwitchForwardv2'
+    
+    
+    % The following trajectories are no longer in use
+    %   'SecondCubeLeftSwitch'
+    % 'SecondCubeLeftSwitchForward'
+    %   'SecondCubeRightSwitch'
+    % 'SecondCubeRightSwitchForward'
+    %'SecondCubeLeftSwitchArc'
+    %'SecondCubeLeftSwitchArcForward'
+    %'SecondCubeRightSwitchArc'
+    %'SecondCubeRightSwitchArcForward'
+    %'RSLCRB'
+    % 'RSRCLB'
+    
     };
 
 for traj = 1:length(all_Trajectories_String)
