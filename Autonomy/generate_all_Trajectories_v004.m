@@ -30,16 +30,22 @@ all_Trajectories_String = {
 %      'RSLCLS'
 %      'RSRCRS'
 %  'RSLCRB'
-%  'RSRCLB'
+% 'RSRCLB'
+
+'SecondCubeLeftSwitchv2'
+'SecondCubeLeftSwitchForwardv2'
+
+
+% The following trajectories are no longer in use
 %   'SecondCubeLeftSwitch'
 % 'SecondCubeLeftSwitchForward'
-% 
 %   'SecondCubeRightSwitch'
 % 'SecondCubeRightSwitchForward'
 %'SecondCubeLeftSwitchArc'
 %'SecondCubeLeftSwitchArcForward'
-'SecondCubeRightSwitchArc'
-'SecondCubeRightSwitchArcForward'
+%'SecondCubeRightSwitchArc'
+%'SecondCubeRightSwitchArcForward'
+
     };
 
 for traj = 1:length(all_Trajectories_String)
