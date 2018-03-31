@@ -1,8 +1,8 @@
 cornerdistance = .5;
 endcornerdistance = .2;
-[Points] = calcCorners( Field.RSwitch.RightP.br_x + 1.1,   Field.RSLC.y, cornerdistance, -1, -1)
-[Points2] = calcCorners( Field.RSwitch.RightP.br_x + 1.1, Field.RSRC.y-.2, cornerdistance, -1, 1)
-[Points3] = calcCorners( (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.tr_x)/2 + RSLCRBv2.add_x, Field.RSRC.y-.2, endcornerdistance, 1, 1)
+[Points] = calcCorners( Field.RSwitch.RightP.br_x + 1.1,   Field.RSLC.y, cornerdistance, -1, -1);
+[Points2] = calcCorners( Field.RSwitch.RightP.br_x + 1.1, Field.RSRC.y-.2, cornerdistance, -1, 1);
+[Points3] = calcCorners( (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.tr_x)/2 + RSLCRBv2.add_x, Field.RSRC.y-.2, endcornerdistance, 1, 1);
 RSLCRBv2.x = [...
     Field.RSLC.x,
     Points.x',
