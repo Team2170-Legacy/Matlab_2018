@@ -41,7 +41,7 @@ Field.RSwitch.RightP.br_y = Field.RSwitch.RightP.bl_y;
 
 % Left Platform Red Switch
 Field.RSwitch.LeftP.bl_x = Field.RSwitch.RightP.bl_x;
-Field.RSwitch.LeftP.bl_y = 16.5*ft;
+Field.RSwitch.LeftP.bl_y = 16.5*ft-2.25*in;
 
 Field.RSwitch.LeftP.tl_x = Field.RSwitch.RightP.bl_x;
 Field.RSwitch.LeftP.tl_y = Field.RSwitch.LeftP.bl_y+3*ft+2.25*in;

@@ -25,6 +25,13 @@ grid on
 % draw_Trajectory(SecondCubeLeftSwitchForward);
 % 
 
- draw_Trajectory(SecondCubeLeftSwitchArc);
-  draw_Trajectory(SecondCubeLeftSwitchArcForward);
+ %draw_Trajectory(SecondCubeLeftSwitchArc);
+ % draw_Trajectory(SecondCubeLeftSwitchArcForward);
+%draw_Trajectory(SecondCubeRightSwitchArc);
+%  draw_Trajectory(SecondCubeRightSwitchArcForward);
+
+ %draw_Trajectory(SecondCubeLeftSwitchv2);
+ %draw_Trajectory(SecondCubeLeftSwitchForwardv2);
+%draw_Trajectory(RSLCRBv2);
+ draw_Trajectory(RSRCLBv2);
 
