@@ -1,9 +1,14 @@
 %	simulate_robot_v006.m
 %
 %   For FRC 2018 PowerUp
-%   Modified for FRC 2018 Control by Adonis Canada
+%   Modified for FRC 2018 Control by Adonis Canada, Priyanshu Agrawal,
+%   and Baris Sengezen
+%   
+%   
+%   
+%   
 %
-%   Based on FRC_2017 Matlab simulator:
+%   Based on FRC_2017 Matlab simulator
 %	Jacob Krucinski
 %	jacob1576@gmail.com
 %

@@ -17,7 +17,7 @@ RSLCRBv2.y = [...
    Points2.y(1),
    Points3.y',
     Field.RSwitch.RightP.br_y + RSRCLB.add_y - Robot.L/2];
-RSLCRBv2.v = 2.0;
+RSLCRBv2.v = 2.5;
 %RSLCRB.t_final = traj_length(RSLCRB) / RSLCRB.v  * 1.3;
 RSLCRBv2.t_final = 6.5;
 RSLCRBv2.name = 'RSLCRBv2';
