@@ -142,8 +142,8 @@ SecondCubeRightSwitchArcForward.add_x =  0;
 SecondCubeRightSwitchArcForward.add_y = 0;
 
 
-SecondCubeLeftSwitchv2.add_x = 0;%-16 * in * sqrt(2);
-SecondCubeLeftSwitchv2.add_y = 0;% 22 * in;
+SecondCubeLeftSwitchv2.add_x = -20 * in / sqrt(2) - 16*in/sqrt(2);
+SecondCubeLeftSwitchv2.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
 
 SecondCubeLeftSwitchForwardv2.add_x = 0;
 SecondCubeLeftSwitchForwardv2.add_y = 0;
