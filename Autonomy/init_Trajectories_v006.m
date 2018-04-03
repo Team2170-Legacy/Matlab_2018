@@ -104,8 +104,8 @@ RSRLS.add_y   = 0.0;      %   additional y-move distance
 RSRRS.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
 RSRRS.add_y   = 0.0;      %   additional y-move distance
 
-RSLCLS.add_x = 0.0;
-RSLCLS.add_y = 0.0;
+RSLCLS.add_x = -12*in;
+RSLCLS.add_y = -1*ft;
 
 RSRCRS.add_x = 0.0;
 RSRCRS.add_y = 0.0;

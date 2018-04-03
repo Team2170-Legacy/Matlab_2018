@@ -20,12 +20,12 @@ all_Trajectories_String = {
 % 'RSMLS'
 % 'RSMRS'
 % 
-% 'RSLCLS'
+ 'RSLCLS'
 % 'RSRCRS'
 % 'RSLCRBv2'
 % 'RSRCLBv2'
 % 
- 'SecondCubeLeftSwitchv2'
+% 'SecondCubeLeftSwitchv2'
 % 'SecondCubeLeftSwitchForwardv2'
 
 
