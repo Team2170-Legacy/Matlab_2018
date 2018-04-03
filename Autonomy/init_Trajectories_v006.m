@@ -142,8 +142,8 @@ SecondCubeRightSwitchArcForward.add_x =  0;
 SecondCubeRightSwitchArcForward.add_y = 0;
 
 
-SecondCubeLeftSwitchv2.add_x = 0;
-SecondCubeLeftSwitchv2.add_y = 0;
+SecondCubeLeftSwitchv2.add_x = -16 * in * sqrt(2);
+SecondCubeLeftSwitchv2.add_y =  22 * in;
 
 SecondCubeLeftSwitchForwardv2.add_x = 0;
 SecondCubeLeftSwitchForwardv2.add_y = 0;
@@ -248,8 +248,6 @@ disp ('RSLCLS via points initialized...');
 
 init_TrajectoryRSRCRS
 disp ('RSRCLS via points initialized...');
-
-
 
 % following trajectoies from this to next comment no longer in use
 init_TrajectoryRSLCRB
