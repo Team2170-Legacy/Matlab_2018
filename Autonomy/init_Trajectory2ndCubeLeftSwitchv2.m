@@ -15,8 +15,8 @@ y = [...
     7.2
     7.2
     6.5
-    5.88
-    5.88
+    5.88 + SecondCubeLeftSwitchv2.add_y
+    5.88 + SecondCubeLeftSwitchv2.add_y;
     ];
 
 
