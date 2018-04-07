@@ -107,8 +107,8 @@ RSRRS.add_y   = 0.0;      %   additional y-move distance
 RSLCLS.add_x = -12*in;
 RSLCLS.add_y = -1*ft;
 
-RSRCRS.add_x = 0.0;
-RSRCRS.add_y = 0.0;
+RSRCRS.add_x = 1*ft;
+RSRCRS.add_y = 1*ft;
 
 RSRCLB.add_x = 0.0;
 RSRCLB.add_y = 0.0;
@@ -147,6 +147,12 @@ SecondCubeLeftSwitchv2.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
 
 SecondCubeLeftSwitchForwardv2.add_x = 0;
 SecondCubeLeftSwitchForwardv2.add_y = 0;
+
+SecondCubeRightSwitchv2.add_x = -20 * in / sqrt(2) - 16*in/sqrt(2);
+SecondCubeRightSwitchv2.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
+
+SecondCubeRightSwitchForwardv2.add_x = 0;
+SecondCubeRightSwitchForwardv2.add_y = 0;
 
 RSRCLBv2.add_x = 0.0;
 RSRCLBv2.add_y = 0.0;
@@ -286,6 +292,12 @@ disp ('SecondCubeLeftSwitchv2 via points initialized...');
 
 init_Trajectory2ndCubeLeftSwitchForwardv2
 disp ('SecondCubeLeftSwitchForwardv2 via points initialized...');
+
+init_Trajectory2ndCubeRightSwitchv2
+disp ('SecondCubeRightSwitchv2 via points initialized...');
+
+init_Trajectory2ndCubeRightSwitchForwardv2
+disp ('SecondCubeRightSwitchForwardv2 via points initialized...');
 
 init_TrajectoryRSLCRBv2
 disp ('RSLCRBv2 via points initialized...');

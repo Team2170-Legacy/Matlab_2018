@@ -14,20 +14,21 @@ make_movies = true
 
 all_Trajectories_String = {
     
-% 'Straight'
-% 'RSMLF'
-% 'RSMRF'
-% 'RSMLS'
-% 'RSMRS'
-% 
-% 'RSLCLS'
-% 'RSRCRS'
-% 'RSLCRBv2'
-% 'RSRCLBv2'
-% 
-'SecondCubeLeftSwitchv2'
-% 'SecondCubeLeftSwitchForwardv2'
+'Straight'
+'RSMLF'
+'RSMRF'
+'RSMLS'
+'RSMRS'
 
+'RSLCLS'
+'RSRCRS'
+'RSLCRBv2'
+'RSRCLBv2'
+
+'SecondCubeLeftSwitchv2'
+ 'SecondCubeLeftSwitchForwardv2'
+'SecondCubeRightSwitchv2'
+'SecondCubeRightSwitchForwardv2'
 
 % The following trajectories are no longer in use
 %   'SecondCubeLeftSwitch'
