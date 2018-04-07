@@ -11,8 +11,8 @@ Init_Field_v003
 % 03/07/2018    New trajectory names
 init_Trajectories_v006
 
-make_movies = true
-%make_movies = false
+%make_movies = true
+make_movies = false
 
 all_Trajectories_String = {
     
@@ -25,13 +25,31 @@ all_Trajectories_String = {
 'RSMRS'
 
 'RSRCLBv2'
-%*** TO DO 'RSRCRBv2
-
-'RSLCRBv2'
-%*** TO DO 'RSLCRBv2
+'RSRCRS'
 
 'SecondCubeLeftSwitchv2'
 'SecondCubeLeftSwitchForwardv2'
+
+'SecondCubeRightSwitchv2'
+'SecondCubeRightSwitchForwardv2'
+
+%-----------------------------------------------
+%'Straight'
+%'RSMLF'
+%'RSMRF'
+%'RSMLS'
+%'RSMRS'
+
+%'RSLCLS'
+%'RSRCRS'
+%'RSLCRBv2'
+%'RSRCLBv2'
+
+%'SecondCubeLeftSwitchv2'
+%'SecondCubeLeftSwitchForwardv2'
+%'SecondCubeRightSwitchv2'
+%'SecondCubeRightSwitchForwardv2'
+%----------------------------------------------
 
 %*** Older Stuff
 
