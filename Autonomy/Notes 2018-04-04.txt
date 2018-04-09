@@ -1,0 +1,29 @@
+Notes 2018-04-04.txt
+
+1) Why did the robot for the 2nd cube switch v2 not approach
+straight from the back as in the movie but more at a 45 deg angle?
+
+2) What is the best way to specify the add_x & add_y corrections
+to those move if the robot comes in at the 45 deg angle?
+Currently, we use two additions to the final points with /sqrt(2)
+coefficients to adjust the final trajectory point.
+
+3) For the 2nd cube switch auto, the last Forward moved seemed to have 
+trouble in the simulator.
+Does it use the nominal end point of the previous trajectory
+as it's start point or does it use the adjusted one?
+For large adjustments, we may need to adjust the start point by the same amount.
+Or, for such a short move, just go from the nominal end point of the
+last trajectory and don't use any adjustments.
+
+One challenge is that this trajectory is slow.
+May need a custom higher Kp gain for this trajectory ONLY
+to speed it up.
+
+Hartford 2018-04-08
+
+It seems we need to smooth out the trajectories and remove
+sharp velocity changes, like e.g. in the 2ndCubeLeftSwitch.
+The robot doesn't seem to be able to follow these,
+and these sharp changes may exist in other profiles as well...
+

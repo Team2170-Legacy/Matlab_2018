@@ -62,10 +62,12 @@ N_switch_pos        = length(all_switch_pos);
 %-------------------------------------------------------------------------
 %   From SM
 
-RSMLF.add_x   = 6.0*in;            %   additional x-move distance at the end of trajectory
+% add + 3in MKrucinski 4/7/18 RSMLF.add_x   = 6.0*in;            %   additional x-move distance at the end of trajectory
+RSMLF.add_x   = 9.0*in;            %   additional x-move distance at the end of trajectory
 RSMLF.add_y   = 0.0;            %   additional y-move distance
 
-RSMRF.add_x   = 6.0*in;            %   additional x-move distance at the end of trajectory
+%RSMRF.add_x   = 6.0*in;            %   additional x-move distance at the end of trajectory
+RSMRF.add_x   = 9.0*in;            %   additional x-move distance at the end of trajectory
 RSMRF.add_y   = 0.0;            %   additional y-move distance at the end of trajectory
 
 RSMLS.add_x   = 0.0;            %   additional x-move distance at the end of trajectory
@@ -145,6 +147,9 @@ SecondCubeRightSwitchArcForward.add_y = 0;
 SecondCubeLeftSwitchv2.add_x = -20 * in / sqrt(2) - 16*in/sqrt(2);
 SecondCubeLeftSwitchv2.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
 
+SecondCubeLeftSwitchv3.add_x = -20 * in / sqrt(2) - 16*in/sqrt(2);
+SecondCubeLeftSwitchv3.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
+
 SecondCubeLeftSwitchForwardv2.add_x = 0;
 SecondCubeLeftSwitchForwardv2.add_y = 0;
 
@@ -153,6 +158,10 @@ SecondCubeRightSwitchv2.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
 
 SecondCubeRightSwitchForwardv2.add_x = 0;
 SecondCubeRightSwitchForwardv2.add_y = 0;
+
+SecondCubeRightSwitchv3.add_x = -20 * in / sqrt(2) - 16*in/sqrt(2);
+SecondCubeRightSwitchv3.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
+
 
 RSRCLBv2.add_x = 0.0;
 RSRCLBv2.add_y = 0.0;
@@ -265,6 +274,9 @@ disp ('RSRCLB via points initialized...');
 init_Trajectory2ndCubeLeftSwitch
 disp ('SecondCubeLeftSwitch via points initialized...');
 
+init_Trajectory2ndCubeLeftSwitchv3
+disp('init_Trajectory2ndCubeLeftSwitchv3 via points initialized')
+
 init_Trajectory2ndCubeLeftSwitchForward
 disp ('SecondCubeLeftSwitchForward via points initialized...');
 
@@ -295,6 +307,9 @@ disp ('SecondCubeLeftSwitchForwardv2 via points initialized...');
 
 init_Trajectory2ndCubeRightSwitchv2
 disp ('SecondCubeRightSwitchv2 via points initialized...');
+
+init_Trajectory2ndCubeRightSwitchv3
+disp ('SecondCubeRightSwitchv3 via points initialized...');
 
 init_Trajectory2ndCubeRightSwitchForwardv2
 disp ('SecondCubeRightSwitchForwardv2 via points initialized...');

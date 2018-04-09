@@ -5,33 +5,33 @@
 %
 %   v005    prepared for Hartford event 2018-04-06 to 2018-04-08
 
+make_movies = true
+%make_movies = false
+
 init_Constants
 Init_Robot_v002
 Init_Field_v003
 % 03/07/2018    New trajectory names
 init_Trajectories_v006
 
-%make_movies = true
-make_movies = false
-
 all_Trajectories_String = {
     
-'Straight'
+%'Straight'
 
-'RSLCLS'
-'RSLCRBv2'
+%'RSLCLS'
+%'RSLCRBv2'
 
-'RSMLS'
-'RSMRS'
+%'RSMLS'
+%'RSMRS'
 
-'RSRCLBv2'
-'RSRCRS'
+%'RSRCLBv2'
+%'RSRCRS'
 
-'SecondCubeLeftSwitchv2'
-'SecondCubeLeftSwitchForwardv2'
+'SecondCubeLeftSwitchv3'
+%'SecondCubeLeftSwitchForwardv2'
 
-'SecondCubeRightSwitchv2'
-'SecondCubeRightSwitchForwardv2'
+%'SecondCubeRightSwitchv3'
+%'SecondCubeRightSwitchForwardv2'
 
 %-----------------------------------------------
 %'Straight'
@@ -53,8 +53,8 @@ all_Trajectories_String = {
 
 %*** Older Stuff
 
-'RSMLF'
-'RSMRF'
+%'RSMLF'
+%'RSMRF'
 
 
 

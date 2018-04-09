@@ -22,8 +22,12 @@ y = [...
 
 SecondCubeLeftSwitchv2.x = x;
 SecondCubeLeftSwitchv2.y = y;
-SecondCubeLeftSwitchv2.v = 2.0;
-SecondCubeLeftSwitchv2.t_final = 3.1;
+% SecondCubeLeftSwitchv2.v = 2.0;
+% SecondCubeLeftSwitchv2.t_final = 3.1;
+
+SecondCubeLeftSwitchv2.v = 1.3;
+SecondCubeLeftSwitchv2.t_final = 4.9;
+
 SecondCubeLeftSwitchv2.name = 'SecondCubeLeftSwitchv2';
 SecondCubeLeftSwitchv2.theta_start = -90*deg;
 SecondCubeLeftSwitchv2.Drive_Forward = [...
