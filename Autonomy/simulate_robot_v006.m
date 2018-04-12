@@ -3,10 +3,10 @@
 %   For FRC 2018 PowerUp
 %   Modified for FRC 2018 Control by Adonis Canada, Priyanshu Agrawal,
 %   and Baris Sengezen
-%   
-%   
-%   
-%   
+%
+%
+%
+%
 %
 %   Based on FRC_2017 Matlab simulator
 %	Jacob Krucinski
@@ -191,8 +191,8 @@ switch_direction    = false;        % flag to keep track of when trajectory dire
 
 prev_forward_flag   = true;
 if isfield(trajectory, 'Drive_Forward')
-prev_forward_flag   = trajectory.Drive_Forward(1);
-end 
+    prev_forward_flag   = trajectory.Drive_Forward(1);
+end
 
 prev_distance       = 0;
 distance            = 0;
@@ -242,7 +242,7 @@ for i=2:N
     [angle,distance] = calcAngleandDistance_v2(carrot,Robot);
     
     %if switch_direction && timer > 0.9,
-	if switch_direction && carrot.y < Robot.y - 0.1,
+    if switch_direction && carrot.y < Robot.y - 0.1,
         switch_direction = false;
     else
         timer = timer + Ts;
@@ -257,11 +257,11 @@ for i=2:N
     end
     
     if (switch_direction)
-%         if (angle<=0)
-%             angle = (angle+180*deg);
-%         else
-%             angle = (angle-180*deg);
-%         end
+        %         if (angle<=0)
+        %             angle = (angle+180*deg);
+        %         else
+        %             angle = (angle-180*deg);
+        %         end
         angle = 0.0;        % disable all turning for a while during direction switching
     end
     
@@ -399,29 +399,51 @@ plot(all_t, Robot.wR_all*Robot.R, 'r');	% Plot right wheel velocities in Red
 hold off
 xlabel('t [s]')
 ylabel('v [m/s]')
+title(trajString)
 
 
-f3		= figure;				% open figure
-set(f3,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default
+%   plot wheel accelerations
 
-subplot(311)
-title('Robot positions')
-plot(all_t, Robot.x_all);	% Plot robot x-positions
+Robot.aL_all = [ 0 ; diff(Robot.wL_all)/Robot.Ts];
+Robot.aR_all = [ 0 ; diff(Robot.wR_all)/Robot.Ts];
+
+f2b		= figure;				% open figure
+set(f2b,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default
 grid on							% draw a grid on the figure
-ylabel('x [m]')
-
-subplot(312)
-plot(all_t, Robot.y_all);	% Plot robot y-positions
-grid on							% draw a grid on the figure
-ylabel('y [m]')
-
-subplot(313)
-plot(all_t, Robot.theta_all);	% Plot robot angles
-grid on							% draw a grid on the figure
-ylabel('theta [rad]')
-
+hold on
+plot(all_t, Robot.aL_all*Robot.R, 'b');	% Plot left wheel velocities in Blue
+plot(all_t, Robot.aR_all*Robot.R, 'r');	% Plot right wheel velocities in Red
+hold off
 xlabel('t [s]')
+ylabel('a [m/s^2]')
+title(trajString)
 
+if 0,
+    
+    f3		= figure;				% open figure
+    set(f3,'DefaultLineLineWidth',3);	% set figure to draw with thick lines by default
+    
+    subplot(311)
+    title('Robot positions')
+    plot(all_t, Robot.x_all);	% Plot robot x-positions
+    grid on							% draw a grid on the figure
+    ylabel('x [m]')
+    
+    subplot(312)
+    plot(all_t, Robot.y_all);	% Plot robot y-positions
+    grid on							% draw a grid on the figure
+    ylabel('y [m]')
+    
+    subplot(313)
+    plot(all_t, Robot.theta_all);	% Plot robot angles
+    grid on							% draw a grid on the figure
+    ylabel('theta [rad]')
+    
+    xlabel('t [s]')
+
+    title(trajString)
+
+end
 
 Robot.wL_all(1)		= Robot.wL;
 Robot.wR_all(1)		= Robot.wR;

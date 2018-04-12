@@ -16,39 +16,37 @@ init_Trajectories_v006
 
 all_Trajectories_String = {
     
-%'Straight'
+'Straight'
 
-%'RSLCLS'
-%'RSLCRBv2'
+'RSLCLS'
+'RSLCRBv2'
 
-%'RSMLS'
-%'RSMRS'
-
-%'RSRCLBv2'
-%'RSRCRS'
+'RSRCLBv2'
+'RSRCRS'
 
 'SecondCubeLeftSwitchv3'
-%'SecondCubeLeftSwitchForwardv2'
+'SecondCubeLeftSwitchForwardv2'
 
-%'SecondCubeRightSwitchv3'
-%'SecondCubeRightSwitchForwardv2'
+'SecondCubeRightSwitchv3'
+'SecondCubeRightSwitchForwardv2'
 
 %-----------------------------------------------
-%'Straight'
-%'RSMLF'
-%'RSMRF'
-%'RSMLS'
-%'RSMRS'
+'RSMLF'
+'RSMRF'
+'RSMLS'
+'RSMRS'
 
-%'RSLCLS'
-%'RSRCRS'
-%'RSLCRBv2'
-%'RSRCLBv2'
+'RSLLF'
+ 'RSLLS'
+'RSLRF'
+'RSLRS'
 
-%'SecondCubeLeftSwitchv2'
-%'SecondCubeLeftSwitchForwardv2'
-%'SecondCubeRightSwitchv2'
-%'SecondCubeRightSwitchForwardv2'
+'RSRLF'
+'RSRRF'
+'RSRLS'
+'RSRRS'
+
+
 %----------------------------------------------
 
 %*** Older Stuff
@@ -77,7 +75,7 @@ all_Trajectories_String = {
 %'RSLCRB'
 % 'RSRCLB'
 %     'Arc'
-%        'RSLLF'
+%     'RSLLF'
 %     'RSLRF'
 %     'RSLLS'
 %     'RSLRS'

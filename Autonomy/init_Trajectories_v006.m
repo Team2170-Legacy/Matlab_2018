@@ -150,6 +150,12 @@ SecondCubeLeftSwitchv2.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
 SecondCubeLeftSwitchv3.add_x = -20 * in / sqrt(2) - 16*in/sqrt(2);
 SecondCubeLeftSwitchv3.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
 
+%   Boston 2018-04-12
+%   Move robot end position slightly lower on the field to grab cube
+%   successfully, try 6*in first
+SecondCubeLeftSwitchv3.add_y    = SecondCubeLeftSwitchv3.add_y  - 6*in;
+
+
 SecondCubeLeftSwitchForwardv2.add_x = 0;
 SecondCubeLeftSwitchForwardv2.add_y = 0;
 
@@ -162,6 +168,10 @@ SecondCubeRightSwitchForwardv2.add_y = 0;
 SecondCubeRightSwitchv3.add_x = -20 * in / sqrt(2) - 16*in/sqrt(2);
 SecondCubeRightSwitchv3.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
 
+%   Boston 2018-04-12
+%   Move robot end position slightly lower on the field to grab cube
+%   successfully, try 6*in first
+SecondCubeRightSwitchv3.add_y = SecondCubeRightSwitchv3.add_y + 6*in;
 
 RSRCLBv2.add_x = 0.0;
 RSRCLBv2.add_y = 0.0;
@@ -195,7 +205,13 @@ for c=1:N_traj_color,
                 traj.x(1)   = eval([ Start_string '.x']);
                 traj.y(1)   = eval([ Start_string '.y']);
                 
-                traj.x(2)   = traj.x(1) + Robot.L/2;
+                %   Modification in Boston 2018-04-12
+                %   with larger bumpers, back corner probably hits back
+                %   wall
+                %   when robot turns at the start, add 8*in
+                
+%                traj.x(2)   = traj.x(1) + Robot.L/2;
+                traj.x(2)   = traj.x(1) + Robot.L/2 + 8*in;
                 traj.y(2)   = traj.y(1);
                 
                 if all_switch_pos(p) == 'F',    % FRONT switch position
@@ -212,6 +228,8 @@ for c=1:N_traj_color,
                         %   this is DIFFERENT from SIDE position where
                         %   positive add_y drives the robot FURTHER into
                         %   the switch
+                        %
+
                         traj.y(3)   = Field.RSwitch.LVT_y + traj.add_y;
                         traj.y(4)   = traj.y(3);
                     else % switch_loc == 'R'        %   RIGHT switch
@@ -231,13 +249,19 @@ for c=1:N_traj_color,
                     traj.x(3)   = traj.x(2) + 0.0;
                     traj.x(4)   = (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2 + traj.add_x;
                     traj.x(5)   = traj.x(4);
+                    
+                        %   2018-04-12 Martin Krucinski Boston
+                        %   added +/- y adjustements in order not to hit
+                        %   wall with new bumpers, start with 0.1 m
+                        %   adjustement
+                        %
                     if all_switch_loc(l) == 'L',    %   LEFT switch
-                        traj.y(3)   = Field.RSwitch.LVT_y + 2*Robot.L - traj.add_y;
+                        traj.y(3)   = Field.RSwitch.LVT_y + 2*Robot.L - traj.add_y - 0.1;
                         traj.y(4)   = traj.y(3);
                         % RSMLS.y = [Field.RSM.y, Field.RSM.y, 4.04, 5.1723, 6.8, 7.2, 7.2, 6.8, Field.RSwitch.LeftP.tl_y+Robot.L/2 - add_y];
                         traj.y(5)   = Field.RSwitch.LeftP.tl_y + Robot.L/2 - traj.add_y;
                     else % switch_loc == 'R'        %   RIGHT switch
-                        traj.y(3)   = Field.RSwitch.RVT_y - 2*Robot.L + traj.add_y;
+                        traj.y(3)   = Field.RSwitch.RVT_y - 2*Robot.L + traj.add_y + 0.1;
                         traj.y(4)   = traj.y(3);
                         %traj.y(5)   = RSMRS.y =  1.8 + traj.add_y;
                         traj.y(5)   = Field.RSwitch.RightP.bl_y - Robot.L/2 + traj.add_y;
