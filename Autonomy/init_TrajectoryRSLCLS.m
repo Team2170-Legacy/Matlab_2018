@@ -12,6 +12,6 @@ RSLCLS.y = [    Field.RSLC.y,    Field.RSLC.y,     Field.RSLC.y + .35 - 0.1,    
 %RSLCLS.y = [Field.RSLC.y, Field.RSLC.y, Field.RSwitch.LeftP.tr_y+Robot.L/2 + RSLCLS.add_y];
 
 
-RSLCLS.v = 2.0;
+RSLCLS.v = 1.3;
 RSLCLS.t_final = traj_length(RSLCLS) / RSLCLS.v  * 1.3;
 RSLCLS.name = 'RSLCLS';

@@ -16,6 +16,11 @@ init_Trajectories_v006
 
 all_Trajectories_String = {
     
+'Test01'
+'Test02'
+'Test03'
+'Test04'
+
 'Straight'
 
 'RSLCLS'
@@ -30,14 +35,13 @@ all_Trajectories_String = {
 'SecondCubeRightSwitchv3'
 'SecondCubeRightSwitchForwardv2'
 
-%-----------------------------------------------
 'RSMLF'
 'RSMRF'
 'RSMLS'
 'RSMRS'
 
 'RSLLF'
- 'RSLLS'
+'RSLLS'
 'RSLRF'
 'RSLRS'
 
@@ -46,8 +50,7 @@ all_Trajectories_String = {
 'RSRLS'
 'RSRRS'
 
-
-%----------------------------------------------
+%----------------------------------------------------------------------
 
 %*** Older Stuff
 

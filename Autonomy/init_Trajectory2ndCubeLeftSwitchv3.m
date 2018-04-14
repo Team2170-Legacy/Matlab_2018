@@ -47,7 +47,7 @@ SecondCubeLeftSwitchv3.y = y;
 % SecondCubeLeftSwitchv3.t_final = 3.1;
 
 SecondCubeLeftSwitchv3.v = 1.3;
-SecondCubeLeftSwitchv3.t_final = 4.9;
+SecondCubeLeftSwitchv3.t_final = 4.6; % 2018-04-13  4.9;
 
 SecondCubeLeftSwitchv3.name = 'SecondCubeLeftSwitchv3';
 SecondCubeLeftSwitchv3.theta_start = -90*deg;

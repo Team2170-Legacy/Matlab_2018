@@ -106,11 +106,21 @@ RSRLS.add_y   = 0.0;      %   additional y-move distance
 RSRRS.add_x   = 0.0;      %   additional x-move distance at the end of trajectory
 RSRRS.add_y   = 0.0;      %   additional y-move distance
 
-RSLCLS.add_x = -12*in;
-RSLCLS.add_y = -1*ft;
+% RSLCLS.add_x = -12*in;
+% RSLCLS.add_y = -1*ft;
+%
+%   Boston 2018-04-13
+%   Remove the corrections for the slower trajectories at 1.3 m/s
+RSLCLS.add_x = 0;
+RSLCLS.add_y = 0;
 
-RSRCRS.add_x = 1*ft;
-RSRCRS.add_y = 1*ft;
+%   Boston 2018-04-13
+%   Remove the corrections for the slower trajectories at 1.3 m/s
+% RSRCRS.add_x = 1*ft;
+% RSRCRS.add_y = 1*ft;
+
+RSRCRS.add_x = 0;
+RSRCRS.add_y = 0;
 
 RSRCLB.add_x = 0.0;
 RSRCLB.add_y = 0.0;
@@ -147,13 +157,21 @@ SecondCubeRightSwitchArcForward.add_y = 0;
 SecondCubeLeftSwitchv2.add_x = -20 * in / sqrt(2) - 16*in/sqrt(2);
 SecondCubeLeftSwitchv2.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
 
-SecondCubeLeftSwitchv3.add_x = -20 * in / sqrt(2) - 16*in/sqrt(2);
-SecondCubeLeftSwitchv3.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
+%   Boston 2018-04-13
+%   Remove the corrections for the slower trajectories at 1.3 m/s
+% 
+% SecondCubeLeftSwitchv3.add_x = -20 * in / sqrt(2) - 16*in/sqrt(2);
+% SecondCubeLeftSwitchv3.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
+
+SecondCubeLeftSwitchv3.add_x = 0;
+SecondCubeLeftSwitchv3.add_y =  0;
 
 %   Boston 2018-04-12
 %   Move robot end position slightly lower on the field to grab cube
 %   successfully, try 6*in first
-SecondCubeLeftSwitchv3.add_y    = SecondCubeLeftSwitchv3.add_y  - 6*in;
+%SecondCubeLeftSwitchv3.add_y    = SecondCubeLeftSwitchv3.add_y  - 6*in;
+% 2018-04-13
+SecondCubeLeftSwitchv3.add_y    = 0;
 
 
 SecondCubeLeftSwitchForwardv2.add_x = 0;
@@ -171,7 +189,9 @@ SecondCubeRightSwitchv3.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
 %   Boston 2018-04-12
 %   Move robot end position slightly lower on the field to grab cube
 %   successfully, try 6*in first
-SecondCubeRightSwitchv3.add_y = SecondCubeRightSwitchv3.add_y + 6*in;
+% 2018-04-13
+%SecondCubeRightSwitchv3.add_y = SecondCubeRightSwitchv3.add_y + 6*in;
+SecondCubeRightSwitchv3.add_y = 0;
 
 RSRCLBv2.add_x = 0.0;
 RSRCLBv2.add_y = 0.0;
@@ -210,7 +230,7 @@ for c=1:N_traj_color,
                 %   wall
                 %   when robot turns at the start, add 8*in
                 
-%                traj.x(2)   = traj.x(1) + Robot.L/2;
+                %                traj.x(2)   = traj.x(1) + Robot.L/2;
                 traj.x(2)   = traj.x(1) + Robot.L/2 + 8*in;
                 traj.y(2)   = traj.y(1);
                 
@@ -229,7 +249,7 @@ for c=1:N_traj_color,
                         %   positive add_y drives the robot FURTHER into
                         %   the switch
                         %
-
+                        
                         traj.y(3)   = Field.RSwitch.LVT_y + traj.add_y;
                         traj.y(4)   = traj.y(3);
                     else % switch_loc == 'R'        %   RIGHT switch
@@ -244,17 +264,17 @@ for c=1:N_traj_color,
                     
                 else %switch_pos(p) == 'S'  % SIDE  switch position
                     %                    traj.x(3)   = traj.x(2);
-%                   traj.x(3)   = traj.x(2) + 1.0;
-% MKrucinski 03/10/18 Make turn 90 deg in order to avoid other robots
+                    %                   traj.x(3)   = traj.x(2) + 1.0;
+                    % MKrucinski 03/10/18 Make turn 90 deg in order to avoid other robots
                     traj.x(3)   = traj.x(2) + 0.0;
                     traj.x(4)   = (Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2 + traj.add_x;
                     traj.x(5)   = traj.x(4);
                     
-                        %   2018-04-12 Martin Krucinski Boston
-                        %   added +/- y adjustements in order not to hit
-                        %   wall with new bumpers, start with 0.1 m
-                        %   adjustement
-                        %
+                    %   2018-04-12 Martin Krucinski Boston
+                    %   added +/- y adjustements in order not to hit
+                    %   wall with new bumpers, start with 0.1 m
+                    %   adjustement
+                    %
                     if all_switch_loc(l) == 'L',    %   LEFT switch
                         traj.y(3)   = Field.RSwitch.LVT_y + 2*Robot.L - traj.add_y - 0.1;
                         traj.y(4)   = traj.y(3);
@@ -269,7 +289,12 @@ for c=1:N_traj_color,
                     
                     %(Field.RSwitch.LeftP.tl_x + Field.RSwitch.LeftP.br_x)/2*[1.01 1]+add_x
                     
-                    traj.v      = 2.0;
+                    %traj.v      = 2.0;
+                    % *** Martin Krucinski 2018-04-13
+                    % Slow down all Side Switch trajectories to 1.0
+                    % 1.0 gives t_final 12.7 s for RSLRS, speed up a bit,
+                    % to 1.3 m/s
+                    traj.v      = 1.3;
                     traj.t_final= ( traj_length(traj) / traj.v ) * 1.3;
                 end
                 
@@ -343,3 +368,9 @@ disp ('RSLCRBv2 via points initialized...');
 
 init_TrajectoryRSRCLBv2
 disp ('RSRCLBv2 via points initialized...');
+
+init_Trajectory_Test01
+init_Trajectory_Test02
+init_Trajectory_Test03
+init_Trajectory_Test04
+disp('Test Trajectories initialized...')
