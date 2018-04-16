@@ -5,8 +5,8 @@
 %
 %   v005    prepared for Hartford event 2018-04-06 to 2018-04-08
 
-make_movies = true
-%make_movies = false
+%make_movies = true
+make_movies = false
 
 init_Constants
 Init_Robot_v002
@@ -23,16 +23,16 @@ all_Trajectories_String = {
 
 'Straight'
 
-'RSLCLS'
+ 'RSLCLS'
 'RSLCRBv2'
 
 'RSRCLBv2'
-'RSRCRS'
+ 'RSRCRS'
 
-'SecondCubeLeftSwitchv3'
+ 'SecondCubeLeftSwitchv3'
 'SecondCubeLeftSwitchForwardv2'
 
-'SecondCubeRightSwitchv3'
+ 'SecondCubeRightSwitchv3'
 'SecondCubeRightSwitchForwardv2'
 
 'RSMLF'

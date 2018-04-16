@@ -183,8 +183,8 @@ SecondCubeRightSwitchv2.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
 SecondCubeRightSwitchForwardv2.add_x = 0;
 SecondCubeRightSwitchForwardv2.add_y = 0;
 
-SecondCubeRightSwitchv3.add_x = -20 * in / sqrt(2) - 16*in/sqrt(2);
-SecondCubeRightSwitchv3.add_y =  20 * in / sqrt(2) - 16*in/sqrt(2);
+SecondCubeRightSwitchv3.add_x = 0.0; %-20 * in / sqrt(2) - 16*in/sqrt(2);
+SecondCubeRightSwitchv3.add_y =  0.0; %20 * in / sqrt(2) - 16*in/sqrt(2);
 
 %   Boston 2018-04-12
 %   Move robot end position slightly lower on the field to grab cube

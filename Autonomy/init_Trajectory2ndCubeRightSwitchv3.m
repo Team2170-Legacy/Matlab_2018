@@ -9,8 +9,8 @@ SecondCubeRightSwitchv3.y(length(SecondCubeRightSwitchv3.y)-1) = SecondCubeRight
 % SecondCubeRightSwitchv3.v = 2.0;
 % SecondCubeRightSwitchv3.t_final = 3.1;
 
-SecondCubeRightSwitchv3.v = 1.3;
-SecondCubeRightSwitchv3.t_final = 4.6;% 2018-04-13     4.9;
+SecondCubeRightSwitchv3.v = 1.6;
+SecondCubeRightSwitchv3.t_final = 3.7;% 2018-04-13     4.9;
 
 SecondCubeRightSwitchv3.name = 'SecondCubeRightSwitchv3';
 SecondCubeRightSwitchv3.theta_start = 90*deg;
